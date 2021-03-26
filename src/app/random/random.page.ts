@@ -12,4 +12,8 @@ export class RandomPage implements OnInit {
   ngOnInit() {
   }
 
+
+  onClick(){
+    console.log("foi clicado")
+  }
 }

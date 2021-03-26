@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>random</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-content class="padding" fullscren="true">
 
-<ion-content>
+    <div class="Soloist">
+    <ion-fab  vertical="center" horizontal="center" slot="fixed"  style = "left: 25%; right:20%" >
+      <ion-button fill="clear" (click)="onClick()" expand="full" class = "ion-activatable ripple-parent">
+          <h1>
+            RANDOM
+          </h1>
+          <ion-ripple-effect></ion-ripple-effect>
+      </ion-button>
+    </ion-fab>
+  </div>    
+  <div class="ButtonImg">
+    <ion-img  (click)="onClick()" alt="people" src="assets/image/people.svg"></ion-img>
+    <ion-img  (click)="onClick()" alt="people" src="assets/image/specie.svg"></ion-img>
+    <ion-img  (click)="onClick()" alt="people" src="assets/image/death_star.svg"></ion-img>
+    <ion-img  (click)="onClick()" alt="people" src="assets/image/millenniumfalcon.png"></ion-img>
+    
+</div>
 
-</ion-content>
+
+
+  </ion-content>
+  
+</ion-app>
+
+
