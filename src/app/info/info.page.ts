@@ -9,6 +9,10 @@ import anime from 'animejs/lib/anime.es.js';
 })
 export class InfoPage implements OnInit {
 
+  
+
+
+
   constructor() { }
 
   ngOnInit() {

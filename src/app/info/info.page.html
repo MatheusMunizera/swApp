@@ -1,9 +1,39 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Matheus GAY</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<!-- Cabeçalho  -->
 <ion-content>
+<ion-item lines=none>Info Page</ion-item>
+
+
+<!-- Avatar selecionado  -->
+  <img height= "35%" width = "50%" style= "margin-left: 25%; margin-right: 25%;"
+  src="https://static.wikia.nocookie.net/ptstarwars/images/1/1a/R2d2.jpg/revision/latest/scale-to-width-down/400?cb=20060701231820"
+  alt="R2D2"> <br>
+
+<ion-card>
+<!-- Breve Descrição  -->
+    <ion-card-title>R2D2</ion-card-title> <br>
+    <ion-card-subtitle color = primary>R2-D2, também chamado simplesmente de R2, foi um droide 
+      astromecânico série R2 produzido pelas Indústrias Autômato com programação masculina</ion-card-subtitle>
+  </ion-card>
+
+<!-- Opções de informaçãoz  -->
+  <ion-item>
+    <ion-label> Choose Info</ion-label>
+    <ion-select value = "input" (ionChange) = "infoType()">
+        <ion-select-option value = techInfo>Technical Info</ion-select-option>
+        <ion-select-option value = prodInfo>Production info</ion-select-option>
+        <ion-select-option value = pcInfo>Political Cronological Info</ion-select-option>
+    </ion-select>
+</ion-item><br>
+
+<ion-card>
+  
+</ion-card>
+
+
+<!-- Data da cena-->
+
+
+
+
 
 </ion-content>
