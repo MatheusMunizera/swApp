@@ -16,24 +16,44 @@
   </ion-card>
 
 <!-- Opções de informaçãoz  -->
-  <ion-item>
-    <ion-label> Choose Info</ion-label>
-    <ion-select value = "input" (ionChange) = "infoType()">
-        <ion-select-option value = techInfo>Technical Info</ion-select-option>
-        <ion-select-option value = prodInfo>Production info</ion-select-option>
-        <ion-select-option value = pcInfo>Political Cronological Info</ion-select-option>
-    </ion-select>
-</ion-item><br>
-
-<ion-card>
-  
-</ion-card>
-
-
-<!-- Data da cena-->
-
-
-
-
+<ion-slides pager="true" style="display: block;">
+  <ion-slide>
+    <ion-card>
+      <ion-card-title>Technical Info</ion-card-title>
+        <ion-card-content><b>Altura: </b>1,09 metro<br>
+                          <b>Massa: </b>32 quilogramas<br>
+                          <b>Gênero: </b> Programação masculina<br>
+                          <b>Cor do sensor: </b>Vermelho
+        </ion-card-content>  
+    </ion-card>
+  </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-title>Production info</ion-card-title>
+          <ion-card-content>  <b>Planeta de origem: </b>Naboo<br>
+                              <b>Data de destruição: </b>Durante o incidente de Carida(reconstruído)<br>
+                              <b>Fabricante: </b> Indústrias Autômato<br>
+                              <b>Modelo: </b>Droide astromecânico série R2 <br>
+                              <b>Classe: </b>Droide astromecânico
+          </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <ion-card-title>Political Cronological Info</ion-card-title>
+        <ion-card-subtitle><b>Afiliação</b></ion-card-subtitle>
+          <ion-card-content><Ul style="text-align: left;"> 
+                              <li>Casa Real de Naboo</li>
+                              <li>República Galáctica</li>
+                              <li>Esquadrão de droides de batalha de R2-D2</li>
+                              <li>Ordem Jedi</li>
+                              <li>Império Galáctico</li>
+                              <li>Aliança para Restauração da República</li>
+                              <li>Resistência</li>
+                            </Ul> 
+          </ion-card-content> 
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>
