@@ -1,51 +1,81 @@
-
-
- ion-content {
-    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover  ;
+ion-content {
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
 }
+
 @font-face {
-    font-family: Soloist;
-    src: url("/assets/fonts/soloist/soloisttitle1.ttf");
-    position: absolute
+  font-family: Soloist;
+  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+  position: absolute
 }
-    .Soloist{
-        ion-button{
-            h1{
-        font-family: Soloist !important;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #ffc500;
-        -webkit-text-fill-color: rgba(22, 22, 22, 0);
-            }
-        }
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+  color: #ffc4004b;
+  border-radius: 10%;
+}
+
+.centro {
+  position: relative;
+  top:45%;
+  left:40%;
+  right:20%
+}
+
+
+.buttonImg {
+  display: block;
+  
+  transform:  translateY(50%);
+  ion-img {
+    position: absolute;
+    max-width: 75px;
+    max-height: auto;
+    object-fit: cover;
+   
+  }
+}
+
+.StarwarsFonte{
+    font-family: Soloist !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffc500;
+    -webkit-text-fill-color: transparent;
+   font-size: xx-large;
+}
+
+#floating {
+  text-align: center;
+  ul {
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+    animation: float 2s infinite;
+    &:nth-child(1) {
+      animation-delay: .1s;
     }
-
-    .ButtonImg{
-        position: absolute;
-        display: block;
-        ion-img{
-         max-width: 75px;
-         max-height: auto;
-         object-fit:cover;
-        }
+    &:nth-child(2) {
+      animation-delay: .2s;
     }
+    &:nth-child(3) {
+      animation-delay: .3s;
+    }
+    &:nth-child(4) {
+      animation-delay: .4s;
+    }
+    &:nth-child(5) {
+      animation-delay: .5s;
+    }
+    &:nth-child(6) {
+      animation-delay: .6s;
+    }
+  }
+}
 
+@keyframes float {
+  30% {
+    transform: translateY(-15px)
+  }
 
-
-    // button[ion-fab] {
-    //     overflow: visible;
-    //     position: relative;
-
-    //     ion-label {
-    //         position: absolute;
-    //         top: -8px;
-    //         right: 40px;
-
-    //         color: white;
-    //         background-color: rgba(0,0,0,0.7);
-    //         line-height: 24px;
-    //         padding: 4px 8px;
-    //         border-radius: 4px;
-    //     }
-    //     contain: layout;
-    // }
-     
+}
