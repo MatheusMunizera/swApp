@@ -9,6 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 export class FolderPage implements OnInit {
   public folder: string;
 
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
