@@ -5,8 +5,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-list-header lines="full">
-    <ion-label>New This Week</ion-label>
-    <ion-button>See All</ion-button>
-  </ion-list-header>
+  <ion-list *ngIf="charater.length > 0; else noTasks">
+    <ion-item *ngFor="let charac of charater">
+      <ion-label>{{charac.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="listCharacter(1)">
+    <ion-icon slot="icon-only" name="add"></ion-icon>
+  </ion-button>
 </ion-content>
