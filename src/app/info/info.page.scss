@@ -1,15 +1,73 @@
-
-.myphoto {
-    img {
-    align-items: center;
-    display: block;
-    top: 10%;
-    max-width: 100%;
-    width: 95px ;
-    max-height: 100%;
-    height: 95px;
-    object-fit:cover;
-    left: -50%;
-    }
+ion-content {
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
 }
 
+@font-face {
+  font-family: Theme;
+  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+  position: absolute
+}
+
+@font-face {
+  font-family: Title;
+  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+  position: absolute
+}
+
+
+
+ion-card {
+  box-shadow: -2px 5px 25px #ffc500;
+  border-color: #ffc500;
+  border-width: -1em;
+  border-style: ridge;
+  overflow: visible;
+
+  position: relative;
+  background-color: #000000;
+
+
+  ion-card-title {
+    --color: #ffffff
+  }
+
+  ion-card-content {
+    strong {
+      color: aliceblue;
+    }
+
+    color: #ffffff
+  }
+
+
+}
+
+
+
+
+
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+  color: #ffc4004b;
+
+}
+
+
+
+
+.swTheme {
+  font-family: Theme !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
+}
+
+.swTitle {
+  font-family: Title !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
+}
