@@ -1,59 +1,64 @@
 <!-- Cabeçalho  -->
 <ion-content>
-<ion-item lines=none>Info Page</ion-item>
 
-
-<!-- Avatar selecionado  -->
-  <img height= "35%" width = "50%" style= "margin-left: 25%; margin-right: 25%;"
-  src="https://static.wikia.nocookie.net/ptstarwars/images/1/1a/R2d2.jpg/revision/latest/scale-to-width-down/400?cb=20060701231820"
+  <!-- Avatar selecionado  -->
+  <img
+  src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_86916bb6.jpeg?region=304%2C0%2C1778%2C1000&width=768"
   alt="R2D2"> <br>
 
-<ion-card>
+  <ion-card>
 <!-- Breve Descrição  -->
-    <ion-card-title>R2D2</ion-card-title> <br>
-    <ion-card-subtitle color = primary>R2-D2, também chamado simplesmente de R2, foi um droide 
-      astromecânico série R2 produzido pelas Indústrias Autômato com programação masculina</ion-card-subtitle>
+
+    <ion-card-subtitle class = "swSub"> Breve Descrição...</ion-card-subtitle>
+    <ion-card-title><div class= "swTitle">R2D2</div></ion-card-title>
+    <ion-card-content><div class= "swText">R2-D2, também chamado simplesmente de R2, foi um droide 
+      astromecânico série R2 produzido pelas Indústrias Autômato com programação masculina</div></ion-card-content>
   </ion-card>
 
-<!-- Opções de informaçãoz  -->
-<ion-slides pager="true" style="display: block;">
-  <ion-slide>
-    <ion-card>
-      <ion-card-title>Technical Info</ion-card-title>
-        <ion-card-content><b>Altura: </b>1,09 metro<br>
-                          <b>Massa: </b>32 quilogramas<br>
-                          <b>Gênero: </b> Programação masculina<br>
-                          <b>Cor do sensor: </b>Vermelho
-        </ion-card-content>  
-    </ion-card>
-  </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-title>Production info</ion-card-title>
-          <ion-card-content>  <b>Planeta de origem: </b>Naboo<br>
-                              <b>Data de destruição: </b>Durante o incidente de Carida(reconstruído)<br>
-                              <b>Fabricante: </b> Indústrias Autômato<br>
-                              <b>Modelo: </b>Droide astromecânico série R2 <br>
-                              <b>Classe: </b>Droide astromecânico
-          </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <ion-card-title>Political Cronological Info</ion-card-title>
-        <ion-card-subtitle><b>Afiliação</b></ion-card-subtitle>
-          <ion-card-content><Ul style="text-align: left;"> 
-                              <li>Casa Real de Naboo</li>
-                              <li>República Galáctica</li>
-                              <li>Esquadrão de droides de batalha de R2-D2</li>
-                              <li>Ordem Jedi</li>
-                              <li>Império Galáctico</li>
-                              <li>Aliança para Restauração da República</li>
-                              <li>Resistência</li>
-                            </Ul> 
-          </ion-card-content> 
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
+  <ion-item lines = black>
+    <ion-label><div class = "swTitle" >Saiba Mais</div></ion-label>
+  </ion-item>
 
+  <!-- Menu de informações -->
+  <ion-toolbar>  
+      <ion-segment value = "Tech" scrollable= "true" [(ngModel)] = "segmentCard" (ionChange)= mudarCor()>
+          <ion-segment-button value="Tech"> <div class= "swBar" id = 'Tech'>Técnico</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
+          <ion-segment-button value="Prod"><div class= "swBar" id = 'Prod'>Produção</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
+          <ion-segment-button value="Pol"><div class= "swBar" id = 'Pol'>Ideología</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
+
+      </ion-segment>
+  </ion-toolbar>
+
+<ion-content>
+  <ion-card *ngIf = "segmentCard === 'Tech'">
+    <ion-card-title></ion-card-title>
+      <ion-card-content style="text-align: left;">
+                            <b>Altura: </b>1,09 metro<br>
+                            <b>Massa: </b>32 quilogramas<br>
+                            <b>Gênero: </b> Programação masculina<br>
+                            <b>Cor do sensor: </b>Vermelho
+      </ion-card-content> 
+  </ion-card>
+    <ion-card *ngIf = "segmentCard === 'Prod'">
+      <ion-card-title></ion-card-title>
+        <ion-card-content style="text-align: left;">  <b>Planeta de origem: </b>Naboo<br>
+                            <b>Data de destruição: </b>Durante o incidente de Carida(reconstruído)<br>
+                            <b>Fabricante: </b> Indústrias Autômato<br>
+                            <b>Modelo: </b>Droide astromecânico série R2 <br>
+                            <b>Classe: </b>Droide astromecânico
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf = "segmentCard === 'Pol'">
+      <ion-card-title></ion-card-title>
+        <ion-card-content ><Ul style="text-align: left;"> 
+                            <li >Casa Real de Naboo</li>
+                            <li>República Galáctica</li>
+                            <li>Esquadrão de droides de batalha de R2-D2</li>
+                            <li>Ordem Jedi</li>
+                            <li>Império Galáctico</li>
+                            <li>Aliança para Restauração da República</li>
+                            <li>Resistência</li>
+                          </Ul> 
+        </ion-card-content> 
+    </ion-card>
 </ion-content>
