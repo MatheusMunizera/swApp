@@ -7,9 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { ListPageRoutingModule } from './list-routing.module';
 
 import { ListPage } from './list.page';
-
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from '../app.component';
 
 @NgModule({
@@ -18,10 +15,8 @@ import { AppComponent } from '../app.component';
     FormsModule,
     IonicModule,
     ListPageRoutingModule,
-    HttpClientModule
   ],
   declarations: [ListPage],
-  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class ListPageModule {}

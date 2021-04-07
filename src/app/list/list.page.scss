@@ -1,3 +1,51 @@
-.Titulo{
+.BackGroundConfig{
+    background-color: transparent;   
+}
+
+ion-content {
+    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+    ion-list{
+        border-radius: 8% !important;        
+        margin-left: 5% !important;
+        margin-right: 5% !important;        
+        padding-left: 3% !important;
+        padding-right: 5% !important;
+        margin-bottom: 1px;
+        border: 1px solid #ffc500;
+    }
+    ion-item{
+        --background: #00000000;        
+    }
+    ion-label{
+         font-size: large;
+        text-align: left;
+    }
+}
+  
+@font-face {
+    font-family: Soloist;
+    src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+    position: absolute
+} 
+
+@font-face {
+    font-family: SoloistTitle;
+    src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+    position: absolute
+} 
+
+.FontTitle{
+    font-family: SoloistTitle !important;
+    font-size: xx-large;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffc500;
+    -webkit-text-fill-color: transparent;
     text-align: center;
+}
+
+ion-list{
+    background-color: transparent;
+    ion-item{
+        background-color: transparent;
+    }
 }
