@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 interface Character{
@@ -79,41 +79,36 @@ export class ListPage implements OnInit {
   ]
   public num: CharacterNumber[] = []
   public pers: Variable[] = [];
+  public caracter: Character[] = []
 
   private API_URL = "https://swapi.dev/api/people/";
-  private url = "https://reqres.in/api/login";
-  constructor(public http: HttpClient) { }
-
-  ngOnInit() {
+  constructor(public http: HttpClient) { 
+    //this.populate();
   }
 
-  public listCharacter(peopleIndex: number){
-    return this.http.get("https://swapi.dev/api/people/1")
-                    .subscribe(data => {
-                      console.log(data);
-                    });
+  ngOnInit() {
+    this.populate();
   }
 
   public populate(){
-    var ch = [];
-    for (let i = 1; i < 83; i++){
-       ch.push(this.listCharacter(i));
+    for (let i = 1; i < 84; i++){
+      if (i != 17){
+        this.http.get(this.API_URL + i)
+             .subscribe(data => {
+                var con = JSON.stringify(data);
+                var content = JSON.parse(con);
+                this.caracter.push({
+                  name: content.name,
+                  height: content.height,
+                  mass: content.mass,
+                  hair: content.hair_color,
+                  skin: content.skin_color,
+                  eye: content.eye_color,
+                  birth: content.birth_year,
+                  gender: content.gender
+                });
+              });
+      }
     }
-    return ch;
-  }
-
-  getAll(page: number) {
-    return new Promise((resolve, reject) => {
-
-      let url = this.url + '/users/?per_page=10&page=' + page;
-
-      this.http.get(this.url)
-        .subscribe((result: any) => {
-          resolve(result.json());
-        },
-        (error) => {
-          reject(error.json());
-        });
-    });
   }
 }
