@@ -3,70 +3,139 @@ ion-content {
 }
 
 @font-face {
-  font-family: Soloist;
+  font-family: Theme;
   src: url("/assets/fonts/soloist/soloisttitle1.ttf");
   position: absolute
 }
+@font-face {
+  font-family: Title;
+  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+  position: absolute
+}
+
+
+
+ion-card {
+  margin-top: 50%;
+  box-shadow: -2px 5px 25px #ffc500;
+  border-color: #ffc500;
+  border-width: -1em;
+  border-style:ridge;
+  overflow: visible;
+  position: absolute !important;
+  background-color: #000000;
+  --background:#000000;
+  ion-fab {
+    
+    position: relative !important;
+    
+
+    ion-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+ 
+  img {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  ion-card-title {
+    --color: #ffffff
+  }
+  ion-card-content{
+    strong{
+      color: aliceblue;
+    }
+    color: #ffffff
+
+  }
+  
+  
+}
+
+
 
 .ripple-parent {
   position: relative;
   overflow: hidden;
   color: #ffc4004b;
-  border-radius: 10%;
+
 }
 
 .centro {
   position: relative;
-  top:45%;
-  left:40%;
-  right:20%
+  top: 45%;
+  left: 40%;
+  right: 20%
 }
 
 
 .buttonImg {
   display: block;
-  
-  transform:  translateY(50%);
+
+  transform: translateY(50%);
+
   ion-img {
     position: absolute;
     max-width: 75px;
     max-height: auto;
     object-fit: cover;
-   
+
   }
 }
 
-.StarwarsFonte{
-    font-family: Soloist !important;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #ffc500;
-    -webkit-text-fill-color: transparent;
-   font-size: xx-large;
+.swTheme {
+  font-family: Theme !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
 }
 
+.swTitle {
+  font-family: Title !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
+}
+
+
+// TIRAR FLOATING, ANIMAR COM IONIC
 #floating {
   text-align: center;
+
   ul {
     text-align: center;
   }
+
   li {
     display: inline-block;
     animation: float 2s infinite;
+
     &:nth-child(1) {
       animation-delay: .1s;
     }
+
     &:nth-child(2) {
       animation-delay: .2s;
     }
+
     &:nth-child(3) {
       animation-delay: .3s;
     }
+
     &:nth-child(4) {
       animation-delay: .4s;
     }
+
     &:nth-child(5) {
       animation-delay: .5s;
     }
+
     &:nth-child(6) {
       animation-delay: .6s;
     }

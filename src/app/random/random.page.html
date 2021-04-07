@@ -1,28 +1,98 @@
 <ion-app>
-  <ion-content class="padding" fullscren="true">
+  <ion-content class="padding" fullscren="true" scrollY = false>
 
-    <ion-fab vertical="center" horizontal="center" slot="fixed" style="left: 25%; right:20%">
-      <ion-button fill="clear" (click)="showImgButtons()" expand="full" class="ion-activatable ripple-parent">
-        <div id="floating">
-          <div class="StarwarsFonte">
-            <li>R</li>
-            <li>A</li>
-            <li>N</li>
-            <li>D</li>
-            <li>O</li>
-            <li>M</li>
+    <div [hidden]=!cardHidden>
+      <ion-fab vertical="center" horizontal="center" slot="fixed" style="left: 25%; right:20%">
+        <ion-button fill="clear" (click)="showImgButtons()" expand="full" class="ion-activatable ripple-parent">
+          <div id="floating">
+            <div class="swTheme" #random>
+              <li>R</li>
+              <li>A</li>
+              <li>N</li>
+              <li>D</li>
+              <li>O</li>
+              <li>M</li>
+            </div>
+            <ion-ripple-effect></ion-ripple-effect>
           </div>
-          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-        </div>
-      </ion-button>
-    </ion-fab>
+        </ion-button>
+      </ion-fab>
+    </div>
+
+
+
+
+    <div [hidden]=cardHidden>
+
+
+      <ion-card class="ion-activatable ripple-parent"  (click)="navInfo()" >
+
+        <img
+          src="https://s2.glbimg.com/LttsvVoQZGHoIJsmdlXMULY336A=/e.glbimg.com/og/ed/f/original/2019/09/23/ea1e16061bdf92edb111d8808c6741a6.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>Foi encontrado...</ion-card-subtitle>
+          <div class="swTitle">
+            <ion-card-title>Luke Skywalker</ion-card-title>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+
+          <strong>Nascimento:</strong> 19BBY<br>
+          <strong>Altura:</strong> 172<br>
+          <strong>Peso:</strong> 77<br>
+          <strong>Gênero:</strong> Masculino<br>
+          <strong>Especie:</strong> Humano
+          
+         
+        </ion-card-content>
+       
+        <ion-ripple-effect></ion-ripple-effect>
+       
+      </ion-card>
+      <ion-fab style="top: 65%;" horizontal="start"slot=fixed bottom right edge>
+        <ion-fab-button color="primary" >
+          <ion-icon name="sync-outline"></ion-icon>
+          <ion-ripple-effect></ion-ripple-effect>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-fab style="top: 65%;" horizontal="end"slot=fixed bottom right edge>
+        <ion-fab-button color="primary">
+          <ion-icon name="repeat-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list >
+          <ion-fab-button color = "opaco" (click)="onClickImg('pessoa')" >
+            <ion-img src="assets/image/people.svg" ></ion-img>
+          </ion-fab-button>
+       
+       
+          <ion-fab-button color = "opaco" (click)="onClickImg('espécie')">
+            <ion-img src="assets/image/specie.svg"></ion-img>
+          </ion-fab-button>
+       
+       
+          <ion-fab-button color = "opaco" (click)="onClickImg('planeta')">
+            <ion-img src="assets/image/death_star.svg"></ion-img>
+          </ion-fab-button>
+       
+       
+          <ion-fab-button color = "opaco" (click)="onClickImg('veículo')">
+            <ion-img src="assets/image/millenniumfalcon.svg"></ion-img> 
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+
+    </div>
+
+
+
+
 
     <div class="centro" [hidden]=btnImgHidden>
       <div class="buttonImg">
         <ion-img (click)="onClickImg('pessoa')" src="assets/image/people.svg" #people></ion-img>
         <ion-img (click)="onClickImg('espécie')" src="assets/image/specie.svg" #species></ion-img>
         <ion-img (click)="onClickImg('planeta')" src="assets/image/death_star.svg" #planets></ion-img>
-        <ion-img (click)="onClickImg('veículo')" src="assets/image/millenniumfalcon.png" #vehicles></ion-img>
+        <ion-img (click)="onClickImg('veículo')" src="assets/image/millenniumfalcon.svg" #vehicles></ion-img>
       </div>
     </div>
 

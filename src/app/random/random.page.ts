@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import {
   Animation,
   AnimationController,
@@ -15,16 +16,28 @@ export class RandomPage implements OnInit {
   @ViewChild('planets', { read: ElementRef }) planets: ElementRef;
   @ViewChild('vehicles', { read: ElementRef }) vehicles: ElementRef;
   @ViewChild('species', { read: ElementRef }) species: ElementRef;
-  @ViewChild('img', { read: ElementRef }) img: ElementRef;
+  @ViewChild('random', { read: ElementRef }) random: ElementRef;
 
   constructor(
     public animationCtrl: AnimationController,
-    public loadingController: LoadingController
-  ) {}
+    public loadingController: LoadingController,
+    private http: HttpClient
+  ) {
+    this.apiURL = 'https://swapi.dev/api/';
+  }
 
   btnImgHidden = true;
+  cardHidden = true;
+
+  readonly apiURL: string;
 
   ngOnInit() {}
+
+  testeAPI() {
+    this.http.get('https://swapi.dev/api/people/1/').subscribe((result) => {
+      console.log(result);
+    });
+  }
 
   animationOut() {
     const people = this.animationCtrl
@@ -56,6 +69,7 @@ export class RandomPage implements OnInit {
     console.log('foi clicado no botão Random');
     this.animationOut();
     this.btnImgHidden = false;
+    this.testeAPI();
   }
 
   animationIn() {
@@ -83,18 +97,31 @@ export class RandomPage implements OnInit {
       .addAnimation([people, planets, vehicles, species])
       .play();
   }
+  teste() {
+    const random = this.animationCtrl
+      .create()
+      .addElement(this.random.nativeElement)
+      .duration(3000)
+      .iterations(1)
+      .easing('ease-in-out')
+      .fromTo('transform', '', 'translateX(250px)')
+      .play();
+  }
   // Tentar customizar o loading
   async presentLoading(img) {
     const loading = await this.loadingController.create({
-      message: `Gerando ${img} aleatório`,
+      message: `Gerando ${img} aleatório(a)`,
       duration: 2000,
     });
+
     await loading.present();
   }
 
-  onClickImg(img) {
+  async onClickImg(img) {
     console.log(`foi clicado na imagem ${img} `);
     this.animationIn();
-    this.presentLoading(img);
+    await this.presentLoading(img);
+    this.teste();
+    setTimeout(() => (this.cardHidden = false), 2000);
   }
 }
