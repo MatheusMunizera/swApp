@@ -1,5 +1,5 @@
 <!-- Cabeçalho  -->
-<ion-content>
+<ion-content scrollY = false>
 
   <!-- Avatar selecionado  -->
   <img
@@ -9,7 +9,7 @@
   <ion-card>
 <!-- Breve Descrição  -->
 
-    <ion-card-subtitle class = "swSub"> Breve Descrição...</ion-card-subtitle>
+    <ion-card-subtitle class = "swSub">Descrição...</ion-card-subtitle>
     <ion-card-title><div class= "swTitle">R2D2</div></ion-card-title>
     <ion-card-content><div class= "swText">R2-D2, também chamado simplesmente de R2, foi um droide 
       astromecânico série R2 produzido pelas Indústrias Autômato com programação masculina</div></ion-card-content>
@@ -21,11 +21,10 @@
 
   <!-- Menu de informações -->
   <ion-toolbar>  
-      <ion-segment value = "Tech" scrollable= "true" [(ngModel)] = "segmentCard" (ionChange)= mudarCor()>
-          <ion-segment-button value="Tech"> <div class= "swBar" id = 'Tech'>Técnico</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
-          <ion-segment-button value="Prod"><div class= "swBar" id = 'Prod'>Produção</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
-          <ion-segment-button value="Pol"><div class= "swBar" id = 'Pol'>Ideología</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
-
+      <ion-segment value = "start" [(ngModel)] = "segmentCard" (ionChange)= mudarCor()>
+          <ion-segment-button value="Tech"> <div class= "swBarTech" id = 'Tech'>Técnico</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
+          <ion-segment-button value="Prod"><div class= "swBarTech" id = 'Prod'>Produção</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
+          <ion-segment-button value="Pol"><div class= "swBarTech" id = 'Pol'>Ideología</div><ion-ripple-effect></ion-ripple-effect></ion-segment-button>
       </ion-segment>
   </ion-toolbar>
 
@@ -33,31 +32,30 @@
   <ion-card *ngIf = "segmentCard === 'Tech'">
     <ion-card-title></ion-card-title>
       <ion-card-content style="text-align: left;">
-                            <b>Altura: </b>1,09 metro<br>
-                            <b>Massa: </b>32 quilogramas<br>
-                            <b>Gênero: </b> Programação masculina<br>
-                            <b>Cor do sensor: </b>Vermelho
+                            <b class = infoTitle>Altura: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> 1,09 metro</ion-text><br>
+                            <b class = infoTitle>Massa: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> 32 quilogramas</ion-text><br>
+                            <b class = infoTitle>Gênero: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Programação masculina</ion-text><br>
+                            <b class = infoTitle>Cor do sensor:</b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Vermelho</ion-text>
       </ion-card-content> 
   </ion-card>
     <ion-card *ngIf = "segmentCard === 'Prod'">
       <ion-card-title></ion-card-title>
-        <ion-card-content style="text-align: left;">  <b>Planeta de origem: </b>Naboo<br>
-                            <b>Data de destruição: </b>Durante o incidente de Carida(reconstruído)<br>
-                            <b>Fabricante: </b> Indústrias Autômato<br>
-                            <b>Modelo: </b>Droide astromecânico série R2 <br>
-                            <b>Classe: </b>Droide astromecânico
+        <ion-card-content style="text-align: left;">  
+                            <b class = infoTitle>Planeta de origem: </b> <ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Naboo</ion-text><br>
+                            <b class = infoTitle>Data de destruição: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Durante o incidente de Carida (reconstruído)</ion-text><br>
+                            <b class = infoTitle>Fabricante: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Indústrias Autômato</ion-text><br>
+                            <b class = infoTitle>Modelo: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Droide astromecânico série R2</ion-text><br>
+                            <b class = infoTitle>Classe: </b><ion-text style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"> Droide astromecânico</ion-text>
         </ion-card-content>
     </ion-card>
     <ion-card *ngIf = "segmentCard === 'Pol'">
       <ion-card-title></ion-card-title>
-        <ion-card-content ><Ul style="text-align: left;"> 
-                            <li >Casa Real de Naboo</li>
-                            <li>República Galáctica</li>
-                            <li>Esquadrão de droides de batalha de R2-D2</li>
-                            <li>Ordem Jedi</li>
-                            <li>Império Galáctico</li>
-                            <li>Aliança para Restauração da República</li>
-                            <li>Resistência</li>
+        <ion-card-content ><Ul style="margin-top: -5%;margin-bottom: -5%; text-align: left;"> 
+                            <li style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;"><div></div> Real de Naboo</li > 
+                            <li style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;">República Galáctica</li> 
+                            <li style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;">Ordem Jedi</li >
+                            <li style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;">Império Galáctico</li> 
+                            <li style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: #e4dedee7;">Resistência</li>
                           </Ul> 
         </ion-card-content> 
     </ion-card>

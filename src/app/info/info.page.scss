@@ -11,11 +11,12 @@ ion-item{
   --border-color: #494747;
 }
 ion-segment-button{
+  font-family: Theme !important;
   box-shadow: -2px 5px 25px #ffc500;
   border-color: #ffc500;
   border-width: -6em;
   border-style: ridge;
-  background: transparent! important;
+  background: transparent !important;
   --indicator-color: #ffc500 !important;
 
 }
@@ -85,14 +86,21 @@ ion-card {
   margin-left: 3%;
 }
 
-.swBar {
-  font-family: Theme !important;
+.swBarra {
+  font-family: AzonixTitle !important;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #000000;
   font-size: small;
-
 }
+.swBarTech {
+  font-family: AzonixTitle !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: #000000;
+  font-size: small;
+}
+
 .swSub{
   margin-left: 2%;
   font-family: AzonixTitle !important;;
@@ -124,4 +132,8 @@ ion-card {
 
 img {
   object-fit: resize;
+}
+.infoTitle{
+  font-family: AzonixTitle !important;
+  color: #ffc500;
 }

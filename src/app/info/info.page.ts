@@ -13,14 +13,14 @@ export class InfoPage implements OnInit {
 
   ngOnInit() { }
 
-  segmentCard = "Tech"
- 
+  segmentCard = ""
 
   mudarCor() {
     switch (this.segmentCard) {
       case 'Tech':
         document.getElementById('Tech').style.cssText =
           '-webkit-text-stroke-color: #000000';
+          '-webkit-text-stroke-color: #ffc500';
         document.getElementById('Prod').style.cssText =
           '-webkit-text-stroke-color: #ffc500';
         document.getElementById('Pol').style.cssText =
