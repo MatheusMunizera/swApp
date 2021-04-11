@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>quizz</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<ion-content class=ion-padding>
+<ion-card>
+  <ion-card-title>
+    {{questions[currentQuestion].title}}
+    
+  </ion-card-title>
+  <ion-card-content>
+    
+    <ion-list>
+      <ion-radio-group>
+  
+        <ion-item>
+          <ion-label>{{questions[currentQuestion].answers.correct}}</ion-label>
+          <ion-radio value="correct"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>{{questions[currentQuestion].answers.wrong}}</ion-label>
+          <ion-radio value="wrong"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 
 </ion-content>
