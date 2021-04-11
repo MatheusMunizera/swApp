@@ -1,127 +1,105 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {
-  Animation,
-  AnimationController,
-  LoadingController,
-} from '@ionic/angular';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { AnimationController, LoadingController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-random',
   templateUrl: './random.page.html',
   styleUrls: ['./random.page.scss'],
 })
-export class RandomPage implements OnInit {
-  @ViewChild('people', { read: ElementRef }) people: ElementRef;
-  @ViewChild('planets', { read: ElementRef }) planets: ElementRef;
-  @ViewChild('vehicles', { read: ElementRef }) vehicles: ElementRef;
-  @ViewChild('species', { read: ElementRef }) species: ElementRef;
-  @ViewChild('random', { read: ElementRef }) random: ElementRef;
+export class RandomPage implements AfterViewInit {
 
-  constructor(
-    public animationCtrl: AnimationController,
-    public loadingController: LoadingController,
-    private http: HttpClient
-  ) {
-    this.apiURL = 'https://swapi.dev/api/';
-  }
-
-  btnImgHidden = true;
-  cardHidden = true;
-
+  @ViewChild('initLbl', { read: ElementRef }) initLbl: ElementRef;
+  @ViewChild('card', { read: ElementRef }) card: ElementRef;
+  
   readonly apiURL: string;
+  name : string
+  img: string
+  resume: string
+  cardHide: boolean = true
 
-  ngOnInit() {}
+  constructor(public animationCtrl: AnimationController,public loadingController: LoadingController,private http: HttpClient) {
+    this.apiURL = 'https://matheusmunizera.github.io/starwars-api/api';
+  }
+ 
 
-  testeAPI() {
-    this.http.get('https://swapi.dev/api/people/1/').subscribe((result) => {
-      console.log(result);
-    });
+  public ngAfterViewInit() {
+
+   const animation = this.animationCtrl
+  .create()
+  .addElement(this.initLbl.nativeElement)
+  .duration(10000)
+  .direction('alternate')
+  .keyframes([
+    { offset: 0.25, transform: 'scale(0.95)', opacity: '0.25' },
+    { offset: 0.5, transform: 'scale(1)', opacity: '0.5' },
+    { offset: 0.75, transform: 'scale(0.95)', opacity: '0.75' },
+    { offset: 1, transform: 'scale(1)', opacity: '1' }
+    
+  ]);
+  animation.play();
+
+
+  
+  
   }
 
-  animationOut() {
-    const people = this.animationCtrl
-      .create()
-      .addElement(this.people.nativeElement)
-      .fromTo('transform', '', 'translateY(335px)translateX(140px)');
-    const planets = this.animationCtrl
-      .create()
-      .addElement(this.planets.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(140px)');
-    const vehicles = this.animationCtrl
-      .create()
-      .addElement(this.vehicles.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(-140px)');
-    const species = this.animationCtrl
-      .create()
-      .addElement(this.species.nativeElement)
-      .fromTo('transform', '', 'translateY(340px)translateX(-140px)');
-    this.animationCtrl
-      .create()
-      .duration(500)
-      .iterations(1)
-      .easing('ease-in-out')
-      .addAnimation([people, planets, vehicles, species])
-      .play();
+  
+  public async cardAnimation(){
+    this.animationCtrl.create()
+    .addElement(this.card.nativeElement)
+    .duration(500)
+    .easing('ease-out')
+    .fromTo('transform', '', 'translateX(138%)')
+    // .keyframes([
+    //   { offset: 0.25, transform: 'translateX(-10%)' },
+    //   { offset: 0.75, transform: 'translateX(145%)' },
+    //   { offset: 0.85, transform: 'translateX(135%)' },
+    //   { offset: 1, transform: 'translateX(138%)'}
+      
+    // ])
+    .play();
   }
 
-  showImgButtons() {
-    console.log('foi clicado no botão Random');
-    this.animationOut();
-    this.btnImgHidden = false;
-    this.testeAPI();
+  
+  public getCharacter() {
+    let randomNumber = Math.floor((Math.random()*88)+1)
+    let completeUrl: string = this.apiURL + '/characters/' + randomNumber + '.json';
+    return this.getCall(completeUrl);
+  }
+  public getVehicle(){
+    let randomNumber = Math.floor((Math.random()*40)+1)
+    let completeUrl: string = this.apiURL + '/vehicles/' + randomNumber + '.json';
+    return this.getCall(completeUrl);
+  }
+  public getSpecie(){
+    let randomNumber = Math.floor((Math.random()*37)+1)
+    let completeUrl: string = this.apiURL + '/species/' + randomNumber + '.json';
+    return this.getCall(completeUrl);
+  }
+  public getPlanet(){
+    let randomNumber = Math.floor((Math.random()*37)+1)
+    let completeUrl: string = this.apiURL + '/planets/' + randomNumber + '.json';
+    return this.getCall(completeUrl);
+  }
+  
+  private async getCall(url: string){
+    console.log(url);
+   this.cardAnimation()
+  this.cardHide = false
+    return this.http.get(url).subscribe(res=> this.setInfo(res))
+  }
+  
+  private  setInfo(res){
+    this.name=res.name
+    this.img = res.image
+    this.resume = res.resume
   }
 
-  animationIn() {
-    const people = this.animationCtrl
-      .create()
-      .addElement(this.people.nativeElement)
-      .fromTo('transform', '', 'translateY(335px)translateX(250px)');
-    const planets = this.animationCtrl
-      .create()
-      .addElement(this.planets.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(250px)');
-    const vehicles = this.animationCtrl
-      .create()
-      .addElement(this.vehicles.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(-250px)');
-    const species = this.animationCtrl
-      .create()
-      .addElement(this.species.nativeElement)
-      .fromTo('transform', '', 'translateY(340px)translateX(-250px)');
-    this.animationCtrl
-      .create()
-      .duration(500)
-      .iterations(1)
-      .easing('ease-in-out')
-      .addAnimation([people, planets, vehicles, species])
-      .play();
-  }
-  teste() {
-    const random = this.animationCtrl
-      .create()
-      .addElement(this.random.nativeElement)
-      .duration(3000)
-      .iterations(1)
-      .easing('ease-in-out')
-      .fromTo('transform', '', 'translateX(250px)')
-      .play();
-  }
-  // Tentar customizar o loading
-  async presentLoading(img) {
-    const loading = await this.loadingController.create({
-      message: `Gerando ${img} aleatório(a)`,
-      duration: 2000,
-    });
+    
 
-    await loading.present();
-  }
 
-  async onClickImg(img) {
-    console.log(`foi clicado na imagem ${img} `);
-    this.animationIn();
-    await this.presentLoading(img);
-    this.teste();
-    setTimeout(() => (this.cardHidden = false), 2000);
-  }
+
+  
 }
