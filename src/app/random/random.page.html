@@ -35,7 +35,7 @@
 
     <!-- Inicialmente Card Vazio, que sera preenchido após imgButton ser clicado-->
     <div #card>
-      <ion-card [hidden]="cardHide">
+      <ion-card [hidden]="cardHide" class = "ion-activatable ripple-parent" (click)="nav()">
         <ion-img src="{{img}}"></ion-img>
         <ion-card-header>
           <ion-card-subtitle>Foi encontrado...</ion-card-subtitle>
@@ -43,9 +43,14 @@
             <ion-card-title>{{name}}</ion-card-title>
           </div>
         </ion-card-header>
-        <ion-card-content> {{resume}} </ion-card-content>
+        <ion-card-content> <h2>{{resume}}</h2></ion-card-content>
+        <ion-ripple-effect></ion-ripple-effect>
       </ion-card>
+
     </div>
 
+
+    
   </ion-content>
 </ion-app>
+
