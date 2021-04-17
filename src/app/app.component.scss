@@ -7,6 +7,7 @@ ion-menu.md ion-content {
   --padding-end: 8px;
   --padding-top: 20px;
   --padding-bottom: 20px;
+  
 }
 
 ion-menu.md ion-list {
@@ -118,4 +119,8 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+title{
+  color: rgb(233, 10, 10);
 }

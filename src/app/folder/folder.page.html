@@ -50,10 +50,10 @@
           <ion-button class="botao">
             Comprar 
           </ion-button>
-           <ion-slides pager="true" [options]="slideOpts2" class=""> <!--Segundo conjunto de slides-->
+           <ion-slides pager="true" [options]="slideOpts2"> <!--Segundo conjunto de slides-->
   
              <ion-slide>
-              <ion-card>
+              <ion-card class="card">
                 <ion-img src="../../assets/image/teste.jpg"></ion-img>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                   Lorem </p>
@@ -61,7 +61,7 @@
              </ion-slide>
   
              <ion-slide>
-               <ion-card>
+               <ion-card class="card">
                 <ion-img src="../../assets/image/teste.jpg"></ion-img>
                   <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                   Lorem </p>
@@ -69,7 +69,7 @@
               </ion-slide>
   
               <ion-slide>
-                <ion-card>
+                <ion-card class="card">
                   <ion-img src="../../assets/image/teste.jpg"></ion-img>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                     Lorem </p>
@@ -77,7 +77,7 @@
               </ion-slide>
   
               <ion-slide>
-                <ion-card>
+                <ion-card class="card">
                   <ion-img src="../../assets/image/teste.jpg"></ion-img>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                      Lorem </p>
@@ -86,14 +86,97 @@
            </ion-slides> <!--Fim do segundo conjunto de slides-->
       </ion-col><!--FIM COL 2-->
 
-      <ion-col size="12" class="mandalorian">
+      <ion-col size="12" class="mandalorian"><!--START COL 3-->
 
-        <ion-button class="botao">
+        <ion-button class="botao-mandalorian">
           Assistir
         </ion-button>
-        
-      </ion-col>
+
+        <ion-button class="botao-mandalorian">
+          Trailer
+        </ion-button>   
+
+      </ion-col><!--FIM COL 3-->
     </ion-row>
+
+    <ion-row><!--START ROW 2-->
+      <ion-col size="12"> <!--START COL 4-->
+
+        <h1>Últimas Notícias </h1>
+
+        <ion-slides pager="true" [options]="slideOpts3"> <!--Segundo conjunto de slides-->
+  
+          <ion-slide>
+           <ion-card class="slide2">
+             <ion-img src="../../assets/image/republic.jpg"></ion-img>
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+               Lorem </p>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card class="slide2">
+             <ion-img src="../../assets/image/republic.jpg"></ion-img>
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+               Lorem </p>
+            </ion-card>
+           </ion-slide>
+
+           <ion-slide>
+             <ion-card class="slide2">
+               <ion-img src="../../assets/image/republic.jpg"></ion-img>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                 Lorem </p>
+             </ion-card>
+           </ion-slide>
+
+           <ion-slide>
+             <ion-card class="slide2">
+               <ion-img src="../../assets/image/republic.jpg"></ion-img>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  Lorem </p>
+             </ion-card>
+           </ion-slide>
+        </ion-slides>
+      </ion-col> <!--FIM COL 4-->
+
+      <ion-col size="12"> <!--START COL 5-->
+
+        <h1>Links Rápidos </h1>
+
+        <ion-slides pager="true" [options]="slideOpts3"> <!--Segundo conjunto de slides-->
+  
+          <ion-slide>
+           <ion-card class="slide2">
+             <ion-img src="../../assets/image/filmes.jpg"></ion-img>
+             <h2>Filmes</h2>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card class="slide2">
+             <ion-img src="../../assets/image/filmes.jpg"></ion-img>
+              <h2>Series</h2>
+            </ion-card>
+           </ion-slide>
+
+           <ion-slide>
+             <ion-card class="slide2">
+               <ion-img src="../../assets/image/filmes.jpg"></ion-img>
+               <h4>Informações</h4>
+             </ion-card>
+           </ion-slide>
+
+           <ion-slide>
+             <ion-card class="slide2">
+               <ion-img src="../../assets/image/filmes.jpg"></ion-img>
+               <h2>Pesquisa</h2>
+             </ion-card>
+           </ion-slide>
+        </ion-slides>
+      </ion-col> <!--FIM COL 5-->
+    </ion-row><!--FIM ROW 2-->
   </ion-grid>
 
+<h5 class="rodape">Todos os direitos reservados</h5>
 </ion-content>

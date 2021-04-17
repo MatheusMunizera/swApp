@@ -4,6 +4,11 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+ion-menu-itens{
+  font-size: xx-large;
+  color: #ffc500;
+}
+
 ion-toolbar{
   --background:#000000;
   img{
@@ -45,12 +50,12 @@ ion-content {
   height: 100%;
   min-width: 100%;
   flex-direction: column;
+  text-align: justify;
 }
 
  slide-p{
   margin: 0;
-  font-size: 13px !important;
-  line-height: 15px !important;
+  font-family:'Times New Roman', Times, serif;
   color: rgb(250, 250, 250);
   margin-top: 0 !important;
   padding-left: 35px;
@@ -60,10 +65,11 @@ ion-content {
   margin-bottom: 10px;
 }
 
-ion-card {
+.card {
   margin-top: 320px;
   --background: #151515;
   --color: #ffffff;
+  text-align: justify;
 }
 
 .mandalorian{/*Background Mandalorian*/
@@ -77,5 +83,27 @@ ion-card {
   height: 500px;
 }
 
+.botao-mandalorian{
+  --background: #ffc500;
+  --background-activated: #ffc500;
+   font-family: "fonteButton";
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  -webkit-text-fill-color: black;
+  font-size:medium;
+  margin-top: 85%;
+  margin-left: 10%;
+  margin-left: 10%;
+}
 
+.slide2 {
+  --background:transparent;
+  --color: #ffffff;
+  text-align: justify;
+}
+
+.rodape{
+  background-color: rgb(75, 75, 75);
+  text-align: center;
+}
 

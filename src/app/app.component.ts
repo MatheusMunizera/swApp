@@ -11,7 +11,8 @@ export class AppComponent {
     { title: 'Favorites', url: '/folder/Favorites'},
     { title: 'Archived', url: '/folder/Archived'},
     { title: 'Trash', url: '/folder/Trash'},
-    { title: 'Spam', url: '/folder/Spam'},
+    { title: 'Filmes', url: '/folder/Spam'},
+    { title: 'Series', url: '/folder/Spam'},
   ];
   constructor() {}
 }
