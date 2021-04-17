@@ -3,41 +3,97 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title class="title">STAR WARS</ion-title>
+    <ion-title>
+      <img class="title" src="../../assets/image/logo.png">
+      <img class="title" src="../../assets/image/yoda.png">
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
 
-  <ion-slides pager="true" [options]="slideOpts">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12">
+        <ion-slides pager="true" [options]="slideOpts" class="ion-padding-top"> <!--Primeiro conjunto de slides-->
+          <ion-slide class="slide">
+            <ion-img src="../../assets/image/teste.jpg"></ion-img>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+            essentially unchanged.</p>
+          </ion-slide>
+        
+          <ion-slide class="slide">
+            <ion-img src="../../assets/image/teste.jpg"></ion-img>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+            essentially unchanged.</p>
+          </ion-slide>
+        
+          <ion-slide class="slide">
+            <ion-img src="../../assets/image/teste.jpg"></ion-img>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
+            essentially unchanged.</p>
+          </ion-slide>
+        </ion-slides> <!--Fim do primeiro conjunto de slides-->
+      </ion-col><!--FIM COL 1-->
+
+      <ion-col class="battlefront"><!--START COL 2-->
+          <ion-button class="botao">
+            Comprar 
+          </ion-button>
+           <ion-slides pager="true" [options]="slideOpts2" class=""> <!--Segundo conjunto de slides-->
   
-    <ion-slide>
-      <ion-img src="../../assets/image/battlefront.jpg"></ion-img>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-      It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-      essentially unchanged.</p>
-    </ion-slide>
+             <ion-slide>
+              <ion-card>
+                <ion-img src="../../assets/image/teste.jpg"></ion-img>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  Lorem </p>
+               </ion-card>
+             </ion-slide>
   
-    <ion-slide>
-      <ion-img src="../../assets/image/battlefront.jpg"></ion-img>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-        essentially unchanged.</p>
-    </ion-slide>
+             <ion-slide>
+               <ion-card>
+                <ion-img src="../../assets/image/teste.jpg"></ion-img>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  Lorem </p>
+               </ion-card>
+              </ion-slide>
   
-    <ion-slide>
-      <ion-img src="../../assets/image/battlefront.jpg"></ion-img>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-        It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-        essentially unchanged.</p>
-    </ion-slide>
+              <ion-slide>
+                <ion-card>
+                  <ion-img src="../../assets/image/teste.jpg"></ion-img>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem </p>
+                </ion-card>
+              </ion-slide>
   
-  </ion-slides>
-  
+              <ion-slide>
+                <ion-card>
+                  <ion-img src="../../assets/image/teste.jpg"></ion-img>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                     Lorem </p>
+                </ion-card>
+              </ion-slide>
+           </ion-slides> <!--Fim do segundo conjunto de slides-->
+      </ion-col><!--FIM COL 2-->
+
+      <ion-col size="12" class="mandalorian">
+
+        <ion-button class="botao">
+          Assistir
+        </ion-button>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

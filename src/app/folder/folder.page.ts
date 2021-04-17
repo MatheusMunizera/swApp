@@ -9,10 +9,18 @@ import { ActivatedRoute } from '@angular/router';
 export class FolderPage implements OnInit {
   public folder: string;
 
-  slideOpts = {
+  public slideOpts = {
     initialSlide: 0,
-    speed: 400
+    speed: 400,
+    spaceBetween:20,
   };
+
+  public slideOpts2 = {
+    initialSlide: 0,
+    slidesPerView: 1.3,
+    spaceBetween:20,
+  };
+
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
