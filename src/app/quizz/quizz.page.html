@@ -1,26 +1,48 @@
-<ion-content class=ion-padding>
-<ion-card>
-  <ion-card-title>
-    {{questions[currentQuestion].title}}
-    
-  </ion-card-title>
-  <ion-card-content>
-    
-    <ion-list>
-      <ion-radio-group>
-  
-        <ion-item>
-          <ion-label>{{questions[currentQuestion].answers.correct}}</ion-label>
-          <ion-radio value="correct"></ion-radio>
-        </ion-item>
-    
-        <ion-item>
-          <ion-label>{{questions[currentQuestion].answers.wrong}}</ion-label>
-          <ion-radio value="wrong"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Quiz
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content class="ion-padding">
+
+{{selected}}
+{{currentQuestion}}
+  <ion-card *ngIf="currentQuestion < questions.length; else resultCard">
+    <ion-card-header>
+      <ion-card-title>{{questions[currentQuestion].text}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-radio-group [(ngModel)]="selectedAnswer">
+          <ion-item *ngFor="let answer of questions[currentQuestion].answers; let i = index;">
+            <ion-radio slot="start" [value]="i"></ion-radio>
+            <ion-label>{{answer}}</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+
+      <ion-button (click)="nextQuestion()" expand="block" [disabled]="selectedAnswer === null">
+        Próxima
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ng-template #resultCard>
+    <ion-card>
+      <img [src]="results[teste].img" [alt]="results[teste].name">
+      <ion-card-header>
+        <ion-card-title>Você é um {{results[teste].name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{results[teste].description}}</p>
+
+        <ion-button (click)="confirmReset()" expand="block">
+          Fazer de novo
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
 </ion-content>
