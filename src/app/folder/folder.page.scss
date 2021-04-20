@@ -4,9 +4,9 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
-ion-menu-itens{
-  font-size: xx-large;
-  color: #ffc500;
+a{
+  text-decoration: none;
+  color: #ffffff;
 }
 
 ion-toolbar{
@@ -41,7 +41,7 @@ ion-content {
   -webkit-text-fill-color: black;
   font-size:medium;
   position: absolute;
-  margin: 75% 28%;
+  margin: 77% 28%;
 }
 
 .slide{
@@ -51,6 +51,7 @@ ion-content {
   min-width: 100%;
   flex-direction: column;
   text-align: justify;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
  slide-p{
@@ -81,6 +82,7 @@ ion-content {
   height: 100%;
   min-width: 100%;
   height: 500px;
+  margin-top: 40px;
 }
 
 .botao-mandalorian{
@@ -96,14 +98,20 @@ ion-content {
   margin-left: 10%;
 }
 
-.slide2 {
-  --background:transparent;
-  --color: #ffffff;
+ion-slide{
+  display: inline-block;
   text-align: justify;
+}
+
+.slide2{
+  img{
+    border-radius: 10px;
+    min-height: 200px;
+    max-height: 200px;
+  }
 }
 
 .rodape{
   background-color: rgb(75, 75, 75);
   text-align: center;
 }
-

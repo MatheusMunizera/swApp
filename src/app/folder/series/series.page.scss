@@ -1,0 +1,38 @@
+ion-content {
+  --background: url('/assets/gif/background5.gif') no-repeat center center / cover;
+}
+
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+
+ion-toolbar{
+--background:#000000;
+img{
+  height: 2.3em;
+}
+}
+
+.botao{
+--background: #ffc500;
+--background-activated: #ffc500;
+ font-family: "fonteButton";
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black;
+-webkit-text-fill-color: black;
+font-size:small;
+padding-left: 10px;
+padding-top: 10px;
+}
+
+ion-card{
+margin-bottom: 40px;
+text-align: justify;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ion-card-title{
+  text-align: center;
+}
+

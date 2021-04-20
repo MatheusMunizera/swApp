@@ -4,8 +4,8 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      <img class="title" src="../../assets/image/logo.png">
-      <img class="title" src="../../assets/image/yoda.png">
+      <img src="../../assets/image/logo.png">
+      <img src="../../assets/image/yoda.png">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,80 +16,69 @@
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-        <ion-slides pager="true" [options]="slideOpts" class="ion-padding-top"> <!--Primeiro conjunto de slides-->
+        <ion-slides pager="true" [options]="slideOpts3" class="ion-padding-top"> <!--Primeiro conjunto de slides-->
           <ion-slide class="slide">
             <ion-img src="../../assets/image/teste.jpg"></ion-img>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-            essentially unchanged.</p>
+            when an unknown </p>
           </ion-slide>
         
           <ion-slide class="slide">
             <ion-img src="../../assets/image/teste.jpg"></ion-img>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-            essentially unchanged.</p>
+            when an unknown </p>
           </ion-slide>
         
           <ion-slide class="slide">
             <ion-img src="../../assets/image/teste.jpg"></ion-img>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining 
-            essentially unchanged.</p>
+            when an </p>
           </ion-slide>
         </ion-slides> <!--Fim do primeiro conjunto de slides-->
       </ion-col><!--FIM COL 1-->
 
       <ion-col class="battlefront"><!--START COL 2-->
-          <ion-button class="botao">
+          <ion-button class="botao" href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2">
             Comprar 
           </ion-button>
-           <ion-slides pager="true" [options]="slideOpts2"> <!--Segundo conjunto de slides-->
+           <ion-slides pager="true" [options]="slideOpts2" class="slide2"> <!--Segundo conjunto de slides-->
   
              <ion-slide>
+              <a href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/letter-to-the-community-original-era-content">
               <ion-card class="card">
-                <ion-img src="../../assets/image/teste.jpg"></ion-img>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                  Lorem </p>
-               </ion-card>
+                <img src="../../assets/image/noticias/scarif.jpg">
+                <p>27/04/2020</p>
+                <p>Battle on Scarif é a última atualização para Star Wars: Battlefront 2</p>
+               </ion-card></a>
              </ion-slide>
   
              <ion-slide>
-               <ion-card class="card">
-                <ion-img src="../../assets/image/teste.jpg"></ion-img>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                  Lorem </p>
-               </ion-card>
+               <a href="https://dropsdejogos.uai.com.br/noticias/industria/ultimas-horas-epic-games-store-tem-um-jogo-de-star-wars-gratuito/">
+                <ion-card class="card">
+                <img src="../../assets/image/noticias/battefront.jpg">
+                  <p>21/01/2020</p>
+                  <p>ÚLTIMAS HORAS Epic Games Store tem um jogo de Star Wars gratuito</p>
+               </ion-card></a>
               </ion-slide>
   
               <ion-slide>
-                <ion-card class="card">
-                  <ion-img src="../../assets/image/teste.jpg"></ion-img>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem </p>
-                </ion-card>
-              </ion-slide>
-  
-              <ion-slide>
-                <ion-card class="card">
-                  <ion-img src="../../assets/image/teste.jpg"></ion-img>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                     Lorem </p>
-                </ion-card>
+                <a href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/making-the-sounds-of-swbf2">
+                  <ion-card class="card">
+                  <img src="../../assets/image/noticias/sons.jpg">
+                    <p>19/02/2020</p>
+                    <p>CRIANDO OS SONS DE STAR WARS™ BATTLEFRONT™ II</p>
+                 </ion-card></a>
               </ion-slide>
            </ion-slides> <!--Fim do segundo conjunto de slides-->
       </ion-col><!--FIM COL 2-->
 
       <ion-col size="12" class="mandalorian"><!--START COL 3-->
 
-        <ion-button class="botao-mandalorian">
-          Assistir
+        <ion-button class="botao-mandalorian"  href="https://www.disneyplus.com/pt-br/series/the-mandalorian/3jLIGMDYINqD">
+          Assistir 
         </ion-button>
 
         <ion-button class="botao-mandalorian">
@@ -104,74 +93,62 @@
 
         <h1>Últimas Notícias </h1>
 
-        <ion-slides pager="true" [options]="slideOpts3"> <!--Segundo conjunto de slides-->
+        <ion-slides pager="true" [options]="slideOpts3" class="slide2"> <!--Segundo conjunto de slides-->
   
           <ion-slide>
-           <ion-card class="slide2">
-             <ion-img src="../../assets/image/republic.jpg"></ion-img>
-             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-               Lorem </p>
-            </ion-card>
+             <a href="https://olhardigital.com.br/2021/03/30/cinema-e-streaming/star-wars-the-bad-batch-ganha-trailer-e-data-de-estreia-no-disney/">
+              <img src="../../assets/image/noticias/bad.jfif">
+             <p>Star Wars The Bad Batch ganha trailer e data de estreia no Disney+</p></a>
           </ion-slide>
 
           <ion-slide>
-            <ion-card class="slide2">
-             <ion-img src="../../assets/image/republic.jpg"></ion-img>
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-               Lorem </p>
-            </ion-card>
+             <a href="https://olhardigital.com.br/2021/04/02/games-e-consoles/lego-star-wars-the-skywalker-saga-e-adiado-indefinidamente/">
+              <img src="../../assets/image/noticias/lego.jpg">
+               <p>Lego Star Wars The Skywalker Saga é adiado indefinidamente</p></a>
            </ion-slide>
 
            <ion-slide>
-             <ion-card class="slide2">
-               <ion-img src="../../assets/image/republic.jpg"></ion-img>
-                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                 Lorem </p>
-             </ion-card>
+              <a href="https://www.oficinadanet.com.br/disney-plus/35879-disney-ordem-correta-para-assistir-os-filmes-star-wars">
+                <img src="../../assets/image/noticias/ordem.jfif">
+                 <p>Star Wars: Qual a ordem certa para assistir os filmes na Disney+?</p></a>
            </ion-slide>
 
            <ion-slide>
-             <ion-card class="slide2">
-               <ion-img src="../../assets/image/republic.jpg"></ion-img>
-                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                  Lorem </p>
-             </ion-card>
+              <a href="https://sociedadejedi.com.br/2021/01/05/star-wars-a-alta-republica-novo-trailer-e-livros-revelados/"><img src="../../assets/image/noticias/republic.jpg">
+                 <p>Star Wars: A Alta República Novo Trailer e Livros Revelados</p></a>
            </ion-slide>
         </ion-slides>
       </ion-col> <!--FIM COL 4-->
 
       <ion-col size="12"> <!--START COL 5-->
 
-        <h1>Links Rápidos </h1>
+        <h1>Links Extras</h1>
 
-        <ion-slides pager="true" [options]="slideOpts3"> <!--Segundo conjunto de slides-->
+        <ion-slides pager="true" [options]="slideOpts3" class="slide2"> <!--Segundo conjunto de slides-->
   
           <ion-slide>
-           <ion-card class="slide2">
-             <ion-img src="../../assets/image/filmes.jpg"></ion-img>
-             <h2>Filmes</h2>
-            </ion-card>
+            <a href="https://loja.panini.com.br/panini/vitrines/comics-star-wars.aspx"><img src="../../assets/image/Extras/republic.jpg">
+             <h2>HQs</h2></a>
           </ion-slide>
 
           <ion-slide>
-            <ion-card class="slide2">
-             <ion-img src="../../assets/image/filmes.jpg"></ion-img>
-              <h2>Series</h2>
-            </ion-card>
+              <a href="https://starwars.fandom.com/pt/wiki/P%C3%A1gina_principal"><img src="../../assets/image/Extras/fandom.jpg">
+                <h2>Fandom</h2></a>
            </ion-slide>
 
            <ion-slide>
-             <ion-card class="slide2">
-               <ion-img src="../../assets/image/filmes.jpg"></ion-img>
-               <h4>Informações</h4>
-             </ion-card>
+              <a href="https://www.disneyplus.com/pt-br/login"><img src="../../assets/image/Extras/disney.jpg">
+                <h2>Disney +</h2></a>
            </ion-slide>
 
            <ion-slide>
-             <ion-card class="slide2">
-               <ion-img src="../../assets/image/filmes.jpg"></ion-img>
-               <h2>Pesquisa</h2>
-             </ion-card>
+              <a href="https://www.starwarscelebration.com/"><img src="../../assets/image/Extras/celebration.webp">
+                <h3>Star Wars Celebration</h3></a>
+           </ion-slide>
+
+           <ion-slide>
+             <a href="https://www.oculus.com/vader-immortal/"><img src="../../assets/image/Extras/vader.webp">
+               <h2>Vader Immortal</h2></a>
            </ion-slide>
         </ion-slides>
       </ion-col> <!--FIM COL 5-->
