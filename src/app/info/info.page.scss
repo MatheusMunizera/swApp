@@ -1,3 +1,4 @@
+// Estilo de componentes Ionic
 ion-content {
   --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
 }
@@ -10,29 +11,27 @@ ion-item{
   --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
   --border-color: #494747;
 }
+ion-toolbar{
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+  img{
+    height: 2.3em;
+  }
+}
 ion-segment-button{
   font-family: Theme !important;
   box-shadow: -2px 5px 25px #ffc500;
   border-color: #ffc500;
-  border-width: -6em;
-  border-style: ridge;
+  border-width: 1em;
+  border-style:none;
   background: transparent !important;
   --indicator-color: #ffc500 !important;
-
+  ion-ripple-effect {
+    position: relative;
+     overflow:auto;
+     color: #ffc4004b;
+     border-radius: 10%;
+  }
 }
-
-@font-face {
-  font-family: Theme;
-  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
-  position: absolute
-}
-
-@font-face {
-  font-family: Title;
-  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
-  position: absolute
-}
-
 
 ion-card {
   box-shadow: -1px 5px -1px #ffc500;
@@ -59,15 +58,18 @@ ion-card {
     color: #ffffff
   }
 
+// Classes criadas para estilizar elementos específicos em compnoentes
 
 }
-
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
-  color: #ffc4004b;
-
+.homeB{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
+
+
 
 .swTheme {
   font-family: Theme !important;
@@ -86,54 +88,71 @@ ion-card {
   margin-left: 3%;
 }
 
-.swBarra {
-  font-family: AzonixTitle !important;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: #000000;
-  font-size: small;
-}
 .swBarTech {
-  font-family: AzonixTitle !important;
+  font-family: LemonMilk !important;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #ffc500;
   -webkit-text-fill-color: #000000;
   font-size: small;
+  
 }
 
 .swSub{
   margin-left: 2%;
-  font-family: AzonixTitle !important;;
+  font-family: LemonMilk !important;;
   color: #6a6868;
 }
 
 .swText{
-  font-family: AzonixTitle !important;
+  font-family: LemonMilk !important;
   color: #ffffff;
   -webkit-text-stroke-width: 1px;
 
 }
 
-@font-face {
-  font-family: AzonixTitle;
-  src: url("/assets/fonts/lemon_milk/LEMONMILK-RegularItalic.otf");
-  position: absolute
-  
-} 
+.infoTitle{
+  font-family: LemonMilk !important;
+  color: #ffc500;
+}
 
-.FontTitle{
-  font-family: AzonixTitle !important;
-  font-size: xx-large;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
+.infoData{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #e4dedee7;
+}
+.gif{
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+  --border-color: #494747;
 }
 
 img {
   object-fit: resize;
 }
-.infoTitle{
-  font-family: AzonixTitle !important;
-  color: #ffc500;
+
+// Fontes utilizadas no projeto
+
+
+@font-face {
+  font-family: LemonMilk;
+  src: url("/assets/fonts/lemon_milk/LEMONMILK-RegularItalic.otf");
+  position: absolute  
+} 
+@font-face {
+  font-family: Theme;
+  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+  position: absolute
+}
+
+@font-face {
+  font-family: Title;
+  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+  position: absolute
+}
+
+.FontTitle{
+  font-family: LemonMilk !important;
+  font-size: xx-large;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
