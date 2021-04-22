@@ -10,7 +10,7 @@ export class FolderPage implements OnInit {
 
   public slideOpts = {
     initialSlide: 0,
-    slidesPerView: 2.3,
+    slidesPerView: 1,
     speed: 400,
     spaceBetween:20,
   };

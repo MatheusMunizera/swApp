@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: FolderPage
-  },  {
+  },
+  {
     path: 'filmes',
     loadChildren: () => import('./filmes/filmes.module').then( m => m.FilmesPageModule)
   },

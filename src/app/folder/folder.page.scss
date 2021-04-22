@@ -1,117 +1,166 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "fonteTitle";
+  src: url(../../assets/fonts/soloist/soloisthalf.ttf);
+}
 
 ion-menu-button {
   color: var(--ion-color-primary);
 }
 
-a{
-  text-decoration: none;
-  color: #ffffff;
-}
-
 ion-toolbar{
   --background:#000000;
-  img{
-    height: 2.3em;
-  }
 }
 
 ion-content {
-  --background: url('/assets/gif/background5.gif') no-repeat center center / cover;
+  --background: url('/assets/gif/background5.gif') no-repeat center center / cover; 
 }
 
+/*fORMATAÇÃO LINKS*/
+a{
+  text-decoration: none; 
+  color: #ffffff;
+} 
+
+#container {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+}
+/*FORMATAÇÃO HEADER*/
+#title{
+  font-family: "fonteTitle";
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size:large;
+  text-align: center;
+  padding-right: 15%;
+}
+
+/*CLASSE DOS SLIDES INICIAIS*/
+.slides{
+  margin: 4%;
+
+  ion-slide{
+    text-align: justify;
+    display: inline-block;
+    padding: 0, 20px;
+  }
+}
+
+/*CLASSE DIV BATTEFRONT*/
 .battlefront{/*Background do segundo conjunto de slides*/
   background-image: url("../../assets/image/Battlefront.jpg");
   background-repeat: no-repeat;
+  background-position:center;
   background-size:100%;
-  width: 80%;
   max-width: 100%;
-  height: 100%;
   min-width: 100%;
+  min-height: 150%;
+  max-height: 150%;
   margin-top: 30px;
-  height: 600px;
-}
 
-.botao{
-  --background: #ffc500;
-  --background-activated: #ffc500;
-   font-family: "fonteButton";
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  -webkit-text-fill-color: black;
-  font-size:medium;
-  position: absolute;
-  margin: 77% 28%;
-}
+/*FORMATAÇÃO BUTTON*/
+  ion-button{
+    --background: #ffc500;
+    --background-activated: #ffc500;
+    --color:black;
+     font-family: "fonteButton";
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: black;
+    position: absolute;
+    margin: 190% 25% 5% 75%;
+    font-size:small;
+    
 
-.slide{
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  min-width: 100%;
-  flex-direction: column;
-  text-align: justify;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
 }
-
- slide-p{
-  margin: 0;
-  font-family:'Times New Roman', Times, serif;
-  color: rgb(250, 250, 250);
-  margin-top: 0 !important;
-  padding-left: 35px;
-  padding-right: 35px;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  margin-bottom: 10px;
-}
-
-.card {
-  margin-top: 320px;
-  --background: #151515;
-  --color: #ffffff;
-  text-align: justify;
-}
-
-.mandalorian{/*Background Mandalorian*/
-  background-image: url("../../assets/image/mandalorian.jpg");
-  background-repeat: no-repeat;
-  background-size:100%;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  min-width: 100%;
-  height: 500px;
-  margin-top: 40px;
-}
-
-.botao-mandalorian{
-  --background: #ffc500;
-  --background-activated: #ffc500;
-   font-family: "fonteButton";
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  -webkit-text-fill-color: black;
-  font-size:medium;
-  margin-top: 85%;
-  margin-left: 10%;
-  margin-left: 10%;
-}
-
-ion-slide{
-  display: inline-block;
-  text-align: justify;
-}
-
+/*FORMATAÇÃO SLIDES BATTLEFRONT*/
 .slide2{
+  margin-top: 100%;
+  border: transparent solid;
+      ion-card{
+        background-color: rgb(29, 28, 28);
+        text-align: justify;
+        color: white;
+        font-family:Arial, Helvetica, sans-serif;
+        img{
+          border-radius: 10px;
+          width: 100%;
+        }
+      }
+}
+
+
+/*FORMATAÇÃO DIV MANDALORIA*/
+.mandalorian{
+  background-image: url("../../assets/image/mandalorian.jpg"); 
+  background-repeat: no-repeat;
+  background-size:100% 99%;
+  background-position:center;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin-top: 30px;
+  border: springgreen solid;
+
+  ion-button{
+    --background: #ffc500;
+    --background-activated: #ffc500;
+    --color:black;
+     font-family: "fonteButton";
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    -webkit-text-fill-color: black;
+    font-size:small;
+    margin-top:80%;
+    margin-left: 5%;
+    margin-bottom: 40%;
+    border: springgreen solid;
+  }
+
+}
+
+/*FORMATAÇÃO NOTICIAS E LINKS EXTRAS*/
+.slide3{
+  margin: 10% 2%; 
+  ion-slide{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
   img{
     border-radius: 10px;
     min-height: 200px;
     max-height: 200px;
   }
+
+}
+/*FORMATAÇÃO RODAPE*/
+#rodape{
+  background-image: url("../../assets/image/rodape.jpg"); 
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-position:center;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin-bottom: 10px;
+  border: transparent solid;
+
+  a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffc500;
+  }
+
+  div{
+    margin-top: 80%;
+    border: transparent solid;
+  }
+
 }
 
-.rodape{
-  background-color: rgb(75, 75, 75);
-  text-align: center;
-}

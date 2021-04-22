@@ -1,22 +1,37 @@
-ion-content {
-    --background: url('/assets/gif/background5.gif') no-repeat center center / cover;
-  }
-
-ion-menu-button {
-    color: var(--ion-color-primary);
+@charset "UTF-8";
+@font-face {
+  font-family: "fonteTitle";
+  src: url(../../../assets/fonts/soloist/soloisthalf.ttf);
 }
 
-  
 ion-toolbar{
   --background:#000000;
-  img{
-    height: 2.3em;
-  }
 }
 
+ion-content {
+  --background: url('/assets/gif/background5.gif') no-repeat center center / cover;
+}
+
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+/*FORMATAÇAÕ HEADER*/
+#title{
+  font-family: "fonteTitle";
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size:large;
+  text-align: center;
+  padding-right: 15%;
+}
+
+/*BOTÕES EM GERAL*/
 .botao{
   --background: #ffc500;
   --background-activated: #ffc500;
+  --color:black;
    font-family: "fonteButton";
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
@@ -31,4 +46,31 @@ ion-card{
   text-align: justify;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
+
+.rodape{
+  background-image: url("../../../assets/image/rodape.jpg"); 
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-position:center;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  margin-bottom: 10px;
+  border: transparent solid;
+  text-align: center;
+
+  a{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffc500;
+  }
+
+  div{
+    margin-top: 80%;
+    border: transparent solid;
+  }
+
+}
+
 
