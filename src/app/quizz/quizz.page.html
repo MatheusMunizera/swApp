@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Quiz
+      QUIZ -  O que você sabe sobre Star Wars?
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,7 @@
 
 {{selected}}
 {{currentQuestion}}
-  <ion-card *ngIf="currentQuestion < questions.length; else resultCard">
+  <ion-card *ngIf="currentQuestion <questions.length; else resultCard">
     <ion-card-header>
       <ion-card-title>{{questions[currentQuestion].text}}</ion-card-title>
     </ion-card-header>
