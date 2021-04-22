@@ -30,7 +30,7 @@ export class QuizzPage implements OnInit {
   ]
 
   public questions = [{
-    text: "O primeiro filme da saga foi lançado em 1978.",
+    text: "O primeiro filme da saga foi lançado em 1978?",
     answers:
       ["Não, em 1977",
         "Sim"
@@ -38,7 +38,7 @@ export class QuizzPage implements OnInit {
 
   },
   {
-    text: "O rival de Anakin Skywalker na corrida de pods era Watto.",
+    text: "O rival de Anakin Skywalker na corrida de pods era Watto?",
     answers:
       ["Não, o nome do rival de Anakin era Sebulba.",
         "Sim, Watto correu contra Anakin em Boonta Eve."
@@ -46,7 +46,7 @@ export class QuizzPage implements OnInit {
 
   },
   {
-    text: "O número da cela onde Leia ficou presa na Estrela da Morte era 2167.",
+    text: "O número da cela onde Leia ficou presa na Estrela da Morte era 2167?",
     answers:
       ["Não, Luke salvou a princesa na cela 2187.",
         "Sim, foi aí que Luke Skywalker resgatou a princesa."
@@ -54,7 +54,7 @@ export class QuizzPage implements OnInit {
 
   },
   {
-    text: "O planeta natal de Han Solo é Bespin.",
+    text: "O planeta natal de Han Solo é Bespin?",
     answers:
       ["Não, Han Solo nasceu em Corellia, planeta conhecido por suas fábricas de naves.",
         "Sim, Han Solo nasceu em Bespin, o mesmo planeta onde Lando Calrissian administra uma usina de gás Tibanna no Episódio V."
@@ -62,7 +62,7 @@ export class QuizzPage implements OnInit {
 
   },
   {
-    text: "Em seu duelo com Anakin, Obi-Wan corta todos os quatro membros de seu ex-pupilo",
+    text: "Em seu duelo com Anakin, Obi-Wan corta todos os quatro membros de seu ex-pupilo?",
     answers:
       ["Errado, Obi-Wan poupa um dos braços de Anakin.",
         "Correto, Obi-Wan deixa Anakin sem nenhum membro, sendo substituídos por próteses robóticas."
@@ -86,7 +86,7 @@ export class QuizzPage implements OnInit {
 
   },
   {
-    text: "C3PO é fluente em mais de oito milhões de formas de comunicação.",
+    text: "C3PO é fluente em mais de oito milhões de formas de comunicação?",
     answers:
       ["Não, C3PO compreende seis milhões de formas de comunicação.",
         "Sim, o dróide de protocolo é fluente em oito milhões de formas de comunicação, inclusive Sith."

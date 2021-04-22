@@ -11,7 +11,7 @@ ion-title {
     -webkit-text-stroke-color: #ffc500;
     -webkit-text-fill-color: #000000;
     font-size: big;
-    position: center;
+    padding: center;
     
 }
 
@@ -21,27 +21,12 @@ ion-toolbar {
 }
 
 ion-card {
-    box-shadow: -1px 5px -1px #ffc500;
-    border-color: #ffc500;
-    border-width: -1em;
-    border-style: ridge;
-    border-left: none !important;
-    border-right: none !important;
-    overflow: visible;
-    position: relative;
-    background-color: #000000;
+
     --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-  
-  
+
     ion-card-title {
       --color: #ffffff
     }
-
-    ion-list {
-        background-color: #000000;
-    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-    }
-
     ion-button {
         background-color: #ffc500;
     --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
