@@ -5,30 +5,109 @@ ion-content {
   }
 
 ion-title { 
+    font-family: Title !important;
     color: whitesmoke;
-    font-family: LemonMilk !important;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffc500;
     -webkit-text-fill-color: #000000;
-    font-size: big;
+    font-size: medium;
     padding: center;
     
 }
-
-ion-toolbar { 
-    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-    overflow: visible;
+ion-card-title{
+    font-family: LemonMilk !important;
+    color: whitesmoke;
+}
+ion-card-content{
+    ion-item{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e4dedee7;
+    }
+}
+ion-radio{
+    --color:#ffc500;
+    --color-checked: #ffc500;
 }
 
-ion-card {
+ ion-toolbar { 
+     --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+     overflow: visible;
+ }
 
-    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-
-    ion-card-title {
-      --color: #ffffff
+ ion-card {
+     --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+     margin-bottom: 70%;
+ }
+ 
+     .next{ 
+         ion-item{
+            font-family: Title !important;
+        --color: #ffc500;
+        border-color: #ffc500;
+        border-style:groove;
+        border-left: none !important;
+        border-right: none !important;
+        --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+        color: rgb(255, 255, 255);
+        --background: black;
+        background: black;
+         }
+         ion-list{
+            font-family: Title !important;
+        --color: #ffc500;
+        border-color: #ffc500;
+        border-style:groove;
+        --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+        color: black;
+        --background: black;
+        background: black;
+         }
+     ion-button{
+        font-family: Title !important;
+        --color: #ffc500;
+        border-color: #ffc500;
+        border-style:groove;
+        border-left: none !important;
+        border-right: none !important;
+        --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+        transform: translate(1px, 1px); 
+     }
     }
-    ion-button {
-        background-color: #ffc500;
+#resultCard{
+    ion-img{
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+}
+.resultText{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #e4dedee7;
+}
+ 
+
+ ion-button {
+    font-family: Title !important;
+    --color: #ffc500;
+    border-color: #ffc500;
+    border-style:groove;
+    border-left: none !important;
+    border-right: none !important;
     --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
-    }
-}
+ }
+
+@font-face {
+    font-family: LemonMilk;
+    src: url("/assets/fonts/lemon_milk/LEMONMILK-RegularItalic.otf");
+    position: absolute
+  } 
+  @font-face {
+    font-family: Theme;
+    src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+    position: absolute
+  }
+  
+  @font-face {
+    font-family: Title;
+    src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+    position: absolute
+  }

@@ -1,18 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      QUIZ -  O que você sabe sobre Star Wars?
+    <ion-title class = fontTitle>
+      O que você sabe sobre Star Wars?
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class = ion-padding>
 
-  <img src="https://media0.giphy.com/media/5wikad3qSOqAg/giphy.gif">
 
-{{selected}}
-{{currentQuestion}}
-  <ion-card *ngIf="currentQuestion <questions.length; else resultCard">
+
+  
+  <div class = next *ngIf="currentQuestion <questions.length; else resultCard"> 
+    <img src="https://media0.giphy.com/media/5wikad3qSOqAg/giphy.gif">
+  <ion-card >
     <ion-card-header>
       <ion-card-title>{{questions[currentQuestion].text}}</ion-card-title>
     </ion-card-header>
@@ -20,25 +21,27 @@
       <ion-list>
         <ion-radio-group [(ngModel)]="selectedAnswer">
           <ion-item *ngFor="let answer of questions[currentQuestion].answers; let i = index;">
-            <ion-radio slot="start" [value]="i"></ion-radio>
-            <ion-label>{{answer}}</ion-label>
+            <ion-radio mode = md slot="start" [value]="i"></ion-radio>
+            <ion-label mode = md>{{answer}}</ion-label>
           </ion-item>
         </ion-radio-group>
       </ion-list>
-
-      <ion-button (click)="nextQuestion()" expand="block" [disabled]="selectedAnswer === null">
-        Próxima
-      </ion-button>
     </ion-card-content>
   </ion-card>
+  <ion-button (click)="nextQuestion()" expand="block" [disabled]="selectedAnswer === null">
+   Próxima
+  </ion-button>
+</div>
+
+  
 
   <ng-template #resultCard>
     <ion-card>
-      <img [src]="results[teste].img" [alt]="results[teste].name">
+      <ion-img [src]="results[teste].img" [alt]="results[teste].name"></ion-img>
       <ion-card-header>
         <ion-card-title>Você é um {{results[teste].name}}</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content class= resultText>
         <p>{{results[teste].description}}</p>
 
         <ion-button (click)="confirmReset()" expand="block">
