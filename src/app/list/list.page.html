@@ -1,8 +1,14 @@
 <ion-content>
 
-  <div class="FontTitle">
-    <h1>Lista de personagens</h1> 
-  </div>
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start">
+        <ion-menu-button color = primary></ion-menu-button>
+      </ion-buttons>
+      <ion-title class = FontTitle>Lista de personagens</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-segment [(ngModel)]="currentFilter" (ionChange)="updateFilter()">
     <ion-segment-button value="characteres" class="swBarTech" mode = md>
       <ion-label class="FontText">Personagens</ion-label>
@@ -19,10 +25,10 @@
   </ion-segment> 
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
   <ion-list *ngIf="currentItem.length > 0;">
-    <ion-item *ngFor="let current of currentItem" class="BackGroundConfig">
+    <ion-item *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info']">
       <ion-label>{{current.name}}</ion-label>    
-      <ion-button (click)="returnItem(current)" slot="end" fill="blank">
-        <ion-icon slot="icon-only" name="information-circle"></ion-icon>
+      <ion-button (click)="returnItem(current)" slot="end" color = opaco>
+        <ion-icon color = primary slot="icon-only" name="alert-circle-outline"></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>

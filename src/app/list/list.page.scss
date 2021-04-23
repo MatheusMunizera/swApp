@@ -1,11 +1,8 @@
-.BackGroundConfig{
-    background-color: transparent;   
-}
 
 ion-content {
     --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
     ion-list{
-        border-radius: 40px !important; 
+        border-radius: 5px !important; 
         margin-top: 5% !important;       
         margin-left: 5% !important;
         margin-right: 5% !important;   
@@ -21,8 +18,20 @@ ion-content {
         }
     }
     ion-item{
-        --background: #00000000;        
+        color: white;
+        margin-bottom: 3% !important;
+        border: solid 2px #303030;
+        ion-icon{
+            background: none;
+        }
     }
+    ion-searchbar{
+        --background: #303030;
+        --placeholder-color: white;
+        --icon-color: white;
+    }
+    
+    
         
 
     .resume{
@@ -95,7 +104,7 @@ ion-content {
 
 .FontTitle{
     font-family: SoloistTitle !important;
-    font-size: xx-large;
+    font-size: large;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffc500;
     -webkit-text-fill-color: transparent;

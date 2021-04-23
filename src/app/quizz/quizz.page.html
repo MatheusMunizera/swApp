@@ -1,15 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title class = fontTitle>
-      O que você sabe sobre Star Wars?
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content >
 
-<ion-content class = ion-padding>
-
-
-
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start">
+        <ion-menu-button color = primary></ion-menu-button>
+      </ion-buttons>
+      <ion-title class = fontTitle>Quizz</ion-title>
+    </ion-toolbar>
+  </ion-header>
   
   <div class = next *ngIf="currentQuestion <questions.length; else resultCard"> 
     <img src="https://media0.giphy.com/media/5wikad3qSOqAg/giphy.gif">

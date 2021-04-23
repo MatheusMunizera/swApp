@@ -14,7 +14,7 @@ export class RandomPage implements OnInit {
   resume: string;
   showCard: boolean = false;
   private lastGet: string;
-  private requests: string[] = [];
+  public requests: string[] = [];
 
   private completeUrl: string;
 

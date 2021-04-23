@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, JsonpClientBackend } from '@angular/common/http';
+import { HttpClient, HttpHandler, JsonpClientBackend } from '@angular/common/http';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
 import { AlertController, LoadingController } from '@ionic/angular';
 
@@ -114,7 +114,8 @@ export class ListPage implements OnInit {
   private API_URL_VEHICLES = "https://matheusmunizera.github.io/starwars-api/api/allVehicles.json";
   private API_URL_PLANETS = "https://matheusmunizera.github.io/starwars-api/api/allPlanets.json";
   private API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
-  constructor(public http: HttpClient, public loadingController: LoadingController) {}
+  constructor(public http: HttpClient, public loadingController: LoadingController) {} 
+
 
   async presentLoading() {
     const loading = await this.loadingController.create({

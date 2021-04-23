@@ -1,4 +1,14 @@
 <ion-content class="padding" fullscren="true">
+
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start">
+        <ion-menu-button color = primary></ion-menu-button>
+      </ion-buttons>
+      <ion-title class = sw-laser>Random</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <!-- Plano Inicial, visivel somente enquanto não foi selecionada nenhuma opção -->
   <div class="center" *ngIf="!showCard; else cardInfo">
     <div class="fade sw-title">
