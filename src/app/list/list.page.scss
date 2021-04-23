@@ -5,22 +5,81 @@
 ion-content {
     --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
     ion-list{
-        border-radius: 8% !important;        
+        border-radius: 40px !important; 
+        margin-top: 5% !important;       
         margin-left: 5% !important;
-        margin-right: 5% !important;        
+        margin-right: 5% !important;   
+        margin-bottom: 5% !important;
+        padding-top: 5% !important;        
         padding-left: 3% !important;
         padding-right: 5% !important;
         margin-bottom: 1px;
         border: 1px solid #ffc500;
+        ion-label{
+            font-size: large;
+            text-align: left;
+        }
     }
     ion-item{
         --background: #00000000;        
     }
-    ion-label{
-         font-size: large;
-        text-align: left;
+        
+
+    .resume{
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ion-color-step-600, #ffffff);
+        overflow: hidden;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        padding-top: 10px;
+        padding-right: 20%
+    }
+
+    .imgCSS{
+        position: absolute;
+         top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        max-height: 100%;
+        max-width: 100%;
+        height: 322px;
+        width: 307px;
+        object-fit: fill;
+        box-shadow: 5px 5px 25px #ffc500;
+        border-color: #ffc500;
+        border-width: -1em;
+        border-style: outset;
+    }
+
+    ion-segment-button{
+        font-family: LemonMilk !important;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #ffc500;
+        -webkit-text-fill-color: #000000;
+        font-size: x-small;
+        --color-checked: #ffc500;
+        ion-label{
+            font-family: Soloist !important;
+            font-size: xx-small;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #ffc500;
+            -webkit-text-fill-color: transparent;
+            text-align: center;                        
+        }
     }
 }
+
+.swBarTech {
+    font-family: LemonMilk !important;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffc500;
+    -webkit-text-fill-color: #000000;
+    font-size: small;
+  }
   
 @font-face {
     font-family: Soloist;
@@ -42,7 +101,14 @@ ion-content {
     -webkit-text-fill-color: transparent;
     text-align: center;
 }
-
+.FontText{
+    font-family: Soloist !important;
+    font-size: medium;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffc500;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
 ion-list{
     background-color: transparent;
     ion-item{
