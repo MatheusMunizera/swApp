@@ -24,8 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   },
   {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    path: 'quizz',
+    loadChildren: () => import('./quizz/quizz.module').then( m => m.QuizzPageModule)
   }
 ];
 
