@@ -1,5 +1,7 @@
 {
   "name": "swApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
