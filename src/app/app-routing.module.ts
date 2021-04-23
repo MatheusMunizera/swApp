@@ -23,10 +23,7 @@ const routes: Routes = [
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   },
-  {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },
+
   {
     path: 'filmes',
     loadChildren: () => import('./filmes/filmes.module').then( m => m.FilmesPageModule)
@@ -34,6 +31,10 @@ const routes: Routes = [
   {
     path: 'series',
     loadChildren: () => import('./series/series.module').then( m => m.SeriesPageModule)
+  },
+  {
+    path: 'quizz',
+    loadChildren: () => import('./quizz/quizz.module').then( m => m.QuizzPageModule)
   }
 ];
 
