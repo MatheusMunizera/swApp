@@ -1,0 +1,143 @@
+//*************** BACKGROUND ****************//
+ion-content {
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+  overflow: visible;
+}
+
+.blurredBackground {
+  background: url('/assets/gif/background5.gif') no-repeat center center / cover;
+  overflow: visible;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(10px)
+}
+
+//*************************************//
+
+
+
+
+
+
+//*************** FONT ****************//
+@font-face {
+  font-family: SoloistTitle;
+  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
+  position: absolute
+}
+
+@font-face {
+  font-family: SoloistLaser;
+  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
+  position: absolute
+}
+
+.sw-title {
+  font-family: SoloistTitle !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
+
+}
+
+.sw-laser {
+  font-family: SoloistLaser !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffc500;
+  -webkit-text-fill-color: transparent;
+  font-size: xx-large;
+}
+
+.subtitle {
+  padding: 0px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--ion-color-step-600, #424242);
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ion-color-step-600, #ffffff);
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  padding-top: 10px;
+  padding-right: 20%
+}
+
+//*************************************//
+
+
+
+
+
+//*************** STYLE ****************//
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -95%);
+  ion-img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 322px;
+    width: 307px;
+    object-fit: fill;
+    border: solid 2px #ffc500;
+    box-shadow: 2px -2px 20px yellow;
+  }
+  ion-icon {
+    position: absolute;
+    top: 1%;
+    left: 86%;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.info-content {
+  position: absolute;
+  top: 55%;
+  left: 10%;
+}
+
+.ion-padding-top {
+  padding-top: 60px;
+  padding-right: 30px;
+}
+
+//*************************************//
+
+
+
+//***************** ANIMATIONS ********************//
+.fade>ion-label {
+  font-size: medium;
+  animation: fade-out 1s alternate ease-out infinite;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}
+//*************************************//
