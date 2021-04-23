@@ -1,12 +1,19 @@
 <ion-app>
+  
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
+
+        
+      
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
-
+          <ion-header>
+            <ion-toolbar translucent>
+             <ion-img src="/assets/image/iconfinder_darth-vader_1626615.svg"></ion-img>
+            </ion-toolbar>
+          </ion-header>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
@@ -15,13 +22,15 @@
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
+          <ion-list-header>
+            <ion-img src="/assets/image/iconfinder_clone-trooper_1626613.svg"></ion-img>
+          </ion-list-header>
+          <ion-item *ngFor="let label of labels" href={{label.url}} lines="none" detail="false">
+            <ion-icon slot="start" name="{{label.icon}}"></ion-icon>
+            <ion-label>{{ label.title }}</ion-label>
           </ion-item>
         </ion-list>
+
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

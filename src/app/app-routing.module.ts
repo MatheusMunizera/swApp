@@ -4,12 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'random',
@@ -23,9 +23,18 @@ const routes: Routes = [
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
   },
+
   {
-    path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    path: 'filmes',
+    loadChildren: () => import('./filmes/filmes.module').then( m => m.FilmesPageModule)
+  },
+  {
+    path: 'series',
+    loadChildren: () => import('./series/series.module').then( m => m.SeriesPageModule)
+  },
+  {
+    path: 'quizz',
+    loadChildren: () => import('./quizz/quizz.module').then( m => m.QuizzPageModule)
   }
 ];
 
