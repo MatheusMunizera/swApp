@@ -44,11 +44,18 @@ a{
   margin: 4%;
 
   ion-slide{
+    
     text-align: justify;
     display: inline-block;
     padding: 0, 20px;
+    p{
+      color: white;
+    }
   }
+
 }
+
+
 
 /*CLASSE DIV BATTEFRONT*/
 .battlefront{/*Background do segundo conjunto de slides*/
@@ -77,6 +84,9 @@ a{
     
 
     }
+}
+h1{
+  color: white;
 }
 /*FORMATAÇÃO SLIDES BATTLEFRONT*/
 .slide2{
@@ -161,4 +171,5 @@ a{
   }
 
 }
+
 

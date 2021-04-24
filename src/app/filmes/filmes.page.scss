@@ -16,7 +16,7 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
-/*FORMATAÇAÕ HEADER*/
+/FORMATAÇAÕ HEADER/
 #title{
   font-family: "fonteTitle";
   -webkit-text-stroke-width: 0.5px;
@@ -27,7 +27,7 @@ ion-menu-button {
   padding-right: 15%;
 }
 
-/*BOTÕES EM GERAL*/
+/BOTÕES EM GERAL/
 .botao{
   --background: #ffc500;
   --background-activated: #ffc500;
@@ -45,6 +45,12 @@ ion-card{
   margin-bottom: 40px;
   text-align: justify;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  background: #303030;
+  color: white;
+}
+ion-card-title{
+  background: #303030;
+  color: white;
 }
 
 
@@ -72,5 +78,3 @@ ion-card{
   }
 
 }
-
-
