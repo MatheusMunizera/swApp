@@ -1,6 +1,13 @@
 <ion-content>
 
-  <app-sw-header [namePage] = "'Lista'"></app-sw-header>
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start">
+        <ion-menu-button color = primary></ion-menu-button>
+      </ion-buttons>
+      <ion-title class = FontTitle>Lista de personagens</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
   <ion-segment [(ngModel)]="currentFilter" (ionChange)="updateFilter()">
     <ion-segment-button value="characteres" class="swBarTech" mode = md>
@@ -26,4 +33,3 @@
     </ion-item>
   </ion-list>
 </ion-content>
-
