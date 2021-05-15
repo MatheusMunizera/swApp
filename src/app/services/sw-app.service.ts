@@ -79,40 +79,32 @@ export interface Specie{
   created: string,
   edited: string
 }
-
-export interface CharacterNumber{
-  numb: number
-}
 @Injectable({
   providedIn: 'root'
 })
 export class SwAppService {
 
-  
  public characterList = []
  public vehiclesList = []
  public speciesList = []
  public planetsList = []
-  public caracter: Character[] = []
-  public vehicle: Vehicle[] = []
-  public planet: Planet[] = []
-  public specie: Specie[] = []
-  public selectedCaracter: Character
-  public selectedVehicle: Vehicle
-  public selectedPlanet: Planet
-  public selectedSpecie: Specie
+ public caracter: Character[] = []
+ public vehicle: Vehicle[] = []
+ public planet: Planet[] = []
+ public specie: Specie[] = []
+ public selectedCaracter: Character
+ public selectedVehicle: Vehicle
+ public selectedPlanet: Planet
+ public selectedSpecie: Specie
  public currentFilter: 'characteres' | 'vehicless' | 'planetss' | 'speciess' = 'characteres';
-  public currentSearch = '';
-  public currentItem = [];
+ public currentSearch = '';
+ public currentItem = [];
 
-  //private API_URL = "https://matheusmunizera.github.io/starwars-api/api/characters/";
-  private API_URL_CHARACTER = "https://matheusmunizera.github.io/starwars-api/api/allCharacters.json";
-  private API_URL_VEHICLES = "https://matheusmunizera.github.io/starwars-api/api/allVehicles.json";
-  private API_URL_PLANETS = "https://matheusmunizera.github.io/starwars-api/api/allPlanets.json";
-  private API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
+  private readonly API_URL_CHARACTER = "https://matheusmunizera.github.io/starwars-api/api/allCharacters.json";
+  private readonly API_URL_VEHICLES = "https://matheusmunizera.github.io/starwars-api/api/allVehicles.json";
+  private readonly API_URL_PLANETS = "https://matheusmunizera.github.io/starwars-api/api/allPlanets.json";
+  private readonly API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
   constructor(public http: HttpClient) {} 
-
-
 
 
   async runPop(){        
@@ -222,10 +214,10 @@ export class SwAppService {
       population: json.population,
       residents: json.residents,
       films: json.films,
-      created: json.hairColor,
-      edited: json.eyeColor,
-      image: json.skinColor,
-      resume: json.cybernetics
+      created: json.created,
+      edited: json.edited,
+      image: json.image,
+      resume: json.resume
     });
   }
 
@@ -288,8 +280,41 @@ export class SwAppService {
   
 
   
+// ** RANDOM ** \\
+public lastGet: string;
 
 
+ // Gera um numero aleatório e procura na lista 
+ public getCharacter() {
+  this.lastGet = 'character';
+  let randomNumber = Math.floor(Math.random() * 88);
+  console.log(randomNumber)
+  return this.characterList[randomNumber];
+}
+public getVehicle() {
+  this.lastGet = 'vehicle';
+  let randomNumber = Math.floor(Math.random() * 40);
+  console.log(randomNumber)
+  return this.vehiclesList[randomNumber]
+}
+public getSpecie() {
+  this.lastGet = 'specie';
+  let randomNumber = Math.floor(Math.random() * 37);
+  console.log(randomNumber)
+  return this.speciesList[randomNumber]
+}
+
+public getPlanet() {
+  this.lastGet = 'planet';
+  let randomNumber = Math.floor(Math.random() * 37);
+  console.log(randomNumber)
+  return this.planetsList[randomNumber]
+}
+
+
+
+
+}
 
 
 
@@ -297,6 +322,6 @@ export class SwAppService {
   
 
  
-}
+
 
 

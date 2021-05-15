@@ -19,17 +19,14 @@ export class ListPage implements OnInit {
   constructor(
      public loadingController: LoadingController,
      private swService: SwAppService
-     ) {
-
-
-
-     } 
+     ) {} 
 
 
   async presentLoading() {
     const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      message: 'Aguarde enquanto buscamos os dados',      
+      cssClass: 'loading',
+      message: '<img src="/assets/gif/loading.gif">',
+      spinner: null,    
     });
     await loading.present();
     await this.swService.runPop();
@@ -69,7 +66,6 @@ export class ListPage implements OnInit {
     }
   }
 
-  
 
   returnItem(item){
     if (this.currentFilter === 'characteres') {
