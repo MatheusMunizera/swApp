@@ -1,9 +1,56 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>random</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-content class="padding" fullscren="true">
 
-<ion-content>
+    <ion-fab vertical="center" horizontal="center" slot="fixed" style="left: 25%; right:20%">
+      <ion-button fill="clear" (click)="showImgButtons()" expand="full" class="ion-activatable ripple-parent">
+        <div id="floating">
+          <div class="StarwarsFonte">
+            <li>R</li>
+            <li>A</li>
+            <li>N</li>
+            <li>D</li>
+            <li>O</li>
+            <li>M</li>
+          </div>
+          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+        </div>
+      </ion-button>
+    </ion-fab>
 
-</ion-content>
+    <div class="centro" [hidden]=btnImgHidden>
+      <div class="buttonImg">
+        <ion-img (click)="onClickImg('pessoa')" src="assets/image/people.svg" #people></ion-img>
+        <ion-img (click)="onClickImg('espécie')" src="assets/image/specie.svg" #species></ion-img>
+        <ion-img (click)="onClickImg('planeta')" src="assets/image/death_star.svg" #planets></ion-img>
+        <ion-img (click)="onClickImg('veículo')" src="assets/image/millenniumfalcon.png" #vehicles></ion-img>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </ion-content>
+
+</ion-app>
