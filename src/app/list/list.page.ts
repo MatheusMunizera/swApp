@@ -70,13 +70,13 @@ export class ListPage implements OnInit {
   returnItem(item){
     if (this.currentFilter === 'characters') {
       this.swService.selectedCaracter = item;
-      //console.log(this.swService.selectedCaracter);
+      console.log(this.swService.selectedCaracter);
     } else if (this.currentFilter === 'vehicles') {
       this.swService.selectedVehicle = item;
-      //console.log(this.swService.selectedVehicle);
+      console.log(this.swService.selectedVehicle);
     } else if (this.currentFilter === 'planets') {
       this.swService.selectedPlanet = item;
-      //console.log(this.swService.selectedPlanet);
+      console.log(this.swService.selectedPlanet);
     } else if (this.currentFilter === 'species'){
       this.swService.selectedSpecie = item;
       //console.log(this.swService.selectedSpecie);

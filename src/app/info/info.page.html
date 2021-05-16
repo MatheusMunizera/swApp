@@ -5,23 +5,29 @@
 
 
   <!-- Avatar selecionado  -->
-  <img
-  src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_86916bb6.jpeg?region=304%2C0%2C1778%2C1000&width=768"
-  alt="R2D2"> <br>
+   <img
+  src="{{currentItem.image}}"> <br> 
   <ion-card >
     
 <!-- Breve Descrição  -->
 
     <ion-card-subtitle class = "swSub">Sabia disso?</ion-card-subtitle>
-    <ion-card-title><div class= "swTitle">R2D2</div></ion-card-title>
-    <ion-card-content><div class= "swText">R2-D2, também chamado simplesmente de R2, foi um droide 
-      astromecânico série R2 produzido pelas Indústrias Autômato com programação masculina</div></ion-card-content>
+    <ion-card-title><div class= "swTitle">{{currentItem.name}}</div></ion-card-title>
+    <ion-card-content><div class= "swText">{{currentItem.resume}}</div></ion-card-content>
   </ion-card>
 
   <ion-item lines = black>
     <ion-label><div class = "swTitle" >Saiba Mais</div></ion-label>
   </ion-item>
- 
+
+    <b class = infoTitle>Altura: </b><ion-text class = infoData> 1,09 metro</ion-text><br>
+    <b class = infoTitle>Massa: </b><ion-text class = infoData> 32 quilogramas</ion-text><br>
+    <b class = infoTitle>Gênero: </b><ion-text class = infoData> Programação masculina</ion-text><br>
+    <b class = infoTitle>Cor do sensor:</b><ion-text class = infoData> Vermelho</ion-text>
+
+  
+
+
   <!-- Menu de informações -->
   <ion-toolbar>  
       <ion-segment [(ngModel)] = "segmentCard" >

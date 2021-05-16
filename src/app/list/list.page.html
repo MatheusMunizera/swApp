@@ -26,7 +26,7 @@
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
   <ion-list *ngIf="currentItem.length > 0;">
     <ion-item *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info', currentFilter + '/' + current.id]">
-      <ion-label>{{current.name}}</ion-label>
+      <ion-label>{{current.name}}</ion-label>    
       <ion-button (click)="returnItem(current)" slot="end" color = opaco>
         <ion-icon color = primary slot="icon-only" name="alert-circle-outline"></ion-icon>
       </ion-button>
