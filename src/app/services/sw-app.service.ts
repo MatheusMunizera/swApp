@@ -106,6 +106,9 @@ export class SwAppService {
   private readonly API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
   constructor(public http: HttpClient) {} 
 
+  
+  
+
 
   async runPop(){        
     await this.createCharacterList();
