@@ -48,13 +48,13 @@ export class ListPage implements OnInit {
 
   public updateFilter() {
     let firstFilter = [];
-    if (this.currentFilter === 'characteres') {
+    if (this.currentFilter === 'characters') {
       firstFilter = this.swService.caracter;
-    } else if (this.currentFilter === 'vehicless') {
+    } else if (this.currentFilter === 'vehicles') {
       firstFilter = this.swService.vehicle
-    } else if (this.currentFilter === 'planetss') {
+    } else if (this.currentFilter === 'planets') {
       firstFilter = this.swService.planet
-    } else if (this.currentFilter === 'speciess'){
+    } else if (this.currentFilter === 'species'){
       firstFilter = this.swService.specie;
     }
 
@@ -68,16 +68,16 @@ export class ListPage implements OnInit {
 
 
   returnItem(item){
-    if (this.currentFilter === 'characteres') {
+    if (this.currentFilter === 'characters') {
       this.swService.selectedCaracter = item;
       console.log(this.swService.selectedCaracter);
-    } else if (this.currentFilter === 'vehicless') {
+    } else if (this.currentFilter === 'vehicles') {
       this.swService.selectedVehicle = item;
       console.log(this.swService.selectedVehicle);
-    } else if (this.currentFilter === 'planetss') {
+    } else if (this.currentFilter === 'planets') {
       this.swService.selectedPlanet = item;
       console.log(this.swService.selectedPlanet);
-    } else if (this.currentFilter === 'speciess'){
+    } else if (this.currentFilter === 'species'){
       this.swService.selectedSpecie = item;
       console.log(this.swService.selectedSpecie);
     }    

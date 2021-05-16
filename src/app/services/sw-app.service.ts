@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 export interface Character{
+  id: number,
   name: string,
   height: number,
   mass: number,
@@ -26,6 +27,7 @@ export interface Character{
 }
 
 export interface Vehicle{
+  id: number,
   name: string,
   model: string,
   manufacturer: string,
@@ -45,6 +47,7 @@ export interface Vehicle{
 }
 
 export interface Planet{
+  id: number,
   name: string,
   rotation_period: string,
   orbital_period: string,
@@ -63,6 +66,7 @@ export interface Planet{
 }
 
 export interface Specie{
+  id: number,
   name: string,
   classification: string,
   resume: string,
@@ -96,7 +100,7 @@ export class SwAppService {
  public selectedVehicle: Vehicle
  public selectedPlanet: Planet
  public selectedSpecie: Specie
- public currentFilter: 'characteres' | 'vehicless' | 'planetss' | 'speciess' = 'characteres';
+ public currentFilter: 'characters' | 'vehicles' | 'planets' | 'species' = 'characters';
  public currentSearch = '';
  public currentItem = [];
 
@@ -159,6 +163,7 @@ export class SwAppService {
 
   populateCharacterList(json){       
     this.characterList.push({
+      id: json.id,
       name: json.name,
       height: json.height,
       mass: json.mass,
@@ -185,6 +190,7 @@ export class SwAppService {
 
   populateVehicleList(json){        
     this.vehiclesList.push({
+      id: json.id,
       name: json.name,
       model: json.model,
       manufacturer: json.manufacturer,
@@ -206,6 +212,7 @@ export class SwAppService {
 
   populatePlanetsList(json){        
     this.planetsList.push({
+      id: json.id,
       name: json.name,
       rotation_period: json.rotation_period,
       orbital_period: json.orbital_period,
@@ -226,6 +233,7 @@ export class SwAppService {
 
   populateSpeciesList(json){        
     this.speciesList.push({
+      id: json.id,
       name: json.name,
       classification: json.classification,
       resume: json.resume,
