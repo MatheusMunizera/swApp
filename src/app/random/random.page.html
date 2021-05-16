@@ -1,56 +1,112 @@
-<ion-app>
-  <ion-content class="padding" fullscren="true">
+<ion-content class="padding" fullscren="true">
 
-    <ion-fab vertical="center" horizontal="center" slot="fixed" style="left: 25%; right:20%">
-      <ion-button fill="clear" (click)="showImgButtons()" expand="full" class="ion-activatable ripple-parent">
-        <div id="floating">
-          <div class="StarwarsFonte">
-            <li>R</li>
-            <li>A</li>
-            <li>N</li>
-            <li>D</li>
-            <li>O</li>
-            <li>M</li>
-          </div>
-          <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-        </div>
-      </ion-button>
+  <app-sw-header [namePage] = "'Random'"></app-sw-header>
+
+  <!-- Plano Inicial, visivel somente enquanto não foi selecionada nenhuma opção -->
+  <div class="center" *ngIf="!showCard; else cardInfo">
+    <div class="fade sw-title">
+      <ion-label>Escolha um para continuar</ion-label>
+    </div>
+    <!-- FABs com imagens respectivas ao que será gerado -->
+    <ion-fab>
+      <ion-row>
+        <ion-col class="ion-padding">
+          <!-- Personagem aleatório -->
+          <ion-fab-button name="people" (click)="getCharacter()" color="opaco">
+            <ion-img src="/assets/image/people.svg"></ion-img>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col class="ion-padding">
+          <!-- Veículo aleatório -->
+          <ion-fab-button name="vehicles" (click)="getVehicle()" color="opaco">
+            <ion-img src="/assets/image/millenniumfalcon.svg"></ion-img>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col class="ion-padding">
+          <!-- Especie aleatória -->
+          <ion-fab-button name="species" (click)="getSpecie()" color="opaco">
+            <ion-img src="/assets/image/specie.svg"></ion-img>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col class="ion-padding">
+          <!-- Planeta aleatória -->
+          <ion-fab-button name="planets" (click)="getPlanet()" color="opaco">
+            <ion-img src="/assets/image/death_star.svg"></ion-img>
+          </ion-fab-button>
+        </ion-col>
+      </ion-row>
     </ion-fab>
-
-    <div class="centro" [hidden]=btnImgHidden>
-      <div class="buttonImg">
-        <ion-img (click)="onClickImg('pessoa')" src="assets/image/people.svg" #people></ion-img>
-        <ion-img (click)="onClickImg('espécie')" src="assets/image/specie.svg" #species></ion-img>
-        <ion-img (click)="onClickImg('planeta')" src="assets/image/death_star.svg" #planets></ion-img>
-        <ion-img (click)="onClickImg('veículo')" src="assets/image/millenniumfalcon.png" #vehicles></ion-img>
+  </div>
+  <!-- ******************************************* -->
+  <!-- Segundo Plano, visivel quando uma das opções anteriores foram selecionadas -->
+  <ng-template #cardInfo>
+    <div class="blurredBackground"></div>
+    <div class="card-position">
+      <!-- ********** Mostra as informações geradas ******** -->
+      <div id='card'>
+        <ion-img src="{{img}}"></ion-img>
+        <!-- Leva a pagina de informação do personagem -->
+        <ion-icon name="alert-circle-outline" color="primary" [routerLink]="['/info']"></ion-icon>
       </div>
     </div>
+    <ion-col class="info-content">
+      <ion-row class="subtitle"> Foi encontrado... </ion-row>
+      <ion-row class="sw-laser"> {{name}} </ion-row>
+      <ion-row class="text"> {{resume}} </ion-row>
+      <!-- ********************************************** -->
+      <ion-row class="ion-padding-top">
+        <ion-col>
+          <ion-fab>
+            <!-- Retorna a ultima informação gerada (caso nao exista, estará desabilitado)-->
+            <ion-fab-button color="light" (click)="previousRequest()" [disabled]="this.requests.length == 1">
+              <ion-icon name="caret-back-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-col>
 
+        <ion-col>
+          <!-- FABs para trocar qual tipo de informação será gerado -->
+          <ion-fab>
+            <ion-fab-button color="light">
+              <ion-icon name="swap-vertical-outline"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-list side="top">
+              <!-- Personagem aleatório -->
+              <ion-fab-button color="opaco" (click)="getCharacter()">
+                <ion-img src="/assets/image/people.svg"></ion-img>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="end">
+              <!-- Veículo aleatório -->
+              <ion-fab-button color="opaco" (click)="getVehicle()">
+                <ion-img src="/assets/image/millenniumfalcon.svg"></ion-img>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="bottom">
+              <!-- Especie aleatório -->
+              <ion-fab-button color="opaco" (click)="getSpecie()">
+                <ion-img src="/assets/image/specie.svg"></ion-img>
+              </ion-fab-button>
+            </ion-fab-list>
+            <ion-fab-list side="start">
+              <!-- Planeta aleatório -->
+              <ion-fab-button color="opaco" (click)="getPlanet()">
+                <ion-img src="/assets/image/death_star.svg"></ion-img>
+              </ion-fab-button>
+            </ion-fab-list>
+          </ion-fab>
+        </ion-col>
 
+        <!-- Gera novas informações do mesmo tipo no card -->
+        <ion-col>
+          <ion-fab>
+            <ion-fab-button (click)="nextRequest()" color="light">
+              <ion-icon name="caret-forward-outline"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ng-template>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </ion-content>
-
-</ion-app>
+</ion-content>

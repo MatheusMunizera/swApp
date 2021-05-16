@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { ElementRef, Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-info',
   templateUrl: './info.page.html',
   styleUrls: ['./info.page.scss'],
+
 })
 export class InfoPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  segmentCard = ""
+
+  
 }

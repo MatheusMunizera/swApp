@@ -1,19 +1,6 @@
-@charset "UTF-8";
-@font-face {
-  font-family: "fonteTitle";
-  src: url(../../assets/fonts/soloist/soloisthalf.ttf);
-}
-
-ion-menu-button {
-  color: var(--ion-color-primary);
-}
-
-ion-toolbar{
-  --background:#000000;
-}
-
 ion-content {
-  --background: url('/assets/gif/background5.gif') no-repeat center center / cover; 
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+  overflow: visible;
 }
 
 /*fORMATAÇÃO LINKS*/
@@ -28,31 +15,29 @@ a{
   width: 100%;
   min-width: 300px;
 }
-/*FORMATAÇÃO HEADER*/
-#title{
-  font-family: "fonteTitle";
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  font-size:large;
-  text-align: center;
-  padding-right: 15%;
-}
+
 
 /*CLASSE DOS SLIDES INICIAIS*/
 .slides{
   margin: 4%;
 
   ion-slide{
+    
     text-align: justify;
     display: inline-block;
     padding: 0, 20px;
+    p{
+      color: white;
+    }
   }
+
 }
+
+
 
 /*CLASSE DIV BATTEFRONT*/
 .battlefront{/*Background do segundo conjunto de slides*/
-  background-image: url("../../assets/image/Battlefront.jpg");
+  background-image: url("../../assets/image/battlefront.jpg");
   background-repeat: no-repeat;
   background-position:center;
   background-size:100%;
@@ -77,6 +62,9 @@ a{
     
 
     }
+}
+h1{
+  color: white;
 }
 /*FORMATAÇÃO SLIDES BATTLEFRONT*/
 .slide2{
@@ -161,4 +149,5 @@ a{
   }
 
 }
+
 

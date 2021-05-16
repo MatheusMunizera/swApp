@@ -10,7 +10,7 @@ ion-title {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffc500;
     -webkit-text-fill-color: #000000;
-    font-size: medium;
+    font-size: xx-large;
     padding: center;
     
 }
@@ -32,6 +32,16 @@ ion-radio{
  ion-toolbar { 
      --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
      overflow: visible;
+     ion-title { 
+        font-family: Title !important;
+        color: whitesmoke;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #ffc500;
+        -webkit-text-fill-color: #000000;
+        font-size:x-large;
+        padding: center;
+        
+    }
  }
 
  ion-card {

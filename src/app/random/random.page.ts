@@ -1,100 +1,138 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import {
-  Animation,
-  AnimationController,
-  LoadingController,
-} from '@ionic/angular';
-
+import { Component, OnInit } from '@angular/core';
+import { AnimationController, LoadingController } from '@ionic/angular';
+import { SwAppService } from '../services/sw-app.service';
 @Component({
   selector: 'app-random',
   templateUrl: './random.page.html',
   styleUrls: ['./random.page.scss'],
 })
+
 export class RandomPage implements OnInit {
-  @ViewChild('people', { read: ElementRef }) people: ElementRef;
-  @ViewChild('planets', { read: ElementRef }) planets: ElementRef;
-  @ViewChild('vehicles', { read: ElementRef }) vehicles: ElementRef;
-  @ViewChild('species', { read: ElementRef }) species: ElementRef;
-  @ViewChild('img', { read: ElementRef }) img: ElementRef;
+  name: string;
+  img: string;
+  resume: string;
+  showCard: boolean = false;
+  public requests: string[] = [];
 
   constructor(
     public animationCtrl: AnimationController,
-    public loadingController: LoadingController
-  ) {}
+    public loadingController: LoadingController,
+    private swService: SwAppService
+  ) {
+  
+  }
 
-  btnImgHidden = true;
+  public ngOnInit() {
+     this.swService.runPop();
+  }
 
-  ngOnInit() {}
-
-  animationOut() {
-    const people = this.animationCtrl
-      .create()
-      .addElement(this.people.nativeElement)
-      .fromTo('transform', '', 'translateY(335px)translateX(140px)');
-    const planets = this.animationCtrl
-      .create()
-      .addElement(this.planets.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(140px)');
-    const vehicles = this.animationCtrl
-      .create()
-      .addElement(this.vehicles.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(-140px)');
-    const species = this.animationCtrl
-      .create()
-      .addElement(this.species.nativeElement)
-      .fromTo('transform', '', 'translateY(340px)translateX(-140px)');
+  // ***************** ANIMAÇOES *************  \\
+  private async cardBounceIn() {
+    this.showCard = true;
     this.animationCtrl
       .create()
+      .addElement(document.getElementById('card'))
       .duration(500)
-      .iterations(1)
-      .easing('ease-in-out')
-      .addAnimation([people, planets, vehicles, species])
+      .easing('ease-in')
+      .keyframes([
+        { offset: 0, transform: 'scale(0)' },
+        { offset: 0.7, transform: 'scale(1.2)' },
+        { offset: 1, transform: 'scale(1)' },
+      ])
       .play();
   }
-
-  showImgButtons() {
-    console.log('foi clicado no botão Random');
-    this.animationOut();
-    this.btnImgHidden = false;
-  }
-
-  animationIn() {
-    const people = this.animationCtrl
-      .create()
-      .addElement(this.people.nativeElement)
-      .fromTo('transform', '', 'translateY(335px)translateX(250px)');
+  private async rollOut() {
     const planets = this.animationCtrl
       .create()
-      .addElement(this.planets.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(250px)');
-    const vehicles = this.animationCtrl
-      .create()
-      .addElement(this.vehicles.nativeElement)
-      .fromTo('transform', '', 'translateY(-340px)translateX(-250px)');
+      .addElement(document.getElementsByName('planets'))
+      .duration(100)
+      .fromTo('transform', '', 'translateX(500px)');
     const species = this.animationCtrl
       .create()
-      .addElement(this.species.nativeElement)
-      .fromTo('transform', '', 'translateY(340px)translateX(-250px)');
-    this.animationCtrl
+      .addElement(document.getElementsByName('species'))
+      .duration(100)
+      .fromTo('transform', '', 'translateX(500px)');
+    const vehicles = this.animationCtrl
       .create()
-      .duration(500)
-      .iterations(1)
-      .easing('ease-in-out')
-      .addAnimation([people, planets, vehicles, species])
-      .play();
+      .addElement(document.getElementsByName('vehicles'))
+      .duration(100)
+      .fromTo('transform', '', 'translateX(500px)');
+    const people = this.animationCtrl
+      .create()
+      .addElement(document.getElementsByName('people'))
+      .duration(100)
+      .fromTo('transform', '', 'translateX(500px)');
+
+    await planets.play();
+    await species.play();
+    await vehicles.play();
+    await people.play();
   }
-  // Tentar customizar o loading
-  async presentLoading(img) {
+  // *******************************************  \\
+
+
+  // Busca a informaçao na list e passa para que o LoadCard as carregue
+  public getCharacter() {
+    return this.loadCard(this.swService.getCharacter());
+  }
+  public getVehicle() {
+    return this.loadCard(this.swService.getVehicle());
+  }
+  public getSpecie() {
+    return this.loadCard(this.swService.getSpecie());
+  }
+  public getPlanet() {
+    return this.loadCard(this.swService.getPlanet());
+  }
+
+
+  // Set as informações necessárias
+  private async setInfo(data) {
+    this.name = data.name;
+    this.img = data.image;
+    this.resume = data.resume;
+  }
+
+  // Loading async carregndo as informações e animações
+  private async loadCard(data) {
     const loading = await this.loadingController.create({
-      message: `Gerando ${img} aleatório`,
-      duration: 2000,
+      cssClass: 'loading',
+      message: '<img src="/assets/gif/loading.gif">',
+      spinner: null,
     });
+
     await loading.present();
+    await this.rollOut();
+    console.log(data)
+    this.requests.push(data);
+    await this.setInfo(data)
+    await this.cardBounceIn();
+    await loading.dismiss();
   }
 
-  onClickImg(img) {
-    console.log(`foi clicado na imagem ${img} `);
-    this.animationIn();
-    this.presentLoading(img);
+
+  //Faz um nova requisição de acordo com o ultimo tipo selecionado
+  public nextRequest() {
+    switch (this.swService.lastGet) {
+      case 'character':
+        this.getCharacter();
+        break;
+      case 'vehicle':
+        this.getVehicle();
+        break;
+      case 'specie':
+        this.getSpecie();
+        break;
+      case 'planet':
+        this.getPlanet();
+        break;
+    }
+  }
+
+  //Verifica no array qual foi a ultima informação gerada e mostra no card
+  public previousRequest() {
+    this.requests.pop();
+    console.log(this.requests)
+    this.setInfo(this.requests[this.requests.length - 1])  
   }
 }

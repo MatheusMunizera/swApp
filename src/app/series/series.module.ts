@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SeriesPageRoutingModule } from './series-routing.module';
 
 import { SeriesPage } from './series.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SeriesPageRoutingModule
+    SeriesPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [SeriesPage]
 })
