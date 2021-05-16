@@ -15,18 +15,18 @@ export class ListPage implements OnInit {
   public currentFilter = this.swService.currentFilter
   public currentSearch = this.swService.currentSearch
   public currentItem = this.swService.currentItem
-  
+
   constructor(
      public loadingController: LoadingController,
      private swService: SwAppService
-     ) {} 
+     ) {}
 
 
   async presentLoading() {
     const loading = await this.loadingController.create({
       cssClass: 'loading',
       message: '<img src="/assets/gif/loading.gif">',
-      spinner: null,    
+      spinner: null,
     });
     await loading.present();
     await this.swService.runPop();
@@ -35,7 +35,7 @@ export class ListPage implements OnInit {
     this.swService.planet = this.swService.planetsList;
     this.swService.specie = this.swService.speciesList;
     this.currentItem = this.swService.caracter;
-    await loading.dismiss();    
+    await loading.dismiss();
   }
 
   ngOnInit() {
@@ -48,13 +48,13 @@ export class ListPage implements OnInit {
 
   public updateFilter() {
     let firstFilter = [];
-    if (this.currentFilter === 'characteres') {
+    if (this.currentFilter === 'characters') {
       firstFilter = this.swService.caracter;
-    } else if (this.currentFilter === 'vehicless') {
+    } else if (this.currentFilter === 'vehicles') {
       firstFilter = this.swService.vehicle
-    } else if (this.currentFilter === 'planetss') {
+    } else if (this.currentFilter === 'planets') {
       firstFilter = this.swService.planet
-    } else if (this.currentFilter === 'speciess'){
+    } else if (this.currentFilter === 'species'){
       firstFilter = this.swService.specie;
     }
 
@@ -68,24 +68,18 @@ export class ListPage implements OnInit {
 
 
   returnItem(item){
-    if (this.currentFilter === 'characteres') {
+    if (this.currentFilter === 'characters') {
       this.swService.selectedCaracter = item;
-      console.log(this.swService.selectedCaracter);
-    } else if (this.currentFilter === 'vehicless') {
+      //console.log(this.swService.selectedCaracter);
+    } else if (this.currentFilter === 'vehicles') {
       this.swService.selectedVehicle = item;
-      console.log(this.swService.selectedVehicle);
-    } else if (this.currentFilter === 'planetss') {
+      //console.log(this.swService.selectedVehicle);
+    } else if (this.currentFilter === 'planets') {
       this.swService.selectedPlanet = item;
-      console.log(this.swService.selectedPlanet);
-    } else if (this.currentFilter === 'speciess'){
+      //console.log(this.swService.selectedPlanet);
+    } else if (this.currentFilter === 'species'){
       this.swService.selectedSpecie = item;
-      console.log(this.swService.selectedSpecie);
-    }    
+      //console.log(this.swService.selectedSpecie);
+    }
   }
-
-
-
-
-  
-  
 }
