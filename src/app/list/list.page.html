@@ -10,22 +10,22 @@
   </ion-header>
 
   <ion-segment [(ngModel)]="currentFilter" (ionChange)="updateFilter()">
-    <ion-segment-button value="characteres" class="swBarTech" mode = md>
+    <ion-segment-button value="characters" class="swBarTech" mode = md>
       <ion-label class="FontText">Personagens</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="vehicless" class="swBarTech" mode = md>
+    <ion-segment-button value="vehicles" class="swBarTech" mode = md>
       <ion-label class="FontText">Veiculos</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="planetss" class="swBarTech" mode = md>
+    <ion-segment-button value="planets" class="swBarTech" mode = md>
       <ion-label class="FontText">Planetas</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="speciess" class="swBarTech" mode = md>
+    <ion-segment-button value="species" class="swBarTech" mode = md>
       <ion-label class="FontText">Espécies</ion-label>
-    </ion-segment-button>    
-  </ion-segment> 
+    </ion-segment-button>
+  </ion-segment>
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
   <ion-list *ngIf="currentItem.length > 0;">
-    <ion-item *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info']">
+    <ion-item *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info', currentFilter + '/' + current.id]">
       <ion-label>{{current.name}}</ion-label>    
       <ion-button (click)="returnItem(current)" slot="end" color = opaco>
         <ion-icon color = primary slot="icon-only" name="alert-circle-outline"></ion-icon>
@@ -33,4 +33,3 @@
     </ion-item>
   </ion-list>
 </ion-content>
-

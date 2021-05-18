@@ -8,6 +8,7 @@ import { ListPageRoutingModule } from './list-routing.module';
 
 import { ListPage } from './list.page';
 import { AppComponent } from '../app.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AppComponent } from '../app.component';
     FormsModule,
     IonicModule,
     ListPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ListPage],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AnimationController, LoadingController } from '@ionic/angular';
+import { SwAppService } from '../services/sw-app.service';
 @Component({
   selector: 'app-random',
   templateUrl: './random.page.html',
@@ -8,26 +8,23 @@ import { AnimationController, LoadingController } from '@ionic/angular';
 })
 
 export class RandomPage implements OnInit {
-  private readonly apiURL: string;
   name: string;
   img: string;
   resume: string;
   showCard: boolean = false;
-  private lastGet: string;
   public requests: string[] = [];
-
-  private completeUrl: string;
 
   constructor(
     public animationCtrl: AnimationController,
     public loadingController: LoadingController,
-    private http: HttpClient
+    private swService: SwAppService
   ) {
-    // URL DA API
-    this.apiURL = 'https://matheusmunizera.github.io/starwars-api/api';
+  
   }
 
-  public ngOnInit() {}
+  public ngOnInit() {
+     this.swService.runPop();
+  }
 
   // ***************** ANIMAÇOES *************  \\
   private async cardBounceIn() {
@@ -74,49 +71,30 @@ export class RandomPage implements OnInit {
   // *******************************************  \\
 
 
-  // Completa o URL DA API de acordo com a informação desejada
+  // Busca a informaçao na list e passa para que o LoadCard as carregue
   public getCharacter() {
-    this.lastGet = 'character';
-    let randomNumber = Math.floor(Math.random() * 88 + 1);
-    this.completeUrl = this.apiURL + '/characters/' + randomNumber + '.json';
-
-    return this.loadCard(this.completeUrl);
+    return this.loadCard(this.swService.getCharacter());
   }
   public getVehicle() {
-    this.lastGet = 'vehicle';
-    let randomNumber = Math.floor(Math.random() * 40 + 1);
-    this.completeUrl = this.apiURL + '/vehicles/' + randomNumber + '.json';
-    return this.loadCard(this.completeUrl);
+    return this.loadCard(this.swService.getVehicle());
   }
   public getSpecie() {
-    this.lastGet = 'specie';
-    let randomNumber = Math.floor(Math.random() * 37 + 1);
-    this.completeUrl = this.apiURL + '/species/' + randomNumber + '.json';
-    return this.loadCard(this.completeUrl);
+    return this.loadCard(this.swService.getSpecie());
   }
   public getPlanet() {
-    this.lastGet = 'planet';
-    let randomNumber = Math.floor(Math.random() * 37 + 1);
-    this.completeUrl = this.apiURL + '/planets/' + randomNumber + '.json';
-    return this.loadCard(this.completeUrl);
+    return this.loadCard(this.swService.getPlanet());
   }
 
-  // Recebe a URL Completa e faz a requisição
-  private getCall(url: string) {
-    return new Promise((res) => {
-      this.http.get(url).subscribe((data) => res(this.setInfo(data)));
-    });
-  }
 
   // Set as informações necessárias
-  private async setInfo(res) {
-    this.name = res.name;
-    this.img = res.image;
-    this.resume = res.resume;
+  private async setInfo(data) {
+    this.name = data.name;
+    this.img = data.image;
+    this.resume = data.resume;
   }
 
   // Loading async carregndo as informações e animações
-  private async loadCard(url) {
+  private async loadCard(data) {
     const loading = await this.loadingController.create({
       cssClass: 'loading',
       message: '<img src="/assets/gif/loading.gif">',
@@ -125,8 +103,9 @@ export class RandomPage implements OnInit {
 
     await loading.present();
     await this.rollOut();
-    this.requests.push(url);
-    await this.getCall(url);
+    console.log(data)
+    this.requests.push(data);
+    await this.setInfo(data)
     await this.cardBounceIn();
     await loading.dismiss();
   }
@@ -134,7 +113,7 @@ export class RandomPage implements OnInit {
 
   //Faz um nova requisição de acordo com o ultimo tipo selecionado
   public nextRequest() {
-    switch (this.lastGet) {
+    switch (this.swService.lastGet) {
       case 'character':
         this.getCharacter();
         break;
@@ -153,7 +132,7 @@ export class RandomPage implements OnInit {
   //Verifica no array qual foi a ultima informação gerada e mostra no card
   public previousRequest() {
     this.requests.pop();
-    let url = this.requests[this.requests.length - 1];
-    this.getCall(url);
+    console.log(this.requests)
+    this.setInfo(this.requests[this.requests.length - 1])  
   }
 }
