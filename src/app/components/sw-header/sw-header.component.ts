@@ -10,8 +10,8 @@ export class SwHeaderComponent implements OnInit {
   @Input() namePage;
   
   constructor() { }
-
-
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
 }

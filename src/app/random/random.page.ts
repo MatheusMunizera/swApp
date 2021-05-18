@@ -11,6 +11,8 @@ export class RandomPage implements OnInit {
   name: string;
   img: string;
   resume: string;
+  id: number;
+  lastGet: string;
   showCard: boolean = false;
   public requests: string[] = [];
 
@@ -54,12 +56,12 @@ export class RandomPage implements OnInit {
       .fromTo('transform', '', 'translateX(500px)');
     const vehicles = this.animationCtrl
       .create()
-      .addElement(document.getElementsByName('vehicles'))
+      .addElement(document.getElementsByName('vehicles')) 
       .duration(100)
       .fromTo('transform', '', 'translateX(500px)');
     const people = this.animationCtrl
       .create()
-      .addElement(document.getElementsByName('people'))
+      .addElement(document.getElementsByName('characters'))
       .duration(100)
       .fromTo('transform', '', 'translateX(500px)');
 
@@ -73,24 +75,30 @@ export class RandomPage implements OnInit {
 
   // Busca a informaçao na list e passa para que o LoadCard as carregue
   public getCharacter() {
+    this.lastGet = "characters"
     return this.loadCard(this.swService.getCharacter());
   }
   public getVehicle() {
+    this.lastGet = "vehicles"
     return this.loadCard(this.swService.getVehicle());
   }
   public getSpecie() {
+    this.lastGet = "species"
     return this.loadCard(this.swService.getSpecie());
   }
   public getPlanet() {
+    this.lastGet = "planets"
     return this.loadCard(this.swService.getPlanet());
   }
 
 
   // Set as informações necessárias
   private async setInfo(data) {
+    this.id = data.id
     this.name = data.name;
     this.img = data.image;
     this.resume = data.resume;
+    
   }
 
   // Loading async carregndo as informações e animações
@@ -113,22 +121,26 @@ export class RandomPage implements OnInit {
 
   //Faz um nova requisição de acordo com o ultimo tipo selecionado
   public nextRequest() {
-    switch (this.swService.lastGet) {
-      case 'character':
+    switch (this.lastGet) {
+      case 'characters':
         this.getCharacter();
         break;
-      case 'vehicle':
+      case 'vehicles':
         this.getVehicle();
         break;
-      case 'specie':
+      case 'species':
         this.getSpecie();
         break;
-      case 'planet':
+      case 'planets':
         this.getPlanet();
         break;
     }
   }
-
+  
+   
+  public setLastGet(){
+    
+  }
   //Verifica no array qual foi a ultima informação gerada e mostra no card
   public previousRequest() {
     this.requests.pop();

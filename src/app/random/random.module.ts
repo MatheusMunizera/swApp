@@ -17,6 +17,7 @@ import { ComponentsModule } from '../components/components.module';
     RandomPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [RandomPage]
+  declarations: [RandomPage],
+  
 })
 export class RandomPageModule {}

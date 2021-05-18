@@ -19,7 +19,8 @@ export class AppComponent implements OnInit{
   public labels = [
     { title: 'O Projeto', url: 'https://github.com/MatheusMunizera/swApp', icon: "logo-github"},
     { title: 'API', url: 'https://github.com/MatheusMunizera/starwars-api', icon: "logo-github"},
-    { title: 'Youtube', url: 'https://youtu.be/bw7zTNt-OF8', icon: "logo-youtube"},
+    { title: 'Youtube Entrega 1', url: 'https://youtu.be/bw7zTNt-OF8', icon: "logo-youtube"},
+    //{ title: 'Youtube Entrega 2', url: 'https://youtu.be/bw7zTNt-OF8', icon: "logo-youtube"},
     { title: 'Discord', url: 'https://discord.gg/tghrPuD', icon: "logo-discord"},
   ];
   constructor(private storage: Storage ) {}

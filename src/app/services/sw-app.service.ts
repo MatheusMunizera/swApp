@@ -309,31 +309,31 @@ export class SwAppService {
 
 
 // ** RANDOM ** \\
-public lastGet: string;
+
 
 
  // Gera um numero aleatório e procura na lista
  public getCharacter() {
-  this.lastGet = 'character';
+  
   let randomNumber = Math.floor(Math.random() * 88);
   console.log(randomNumber)
   return this.characterList[randomNumber];
 }
 public getVehicle() {
-  this.lastGet = 'vehicle';
+ 
   let randomNumber = Math.floor(Math.random() * 40);
   console.log(randomNumber)
   return this.vehiclesList[randomNumber]
 }
 public getSpecie() {
-  this.lastGet = 'specie';
+ 
   let randomNumber = Math.floor(Math.random() * 37);
   console.log(randomNumber)
   return this.speciesList[randomNumber]
 }
 
 public getPlanet() {
-  this.lastGet = 'planet';
+
   let randomNumber = Math.floor(Math.random() * 37);
   console.log(randomNumber)
   return this.planetsList[randomNumber]
@@ -351,16 +351,6 @@ public  rank = {
   score: 0
 }
 
-private eraseRank(){
-  this.rank.id = 0;
-  this.rank.score = 0;
-  this.rank.username = "";
-}
-
-private eraseRanks(){
-  for(let i= 0; i <this.ranks.length; i++)
-    this.ranks.splice(i)
-}
 
 public add(score: number) {      
   this.ranks.push({

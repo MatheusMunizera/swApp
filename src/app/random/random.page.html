@@ -12,7 +12,7 @@
       <ion-row>
         <ion-col class="ion-padding">
           <!-- Personagem aleatório -->
-          <ion-fab-button name="people" (click)="getCharacter()" color="opaco">
+          <ion-fab-button name="characters" (click)="getCharacter()" color="opaco">
             <ion-img src="/assets/image/people.svg"></ion-img>
           </ion-fab-button>
         </ion-col>
@@ -44,9 +44,9 @@
     <div class="card-position">
       <!-- ********** Mostra as informações geradas ******** -->
       <div id='card'>
-        <ion-img src="{{img}}"></ion-img>
+        <ion-img src="{{img}}" (click)="setLastGet()"></ion-img>
         <!-- Leva a pagina de informação do personagem -->
-        <ion-icon name="alert-circle-outline" color="primary" [routerLink]="['/info']"></ion-icon>
+        <ion-icon  name="alert-circle-outline" color="primary" [routerLink]="['/info', lastGet, id]"></ion-icon>
       </div>
     </div>
     <ion-col class="info-content">

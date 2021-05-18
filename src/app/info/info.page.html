@@ -1,9 +1,17 @@
 <ion-content>
 
   <!-- Cabeçalho  -->
-  <app-sw-header [namePage] = "'Info'"></app-sw-header>
   
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start" >
+        <ion-back-button color = "primary"defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title class = sw-laser>{{currentItem.name}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
   
+ 
     <!-- Avatar selecionado  -->
     <ion-card> 
     <img
