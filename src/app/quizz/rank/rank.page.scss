@@ -1,0 +1,26 @@
+
+ion-list{
+    border-radius: 5px !important; 
+    margin-top: 5% !important;       
+    margin-left: 5% !important;
+    margin-right: 5% !important;   
+    margin-bottom: 5% !important;
+    padding-top: 5% !important;        
+    padding-left: 3% !important;
+    padding-right: 5% !important;
+    margin-bottom: 1px;
+    border: 1px solid #ffc500;
+    background-color: hsla(0, 0%, 0%, 0);
+
+    ion-item{
+        color: rgb(255, 255, 255);
+        margin-bottom: 3% !important;
+        border: solid 2px #303030;
+        ion-label{
+            font-size: large;
+            text-align: left;
+        }
+    }
+    
+
+}

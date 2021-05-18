@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Storage } from '@ionic/storage-angular'
+import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 export interface Character{
   id: number,
@@ -83,6 +85,13 @@ export interface Specie{
   created: string,
   edited: string
 }
+
+interface Rank {
+  id: number;
+  username: string;
+  score: number;
+
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -108,10 +117,10 @@ export class SwAppService {
   private readonly API_URL_VEHICLES = "https://matheusmunizera.github.io/starwars-api/api/allVehicles.json";
   private readonly API_URL_PLANETS = "https://matheusmunizera.github.io/starwars-api/api/allPlanets.json";
   private readonly API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
-  constructor(public http: HttpClient) {} 
+  constructor(public http: HttpClient, private storage: Storage) {
 
-  
-  
+   this.loadRanks();
+  } 
 
 
   async runPop(){        
@@ -323,7 +332,51 @@ public getPlanet() {
 }
 
 
+// Quizz \\
+public ranks: Rank[] = [];
+public newUser: string;
+public newScore: number;
 
+public  rank = {
+  id: 0,
+  username: "",
+  score: 0
+}
+
+private eraseRank(){
+  this.rank.id = 0;
+  this.rank.score = 0;
+  this.rank.username = "";
+}
+
+private eraseRanks(){
+  for(let i= 0; i <this.ranks.length; i++)
+    this.ranks.splice(i)
+}
+
+public add(score: number) {      
+  this.ranks.push({
+    id: 1 + this.ranks.length,
+    username: this.newUser,
+    score: score
+  });  
+  console.log(this.ranks)
+  this.storage.set('ranks', this.ranks);
+  this.newScore = 0;
+}
+
+
+private async loadRanks() {
+  const loadedRanks = await this.storage.get('ranks') as Rank[];
+  if (loadedRanks) {
+    this.ranks.push(...loadedRanks);
+  }
+ 
+}
+
+public async getAll(){
+  return await this.storage.get('ranks')
+}
 
 }
 

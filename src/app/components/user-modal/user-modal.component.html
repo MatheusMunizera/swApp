@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar color = opaco>
+      <ion-buttons slot="start">
+      </ion-buttons>
+      <ion-title class = sw-laser>Usuario </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-text color="primary">
+    <h4>Você é um verdadeiro fã de Star Wars?</h4>
+    <h5>Digite seu nome, responda o quiz e descubra se você sabe tudo sobre Star Wars.</h5>
+  </ion-text>
+    
+    <ion-item class = "next">
+      <ion-label position = "floating"> Digite seu nome</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-button (click)="goQuizz()" expand="block" [disabled]="username == '' " >
+      Iniciar Quizz
+     </ion-button>
+
+</ion-content>

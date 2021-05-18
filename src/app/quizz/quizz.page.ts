@@ -1,10 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
+import { UserModalComponent } from '../components/user-modal/user-modal.component';
+import { SwAppService } from 'src/app/services/sw-app.service';
+
+interface Rank {
+  id: number;
+  username: string;
+  score: number;
+
+}
+
+
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.page.html',
   styleUrls: ['./quizz.page.scss'],
 })
+
 export class QuizzPage implements OnInit {
   public results = [
     {
@@ -101,11 +113,22 @@ export class QuizzPage implements OnInit {
 
   public currentQuestion = 0;
   public selectedAnswer = null;
+  public maxQuestionsNumbers = 8;
 
-  private score = 0;
+  constructor(private toastCtrl: ToastController, 
+    private alertCtrl: AlertController, 
+    private modalController: ModalController,
+    public swService: SwAppService){ 
+      this.score = 0;
+    }
 
-  constructor(private toastCtrl: ToastController, private alertCtrl: AlertController) { }
 
+  public async openUserModal(){
+    const modal = await this.modalController.create({
+      component: UserModalComponent,
+    });
+    modal.present();
+  }
   public nextQuestion() {
     this.currentQuestion++;
     this.calculateResult();
@@ -113,9 +136,13 @@ export class QuizzPage implements OnInit {
 
     this.showToast();
 
-     
-    
+     if (this.currentQuestion >= this.maxQuestionsNumbers){
+     this.swService.add(this.score);
+     this.score = 0;
+     }
   }
+
+
 
   public async confirmReset() {
     const alert = await this.alertCtrl.create({
@@ -133,13 +160,29 @@ export class QuizzPage implements OnInit {
   }
 
   private reset() {
+    if(this.status == false){
+      //this.swService.add()
+    }
+    //this.swService.rank.username = ''
+    this.status = false;
     this.currentQuestion = 0;
-    this.score = 0;
+ //   this.swService.rank.score = 0;
+    this.openUserModal()
   }
 
+  public status = false
+  public username = ''
+  public id = 0
+  private score: number;
+  
+  public getNewScore(){
+    return this.swService.newScore
+  }
+    
+  
   private calculateResult() {
     if (this.selectedAnswer==0){
-      this.score++
+      this.score++;
     }
     if (this.score <=2){
       this.teste=0
@@ -160,6 +203,12 @@ public teste2=0
     })
     toast.present()
   }
-ngOnInit(){}
+
+
+
+  
+ngOnInit(){
+  this.openUserModal()
+}
 
 }
