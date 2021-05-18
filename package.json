@@ -23,6 +23,7 @@
     "@ionic-native/streaming-media": "^5.32.1",
     "@ionic-native/youtube-video-player": "^5.32.1",
     "@ionic/angular": "^5.5.2",
+    "@ionic/storage-angular": "^3.0.6",
     "cordova-plugin-streaming-media": "^2.3.0",
     "default-passive-events": "^2.0.0",
     "rxjs": "~6.6.0",

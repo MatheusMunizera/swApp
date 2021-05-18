@@ -2,7 +2,7 @@
 
   <app-sw-header [namePage] = "'Quizz'"></app-sw-header>
   
-  <div class = next *ngIf="currentQuestion <questions.length; else resultCard"> 
+  <div class = next *ngIf="currentQuestion < maxQuestionsNumbers; else resultCard"> 
     <img src="https://media0.giphy.com/media/5wikad3qSOqAg/giphy.gif">
   <ion-card >
     <ion-card-header>
@@ -30,13 +30,15 @@
     <ion-card>
       <ion-img [src]="results[teste].img" [alt]="results[teste].name"></ion-img>
       <ion-card-header>
-        <ion-card-title>Você é um {{results[teste].name}}</ion-card-title>
+        <ion-card-title >Você é um {{results[teste].name}}</ion-card-title>
       </ion-card-header>
       <ion-card-content class= resultText>
         <p>{{results[teste].description}}</p>
-
         <ion-button (click)="confirmReset()" expand="block">
           Fazer de novo
+        </ion-button>
+        <ion-button  [routerLink]="['/quizz/rank']"   expand="block">
+          Ver Rank
         </ion-button>
       </ion-card-content>
     </ion-card>
