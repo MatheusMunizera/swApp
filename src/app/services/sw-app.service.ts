@@ -64,7 +64,7 @@ export interface Planet{
   created: string,
   edited: string,
   image: string,
-  resume: string  
+  resume: string
 }
 
 export interface Specie{
@@ -117,60 +117,68 @@ export class SwAppService {
   private readonly API_URL_VEHICLES = "https://matheusmunizera.github.io/starwars-api/api/allVehicles.json";
   private readonly API_URL_PLANETS = "https://matheusmunizera.github.io/starwars-api/api/allPlanets.json";
   private readonly API_URL_SPECIES = "https://matheusmunizera.github.io/starwars-api/api/allSpecies.json";
+
   constructor(public http: HttpClient, private storage: Storage) {
 
    this.loadRanks();
   } 
 
 
-  async runPop(){        
+  async runPop(){
     await this.createCharacterList();
     await this.createVehicleList();
     await this.createPlanetList();
-    await this.createSpeciesList();    
+    await this.createSpeciesList();
   }
 
   async createCharacterList(){
-    await this.populateCaracter().then(data => {     
-      var cha = JSON.parse(JSON.stringify(data));          
+    await this.populateCaracter().then(data => {
+      var cha = JSON.parse(JSON.stringify(data));
       for(let i = 0; i < cha.length; i++){
-        this.populateCharacterList(cha[i]);  
-      }          
+        this.populateCharacterList(cha[i]);
+      }
     });
   }
-  
+
+  public async loadInfo (apiUrl){
+    return new Promise(resolve => {
+      this.http.get(apiUrl).subscribe(data => {
+        resolve(JSON.parse(JSON.stringify(data)));
+      });
+    });
+  }
 
   async createVehicleList(){
-    await this.populateVehicle().then(data => {     
-      var cha = JSON.parse(JSON.stringify(data));          
+    await this.populateVehicle().then(data => {
+      var cha = JSON.parse(JSON.stringify(data));
       for(let i = 0; i < cha.length; i++){
-        this.populateVehicleList(cha[i]);  
-      }   
-      }          
+        this.populateVehicleList(cha[i]);
+      }
+      }
     );
   }
 
   async createPlanetList(){
-    await this.populatePlanets().then(data => {     
-      var cha = JSON.parse(JSON.stringify(data));          
+    await this.populatePlanets().then(data => {
+      var cha = JSON.parse(JSON.stringify(data));
       for(let i = 0; i < cha.length; i++){
-        this.populatePlanetsList(cha[i]);  
-      }   
-      }          
+        this.populatePlanetsList(cha[i]);
+      }
+      }
     );
   }
 
   async createSpeciesList(){
-    await this.populateSpecies().then(data => {     
-      var cha = JSON.parse(JSON.stringify(data));          
+    await this.populateSpecies().then(data => {
+      var cha = JSON.parse(JSON.stringify(data));
       for(let i = 0; i < cha.length; i++){
-        this.populateSpeciesList(cha[i]);  
-      }   
-      }          
+        this.populateSpeciesList(cha[i]);
+      }
+      }
     );
   }
 
-  populateCharacterList(json){       
+  populateCharacterList(json){
     this.characterList.push({
       id: json.id,
       name: json.name,
@@ -197,7 +205,7 @@ export class SwAppService {
     });
   }
 
-  populateVehicleList(json){        
+  populateVehicleList(json){
     this.vehiclesList.push({
       id: json.id,
       name: json.name,
@@ -219,7 +227,7 @@ export class SwAppService {
     });
   }
 
-  populatePlanetsList(json){        
+  populatePlanetsList(json){
     this.planetsList.push({
       id: json.id,
       name: json.name,
@@ -240,7 +248,7 @@ export class SwAppService {
     });
   }
 
-  populateSpeciesList(json){        
+  populateSpeciesList(json){
     this.speciesList.push({
       id: json.id,
       name: json.name,
@@ -264,47 +272,47 @@ export class SwAppService {
   async populateCaracter(){
     return new Promise(resolve => {
       this.http.get(this.API_URL_CHARACTER)// + num + ".json")
-               .subscribe(data => {                 
-                resolve(JSON.parse(JSON.stringify(data)));                 
+               .subscribe(data => {
+                resolve(JSON.parse(JSON.stringify(data)));
                });
-    });        
+    });
   }
 
   async populateVehicle(){
     return new Promise(resolve => {
       this.http.get(this.API_URL_VEHICLES)// + num + ".json")
-               .subscribe(data => {                 
-                resolve(JSON.parse(JSON.stringify(data)));                 
+               .subscribe(data => {
+                resolve(JSON.parse(JSON.stringify(data)));
                });
-    });        
+    });
   }
 
   async populatePlanets(){
     return new Promise(resolve => {
       this.http.get(this.API_URL_PLANETS)// + num + ".json")
-               .subscribe(data => {                 
-                resolve(JSON.parse(JSON.stringify(data)));                 
+               .subscribe(data => {
+                resolve(JSON.parse(JSON.stringify(data)));
                });
-    });        
+    });
   }
 
   async populateSpecies(){
     return new Promise(resolve => {
       this.http.get(this.API_URL_SPECIES)// + num + ".json")
-               .subscribe(data => {                 
-                resolve(JSON.parse(JSON.stringify(data)));                 
+               .subscribe(data => {
+                resolve(JSON.parse(JSON.stringify(data)));
                });
-    });        
+    });
   }
 
-  
 
-  
+
+
 // ** RANDOM ** \\
 public lastGet: string;
 
 
- // Gera um numero aleatório e procura na lista 
+ // Gera um numero aleatório e procura na lista
  public getCharacter() {
   this.lastGet = 'character';
   let randomNumber = Math.floor(Math.random() * 88);
@@ -383,9 +391,9 @@ public async getAll(){
 
 
 
-  
 
- 
+
+
 
 
 

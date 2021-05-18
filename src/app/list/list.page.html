@@ -21,8 +21,8 @@
     </ion-segment-button>
     <ion-segment-button value="species" class="swBarTech" mode = md>
       <ion-label class="FontText">Espécies</ion-label>
-    </ion-segment-button>    
-  </ion-segment> 
+    </ion-segment-button>
+  </ion-segment>
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
   <ion-list *ngIf="currentItem.length > 0;">
     <ion-item *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info', currentFilter + '/' + current.id]">

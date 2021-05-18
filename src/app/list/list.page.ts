@@ -15,18 +15,18 @@ export class ListPage implements OnInit {
   public currentFilter = this.swService.currentFilter
   public currentSearch = this.swService.currentSearch
   public currentItem = this.swService.currentItem
-  
+
   constructor(
      public loadingController: LoadingController,
      private swService: SwAppService
-     ) {} 
+     ) {}
 
 
   async presentLoading() {
     const loading = await this.loadingController.create({
       cssClass: 'loading',
       message: '<img src="/assets/gif/loading.gif">',
-      spinner: null,    
+      spinner: null,
     });
     await loading.present();
     await this.swService.runPop();
@@ -35,7 +35,7 @@ export class ListPage implements OnInit {
     this.swService.planet = this.swService.planetsList;
     this.swService.specie = this.swService.speciesList;
     this.currentItem = this.swService.caracter;
-    await loading.dismiss();    
+    await loading.dismiss();
   }
 
   ngOnInit() {
@@ -79,13 +79,7 @@ export class ListPage implements OnInit {
       console.log(this.swService.selectedPlanet);
     } else if (this.currentFilter === 'species'){
       this.swService.selectedSpecie = item;
-      console.log(this.swService.selectedSpecie);
-    }    
+      //console.log(this.swService.selectedSpecie);
+    }
   }
-
-
-
-
-  
-  
 }
