@@ -123,12 +123,17 @@ export class SwAppService {
    this.loadRanks();
   } 
 
-
+  public status = false
   async runPop(){
+    if(this.status == false){
+      console.log("Populando")
     await this.createCharacterList();
     await this.createVehicleList();
     await this.createPlanetList();
     await this.createSpeciesList();
+    }
+    console.log("já esta populado")
+    this.status = true;
   }
 
   async createCharacterList(){

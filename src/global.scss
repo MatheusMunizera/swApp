@@ -25,16 +25,26 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-// Apenas para mudar o fundo do loading
 .loading{
     --background: #00000000;
 }
+
+ion-content {
+  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+  overflow: visible;
+  
+}   
 
 @font-face {
     font-family: SoloistTitle;
     src: url("/assets/fonts/soloist/soloisttitle1.ttf");
     position: absolute
   }
+
+@font-face{
+  font-family: Soloist3d;
+  src: url("/assets/fonts/soloist/soloist3d.ttf")
+}
   
   @font-face {
     font-family: SoloistLaser;
@@ -80,10 +90,6 @@
     padding-right: 20%
   }
 
-  ion-content {
-    --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-    overflow: visible;
-    
-  }
+
 
  
