@@ -71,7 +71,7 @@ ion-content {
   
   .subtitle {
     padding: 0px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.4px;
     text-transform: uppercase;
@@ -79,15 +79,11 @@ ion-content {
   }
   
   .text {
-    font-size: 16px;
+    font-size: clamp(0.9em, 0.9em + 0.9vw, 2em);
     font-weight: 600;
     color: var(--ion-color-step-600, #ffffff);
     overflow: hidden;
-    -webkit-line-clamp: 6;
-    -webkit-box-orient: vertical;
     display: -webkit-box;
-    padding-top: 10px;
-    padding-right: 20%
   }
 
 

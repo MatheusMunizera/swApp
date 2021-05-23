@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RankPageRoutingModule } from './rank-routing.module';
 
 import { RankPage } from './rank.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RankPageRoutingModule
+    RankPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [RankPage]
 })

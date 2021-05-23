@@ -1,158 +1,47 @@
-// Estilo de componentes Ionic
-ion-content {
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+
+.info-content {
+  position: absolute;
+  top: 55%;
+  left: 5%;
+} 
+
+.sw-title{
+  -webkit-text-stroke-color: #ffc500;
+  font-family: Soloist3d !important;
+  padding-right: 10%;
 }
 
-ion-toolbar{
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
+.text{
+  padding-right: 10%;
+  padding-bottom: 5%;
 }
 
-ion-item{
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-  --border-color: #494747;
-}
-ion-toolbar{
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-  img{
-    height: 2.3em;
+ion-segment{
+  padding-right: 10%;
+ion-segment-button {
+  font-family: Soloist3d !important;
+  -webkit-text-stroke-width: 0.5px;
+  font-size: clamp(0.1em, 0.8em + .7vw, 1.4em);
+  border-left: solid;
+  --padding-start: 20px;
+  --color-checked: #ffc500;
+  --color: white;
   }
 }
-ion-segment-button{
-  font-family: Theme !important;
-  box-shadow: -2px 5px 25px #ffc500;
-  border-color: #ffc500;
-  border-width: 1em;
-  border-style:none;
-  background: transparent !important;
-  --indicator-color: #ffc500 !important;
-  ion-ripple-effect {
-    position: relative;
-     overflow:auto;
-     color: #ffc4004b;
-     border-radius: 10%;
-  }
-}
-
-ion-card {
-  box-shadow: -1px 5px -1px #ffc500;
-  border-color: #ffc500;
-  border-width: -1em;
-  border-style: ridge;
-  border-left: none !important;
-  border-right: none !important;
-  overflow: visible;
-  position: relative;
-  background-color: #000000;
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-
-
-  ion-card-title {
-    --color: #ffffff
-  }
-
-  ion-card-content {
-    strong {
-      color: aliceblue;
-    }
-
-    color: #ffffff
-  }
-
-// Classes criadas para estilizar elementos específicos em compnoentes
-
-}
-.homeB{
+.card-position {
   position: absolute;
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -90%);
+  ion-img {
+    max-height: 100%;
+    max-width: 100%;
+    height: calc(20em + 3vw);
+    width: calc(15em + 2vw + 30px) ;
+    object-fit: fill;
+    border: solid 2px #ffc500;
+    box-shadow: 2px -2px 20px yellow;
+  }
 }
-
-
-
-.swTheme {
-  font-family: Theme !important;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  font-size:large;
-}
-
-.swTitle {
-  font-family: Title !important;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  font-size: xx-large;
-  margin-left: 3%;
-}
-
-.swBarTech {
-  font-family: LemonMilk !important;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: #000000;
-  font-size: small;
   
-}
-
-.swSub{
-  margin-left: 2%;
-  font-family: LemonMilk !important;;
-  color: #6a6868;
-}
-
-.swText{
-  font-family: LemonMilk !important;
-  color: #ffffff;
-  -webkit-text-stroke-width: 1px;
-
-}
-
-.infoTitle{
-  font-family: LemonMilk !important;
-  color: #ffc500;
-}
-
-.infoData{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #e4dedee7;
-}
-.gif{
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-  --border-color: #494747;
-}
-
-img {
-  object-fit: resize;
-}
-
-// Fontes utilizadas no projeto
-
-
-@font-face {
-  font-family: LemonMilk;
-  src: url("/assets/fonts/lemon_milk/LEMONMILK-RegularItalic.otf");
-  position: absolute  
-} 
-@font-face {
-  font-family: Theme;
-  src: url("/assets/fonts/soloist/soloisttitle1.ttf");
-  position: absolute
-}
-
-@font-face {
-  font-family: Title;
-  src: url("/assets/fonts/soloist/soloistlaser1.ttf");
-  position: absolute
-}
-
-.FontTitle{
-  font-family: LemonMilk !important;
-  font-size: xx-large;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}

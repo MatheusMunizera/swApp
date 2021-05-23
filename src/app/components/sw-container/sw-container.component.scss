@@ -1,0 +1,45 @@
+
+ion-card {
+  border-color: #ffc500;
+  border-style: solid;
+  overflow: visible;
+  position: relative;
+  background-color: transparent;
+  border-left: none;
+  border-right: none;
+  margin-left: 0px;
+  margin-top: -1px;
+  margin-right: 10%;
+
+  ion-card-content {
+    display: contents;
+    line-height: 1;
+  }
+}
+
+ion-grid {
+  margin-top: -10px;
+  padding: 0px;
+  ion-row {
+
+    ion-title {
+      font-family: Soloist3d !important;
+      -webkit-text-stroke-width: 0.5px;
+      font-size: clamp(0.1em, 0.8em + .7vw, 1.4em);
+      -webkit-text-stroke-color: #ffffff;
+      -webkit-text-fill-color: transparent;
+      padding-left: 5px;
+
+    }
+
+    ion-label {
+      font-size: clamp(1em, 0.8em + 1.2vw, 2em);
+      text-transform: capitalize;
+      font-weight: 600;
+      color: var(--ion-color-step-600, #ffffff);
+      padding-left: 5px;
+    }
+
+
+  }
+}

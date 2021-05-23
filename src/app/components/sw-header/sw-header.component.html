@@ -1,12 +1,21 @@
-<ion-header  mode = md>
-  <ion-toolbar color = opaco>
-    <ion-buttons slot="start">
-      <ion-menu-button color = primary></ion-menu-button>
-    </ion-buttons>
-    <ion-title class = sw-laser>{{namePage}} </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ng-container *ngIf="info == false">
+  <ion-header mode=md>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color=primary></ion-menu-button>
+      </ion-buttons>
+      <ion-title class=sw-laser>{{namePage}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ng-container>
 
-
-   
-  
+ <ng-container *ngIf="info == true">
+  <ion-header mode=md>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="primary" defaultHref="home"></ion-back-button>
+      </ion-buttons>
+      <ion-title class=sw-laser>{{namePage}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ng-container>

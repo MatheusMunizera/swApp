@@ -1,7 +1,6 @@
-<ion-content >
+<app-sw-header [namePage] = "'Quizz'" [info] = "false"></app-sw-header>
 
-  <app-sw-header [namePage] = "'Quizz'"></app-sw-header>
-  
+<ion-content >
   <div class = next *ngIf="currentQuestion < maxQuestionsNumbers; else resultCard"> 
     <img src="https://media0.giphy.com/media/5wikad3qSOqAg/giphy.gif">
   <ion-card >

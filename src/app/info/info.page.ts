@@ -9,7 +9,7 @@ import { SwAppService } from '../services/sw-app.service';
 })
 export class InfoPage implements OnInit {
   readonly apiUrl = 'https://matheusmunizera.github.io/starwars-api/api/';
-  segmentCard = '';
+  segmentCard = 'Tech';
 
   constructor(private route: ActivatedRoute, private swService: SwAppService) {
     const id = route.snapshot.paramMap.get('id');
@@ -21,11 +21,13 @@ export class InfoPage implements OnInit {
   }
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   public typeItem
   public currentItem;
-
+  
   private loadInfo(type: string, id) {
     this.typeItem = type
     switch (type) {

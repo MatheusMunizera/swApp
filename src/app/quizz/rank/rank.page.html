@@ -1,13 +1,5 @@
+<app-sw-header [namePage] = "'Rank'" [info] = "true"></app-sw-header>
 <ion-content>
-  <ion-header>
-    <ion-toolbar color = opaco>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title class = sw-laser>Rank </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-list>
     <ion-item *ngFor="let rank of ranks" color = "opaco" lines = "none"  >
       <ion-label>

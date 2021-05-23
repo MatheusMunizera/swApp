@@ -1,0 +1,427 @@
+<!-- Setor de Personagem -->
+<ng-container *ngIf="typeItem === 'characters'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Altura:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.height}}m </ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Massa:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.mass}}Kg</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Gênero:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.gender}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Planeta Natal:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.homeworld}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Planeta de origem:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.bornlocation}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Morte/Destruição:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.died}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>local da Morte:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label> {{currentItem.diedlocation}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Espécie:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.species}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Mestre:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.masters}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Afiliações:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.affiliations}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Aprendizes:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label> {{currentItem.apprentices}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngIf="typeItem === 'vehicles'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Modelo:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.model}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Capacidade de carga:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.cargo_capacity}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Comprimento:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.lenght}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Velocidade Máxima:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.max_atmosphering_speed}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+      </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Criador:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.manufacturer}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Classe:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.vehicle_class}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Passageiros:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.passengers}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Data de criação:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.created}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Grupo:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.crew}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Filmes:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.films}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Custo em créditos:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.cost_in_credits}}</ion-label>
+          </ion-row>
+
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+
+<ng-container *ngIf="typeItem === 'planets'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Clima:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.climate}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Gravidade:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.gravity}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Terreno:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.terrain}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>População:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.population}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Diâmetro:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.diameter}}</ion-label>
+          </ion-row>
+
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Rotação:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.rotation_period}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Órbita:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.orbital_period}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Água na superfície:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.surface_water}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Data de criação: </ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.created}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Edição:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.edited}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Residentes:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.residents}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Filmes:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.films}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ng-container>
+
+<ng-container *ngIf="typeItem === 'species'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Classificação:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.classification}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Média de altura:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.average_height}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.skin_color}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor do cabelo: </ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.hair_color}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor do olho:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.average_lifespan}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Filmes:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.films}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Criação:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.average_height}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>{{currentItem.created}}</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.skin_color}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Edição: </ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.hair_color}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor do olho:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.edited}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Designação:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.designation}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Língua:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.language}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ng-container> 

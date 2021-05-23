@@ -1,5 +1,6 @@
+<app-sw-header [namePage] = "'DataBank'" [info] = "false"></app-sw-header>
 <ion-content>
-  <app-sw-header [namePage] = "'DataBank'"></app-sw-header>
+  
   <ion-segment  [(ngModel)]="currentFilter" (ionChange)="updateFilter()" mode = md>
     <ion-segment-button  value="characters"> 
       <ion-label >Personagens</ion-label>

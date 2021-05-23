@@ -7,11 +7,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SwHeaderComponent implements OnInit {
 
-  @Input() namePage;
-  
+  @Input() namePage
+  @Input() info
   constructor() { }
   ngOnInit() {
-    
+   
   }
+
 
 }

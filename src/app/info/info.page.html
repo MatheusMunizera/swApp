@@ -1,166 +1,30 @@
-<ion-content>
+ <!-- Cabeçalho  -->
+ <app-sw-header [namePage] = "currentItem.name" [info] = "true"></app-sw-header>
 
-  <!-- Cabeçalho  -->
-  
-  <ion-header>
-    <ion-toolbar color = opaco>
-      <ion-buttons slot="start" >
-        <ion-back-button color = "primary"defaultHref="home"></ion-back-button>
-      </ion-buttons>
-      <ion-title class = sw-laser>{{currentItem.name}} </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
- 
-    <!-- Avatar selecionado  -->
-    <ion-card> 
-    <img
-    src="{{currentItem.image}}"> <br> 
-  </ion-card>
-      
+<ion-content fullscreen>
+  <!-- Avatar selecionado  -->
+  <div class="card-position">
+    <ion-img src="{{currentItem.image}}"></ion-img>
+  </div>
+
   <!-- Breve Descrição  -->
-  <ion-card >
-      <ion-card-subtitle class = "swSub">Sabia disso?</ion-card-subtitle>
-      <ion-card-title><div class= "swTitle">{{currentItem.name}}</div></ion-card-title>
-      <ion-card-content><div class= "swText">{{currentItem.resume}}</div></ion-card-content>
-    </ion-card>
-  
-    <ion-item lines = black>
-      <ion-label><div class = "swTitle" >Saiba Mais</div></ion-label>
-    </ion-item>
-    
-  
-    <!-- Menu de informações -->
-    <ion-toolbar>  
+  <ion-col class = info-content>
+    <ion-row><ion-label class="subtitle">Sabia disso?</ion-label></ion-row>
+    <ion-row><ion-label class="sw-title">{{currentItem.name}}</ion-label></ion-row>
+    <ion-row><ion-label class="text">{{currentItem.resume}}</ion-label></ion-row>
+    <ion-row><ion-label class ="sw-title">Dados</ion-label></ion-row>
+
+     <!-- Menu de informações -->
+    <ion-row>
+      <ion-toolbar color = "opaco">  
         <ion-segment [(ngModel)] = "segmentCard" [ngSwitch] = "typeItem">
-          <ion-segment-button mode = md value="Tech"> <div class= "swBarTech" id = 'Tech'>Técnico</div></ion-segment-button>
-          <ion-segment-button mode = md value="Prod"><div class= "swBarTech" id = 'Prod'>Produção</div></ion-segment-button>
-          <ion-segment-button mode = md value="Pol"><div class= "swBarTech" id = 'Pol'>Ideología</div></ion-segment-button>    
+          <ion-segment-button mode = md value="Tech">Técnico</ion-segment-button>
+          <ion-segment-button mode = md value="Prod">Produção</ion-segment-button>
+          <ion-segment-button mode = md value="Pol">Ideología</ion-segment-button>    
         </ion-segment>
       <ion-ripple-effect ></ion-ripple-effect>
     </ion-toolbar>
-  
-    <!-- Setor de Personagem -->
-    <ion-content *ngIf = "typeItem === 'characters'">
-      <ion-card *ngIf = "segmentCard === 'Tech'">
-        <ion-card-title></ion-card-title>
-          <ion-card-content style="text-align: left;">
-                                <b class = infoTitle>Altura: </b><ion-text class = infoData>{{currentItem.height}}</ion-text><br>
-                                <b class = infoTitle>Massa: </b><ion-text class = infoData>{{currentItem.mass}}</ion-text><br>
-                                <b class = infoTitle>Gênero: </b><ion-text class = infoData>{{currentItem.gender}}</ion-text><br>
-                                <b class = infoTitle>PLaneta Natal: </b><ion-text class = infoData> {{currentItem.homeworld}}</ion-text><br>
-          </ion-card-content> 
-      </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Prod'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="text-align: left;">  
-                                <b class = infoTitle>Planeta de origem: </b> <ion-text class = infoData> {{currentItem.bornlocation}}</ion-text><br>
-                                <b class = infoTitle>Morte/Destruição: </b><ion-text class = infoData> {{currentItem.died}}</ion-text><br>
-                                <b class = infoTitle>local da Morte: </b><ion-text class = infoData> {{currentItem.diedlocation}}</ion-text><br>
-                                <b class = infoTitle>Espécie: </b><ion-text class = infoData>{{currentItem.species}}</ion-text>
-            </ion-card-content>
-        </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Pol'">
-          <ion-card-title></ion-card-title>
-          <ion-card-content style="text-align: left;">  
-            <b class = infoTitle>Mestre: </b> <ion-text class = infoData> {{currentItem.masters}}</ion-text><br>
-            <b class = infoTitle>Afiliações: </b><ion-text class = infoData> {{currentItem.affiliations}}</ion-text><br>
-            <b class = infoTitle>Aprendizes: </b><ion-text class = infoData> {{currentItem.apprentices}}</ion-text><br>
-          </ion-card-content>
-        </ion-card>
-    </ion-content>
-
-    <!-- Setor de Veículos -->
-    <ion-content *ngIf = "typeItem === 'vehicles'">
-      <ion-card *ngIf = "segmentCard === 'Tech'">
-        <ion-card-title></ion-card-title>
-          <ion-card-content style="text-align: left;">
-            <b class = infoTitle>Modelo: </b><ion-text class = infoData> {{currentItem.model}}</ion-text><br>
-            <b class = infoTitle>Capacidade de carga: </b><ion-text class = infoData>{{currentItem.cargo_capacity}}</ion-text><br>
-            <b class = infoTitle>Comprimento: </b><ion-text class = infoData> {{currentItem.lenght}}</ion-text><br>
-            <b class = infoTitle>Velocidade Máxima: </b><ion-text class = infoData> {{currentItem.max_atmosphering_speed}}</ion-text>
-          </ion-card-content>
-      </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Prod'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="text-align: left;">  
-              <b class = infoTitle>Criador: </b><ion-text class = infoData> {{currentItem.manufacturer}}</ion-text><br>
-              <b class = infoTitle>Classe: </b><ion-text class = infoData> {{currentItem.vehicle_class}}</ion-text><br>
-              <b class = infoTitle>Passageiros: </b><ion-text class = infoData> {{currentItem.passengers}}</ion-text><br>
-              <b class = infoTitle>Data de criação: </b><ion-text class = infoData>{{currentItem.created}}</ion-text>
-            </ion-card-content>
-        </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Pol'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content > style="margin-bottom: -3%; margin-top: -3%;text-align: left;"> 
-              <b class = infoTitle>Grupo: </b> <ion-text class = infoData>{{currentItem.crew}}</ion-text><br>
-              <b class = infoTitle>Filmes: </b><ion-text class = infoData>{{currentItem.films}}</ion-text><br>
-              <b class = infoTitle>Custo em créditos: </b><ion-text class = infoData>{{currentItem.cost_in_credits}}</ion-text><br>
-            </ion-card-content>
-        </ion-card>
-    </ion-content>
-  
-
-    <!-- Setor de Planetas -->
-    <ion-content *ngIf = "typeItem === 'planets'">
-      <ion-card *ngIf = "segmentCard === 'Tech'">
-          <ion-card-title></ion-card-title>
-          <ion-card-content style="text-align: left;">
-            <b class = infoTitle>Clima: </b><ion-text class = infoData>{{currentItem.climate}}</ion-text><br>
-            <b class = infoTitle>Gravidade </b><ion-text class = infoData>{{currentItem.gravity}}</ion-text><br>
-            <b class = infoTitle>Terreno: </b><ion-text class = infoData>{{currentItem.terrain}}</ion-text><br>
-            <b class = infoTitle>População: </b><ion-text class = infoData>{{currentItem.population}}</ion-text>
-            <b class = infoTitle>Diâmetro: </b><ion-text class = infoData>{{currentItem.diameter}}</ion-text>
-          </ion-card-content>
-      </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Prod'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="text-align: left;">
-              <b class = infoTitle>Rotação: </b><ion-text class = infoData> {{currentItem.rotation_period}}</ion-text><br>
-              <b class = infoTitle>Órbita: </b><ion-text class = infoData> {{currentItem.orbital_period}}</ion-text><br>
-              <b class = infoTitle>Água na superfície: </b><ion-text class = infoData>{{currentItem.surface_water}}</ion-text><br>
-              <b class = infoTitle>Data de criação: </b><ion-text class = infoData>{{currentItem.created}}</ion-text>
-              <b class = infoTitle>Criação: </b><ion-text class = infoData> {{currentItem.created}}</ion-text><br>
-              <b class = infoTitle>Edição: </b><ion-text class = infoData> {{currentItem.edited}}</ion-text><br> 
-            </ion-card-content>
-        </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Pol'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="margin-bottom: -3%; margin-top: -3%;text-align: left;"> 
-              <b class = infoTitle>Residentes: </b> <ion-text class = infoData>{{currentItem.residents}}</ion-text><br>
-              <b class = infoTitle>Filmes: </b><ion-text class = infoData>{{currentItem.films}}</ion-text><br>
-            </ion-card-content>
-        </ion-card>
-    </ion-content>
-  
-    <!-- Setor de Espécies -->
-    <ion-content *ngIf = "typeItem === 'species'">
-      <ion-card *ngIf = "segmentCard === 'Tech'">
-          <ion-card-title></ion-card-title>
-          <ion-card-content style="text-align: left;">
-            <b class = infoTitle>Classificação: </b><ion-text class = infoData>{{currentItem.classification}}</ion-text><br>
-            <b class = infoTitle>Média de altura </b><ion-text class = infoData>{{currentItem.average_height}}</ion-text><br>
-            <b class = infoTitle>Cor: </b><ion-text class = infoData>{{currentItem.skin_color}}</ion-text><br>
-            <b class = infoTitle>Cor do cabelo: </b><ion-text class = infoData>{{currentItem.hair_color}}</ion-text>
-            <b class = infoTitle>Cor do olho: </b><ion-text class = infoData>{{currentItem.eye_color}}</ion-text>
-            <b class = infoTitle>Tempo de vida: </b><ion-text class = infoData> {{currentItem.average_lifespan}}</ion-text><br>
-          </ion-card-content>
-      </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Prod'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="text-align: left;">
-              <b class = infoTitle>Filmes: </b><ion-text class = infoData>{{currentItem.films}}</ion-text>
-              <b class = infoTitle>Criação: </b><ion-text class = infoData> {{currentItem.created}}</ion-text><br>
-              <b class = infoTitle>Edição: </b><ion-text class = infoData> {{currentItem.edited}}</ion-text><br> 
-            </ion-card-content>
-        </ion-card>
-        <ion-card *ngIf = "segmentCard === 'Pol'">
-          <ion-card-title></ion-card-title>
-            <ion-card-content style="margin-bottom: -3%; margin-top: -3%;text-align: left;"> 
-              <b class = infoTitle>Designação: </b><ion-text class = infoData> {{currentItem.designation}}</ion-text><br>
-              <b class = infoTitle>Língua: </b><ion-text class = infoData>{{currentItem.language}}</ion-text><br>
-            </ion-card-content>
-        </ion-card>
-    </ion-content>
-  
-  </ion-content>
+    </ion-row>
+    <app-sw-container [typeItem] = 'typeItem' [segmentCard]='segmentCard' [currentItem]='currentItem'></app-sw-container>
+  </ion-col>
+</ion-content>
