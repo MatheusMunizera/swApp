@@ -8,10 +8,7 @@ import { SwAppService } from '../services/sw-app.service';
 })
 
 export class RandomPage implements OnInit {
-  name: string;
-  img: string;
-  resume: string;
-  id: number;
+  public currentItem
   lastGet: string;
   showCard: boolean = false;
   public requests: string[] = [];
@@ -94,10 +91,7 @@ export class RandomPage implements OnInit {
 
   // Set as informações necessárias
   private async setInfo(data) {
-    this.id = data.id
-    this.name = data.name;
-    this.img = data.image;
-    this.resume = data.resume;
+    this.currentItem = data
     
   }
 
@@ -138,9 +132,6 @@ export class RandomPage implements OnInit {
   }
   
    
-  public setLastGet(){
-    
-  }
   //Verifica no array qual foi a ultima informação gerada e mostra no card
   public previousRequest() {
     this.requests.pop();

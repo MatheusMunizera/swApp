@@ -18,6 +18,7 @@ ion-content {
 
 
 //*************** STYLE ****************//
+
 .center {
   position: absolute;
   top: 50%;
@@ -25,7 +26,6 @@ ion-content {
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
-
 .card-position {
   position: absolute;
   top: 50%;
@@ -49,17 +49,21 @@ ion-content {
     height: 35px;
   }
 }
-
 .info-content {
   position: absolute;
   top: 55%;
-  left: 10%;
+  left: 5%;
+} 
+
+
+
+.text {
+  padding-top: 10px;
+  padding-right: 20%;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
 }
 
-.ion-padding-top {
-  padding-top: 60px;
-  padding-right: 30px;
-}
 
 //*************************************//
 
@@ -80,4 +84,5 @@ ion-content {
     opacity: 0.2;
   }
 }
+
 //*************************************//

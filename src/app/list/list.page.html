@@ -1,4 +1,6 @@
 <app-sw-header [namePage] = "'DataBank'" [info] = "false"></app-sw-header>
+
+
 <ion-content>
   
   <ion-segment  [(ngModel)]="currentFilter" (ionChange)="updateFilter()" mode = md>
@@ -16,11 +18,16 @@
     </ion-segment-button>
   </ion-segment>
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
-  <ion-list *ngIf="currentItem.length > 0;">
-    <ion-item  class = "ion-activatable ripple-parent" *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info', currentFilter, current.id]">
-      <ion-img src="{{current.image}}" slot="start"></ion-img>
-      <ion-label class="text">{{current.name}}</ion-label>    
-      <ion-ripple-effect></ion-ripple-effect>
-    </ion-item>
-  </ion-list>
+
+  <ion-content>
+
+    <ion-list *ngIf="currentItem.length > 0;">
+      <ion-item  class = "ion-activatable ripple-parent" *ngFor="let current of currentItem" color = opaco lines = none [routerLink]="['/info', currentFilter, current.id]">
+        <ion-img src="{{current.image}}" slot="start"></ion-img>
+        <ion-label class="text">{{current.name}}</ion-label>    
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
 </ion-content>

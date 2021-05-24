@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Variable } from '@angular/compiler/src/render3/r3_ast';
-import { AlertController, LoadingController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
+import { IonInfiniteScroll } from '@ionic/angular';
 import { SwAppService } from '../services/sw-app.service';
 
 @Component({
@@ -9,9 +9,9 @@ import { SwAppService } from '../services/sw-app.service';
   styleUrls: ['./list.page.scss'],
 })
 export class ListPage implements OnInit {
-  public currentFilter = this.swService.currentFilter;
-  public currentSearch = this.swService.currentSearch;
-  public currentItem = this.swService.currentItem;
+  public currentFilter: 'characters' | 'vehicles' | 'planets' | 'species' = 'characters';
+  public currentSearch = '';
+  public currentItem = [];
 
   constructor(
     public loadingController: LoadingController,
@@ -25,33 +25,27 @@ export class ListPage implements OnInit {
       spinner: null,
     });
     await loading.present();
-    await this.swService.runPop();
-    this.swService.caracter = this.swService.characterList;
-    this.swService.vehicle = this.swService.vehiclesList;
-    this.swService.planet = this.swService.planetsList;
-    this.swService.specie = this.swService.speciesList;
-    this.currentItem = this.swService.caracter;
+    this.currentItem = this.swService.characterList;
     await loading.dismiss();
   }
 
-  ngOnInit() {
-    this.presentLoading();
-  }
-
-  segmentChanged(ev: any) {
-    console.log('Segment changed', ev);
+u
+  async ngOnInit() {
+    
+    await this.swService.runPop();
+    await this.presentLoading();
   }
 
   public updateFilter() {
     let firstFilter = [];
     if (this.currentFilter === 'characters') {
-      firstFilter = this.swService.caracter;
+      firstFilter = this.swService.characterList;
     } else if (this.currentFilter === 'vehicles') {
-      firstFilter = this.swService.vehicle;
+      firstFilter = this.swService.vehiclesList;
     } else if (this.currentFilter === 'planets') {
-      firstFilter = this.swService.planet;
+      firstFilter = this.swService.planetsList;
     } else if (this.currentFilter === 'species') {
-      firstFilter = this.swService.specie;
+      firstFilter = this.swService.speciesList;
     }
 
     if (this.currentSearch === '') {
@@ -63,5 +57,4 @@ export class ListPage implements OnInit {
       );
     }
   }
-
 }
