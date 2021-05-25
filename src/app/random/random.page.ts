@@ -22,7 +22,7 @@ export class RandomPage implements OnInit {
   }
 
   public ngOnInit() {
-     this.swService.runPop();
+     this.swService.requestAll();
   }
 
   // ***************** ANIMAÇOES *************  \\
@@ -73,19 +73,19 @@ export class RandomPage implements OnInit {
   // Busca a informaçao na list e passa para que o LoadCard as carregue
   public getCharacter() {
     this.lastGet = "characters"
-    return this.loadCard(this.swService.getCharacter());
+    return this.loadCard(this.swService.getRandomCharacter());
   }
   public getVehicle() {
     this.lastGet = "vehicles"
-    return this.loadCard(this.swService.getVehicle());
+    return this.loadCard(this.swService.getRandomVehicle());
   }
   public getSpecie() {
     this.lastGet = "species"
-    return this.loadCard(this.swService.getSpecie());
+    return this.loadCard(this.swService.getRandomSpecie());
   }
   public getPlanet() {
     this.lastGet = "planets"
-    return this.loadCard(this.swService.getPlanet());
+    return this.loadCard(this.swService.getRandomPlanet());
   }
 
 

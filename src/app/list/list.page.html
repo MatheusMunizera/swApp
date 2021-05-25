@@ -3,7 +3,7 @@
 
 <ion-content>
   
-  <ion-segment  [(ngModel)]="currentFilter" (ionChange)="updateFilter()" mode = md>
+  <ion-segment scrollable [(ngModel)]="currentFilter" (ionChange)="updateFilter()" mode = md>
     <ion-segment-button  value="characters"> 
       <ion-label >Personagens</ion-label>
     </ion-segment-button>
@@ -15,6 +15,9 @@
     </ion-segment-button>
     <ion-segment-button value="species">
       <ion-label >Espécies</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="films">
+      <ion-label >Filmes</ion-label>
     </ion-segment-button>
   </ion-segment>
   <ion-searchbar  placeholder="Filtrar" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>

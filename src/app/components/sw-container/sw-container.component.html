@@ -1,4 +1,5 @@
 <!-- Setor de Personagem -->
+<!-- **************************** C H A R A C T E R S ***************************************************************-->
 <ng-container *ngIf="typeItem === 'characters'">
   <ion-card *ngIf="segmentCard === 'Tech'">
     <ion-card-content>
@@ -26,11 +27,34 @@
           </ion-row>
 
           <ion-row>
-            <ion-title>Planeta Natal:</ion-title>
+            <ion-title>Planeta de origem:</ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.homeworld}}</ion-label>
+            <ion-label>{{currentItem.bornLocation}}</ion-label>
           </ion-row>
+
+          <ion-row>
+            <ion-title>Cor do cabelo:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.hairColor}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor do olho:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.eyeColor}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Cor da pele:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.skinColor}}</ion-label>
+          </ion-row>
+
+         
         </ion-col>
       </ion-grid>
     </ion-card-content>
@@ -40,11 +64,19 @@
     <ion-card-content>
       <ion-grid>
         <ion-col>
+
+          <ion-row>
+            <ion-title>Planeta Natal:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.homeworld}}</ion-label>
+          </ion-row>
+
           <ion-row>
             <ion-title>Planeta de origem:</ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.bornlocation}}</ion-label>
+            <ion-label>{{currentItem.bornLocation}}</ion-label>
           </ion-row>
 
           <ion-row>
@@ -58,15 +90,9 @@
             <ion-title>local da Morte:</ion-title>
           </ion-row>
           <ion-row>
-            <ion-label> {{currentItem.diedlocation}}</ion-label>
+            <ion-label> {{currentItem.diedLocation}}</ion-label>
           </ion-row>
 
-          <ion-row>
-            <ion-title>Espécie:</ion-title>
-          </ion-row>
-          <ion-row>
-            <ion-label>{{currentItem.species}}</ion-label>
-          </ion-row>
         </ion-col>
       </ion-grid>
     </ion-card-content>
@@ -96,12 +122,21 @@
           <ion-row>
             <ion-label> {{currentItem.apprentices}}</ion-label>
           </ion-row>
+    
+        <ion-row>
+          <ion-title>Espécie:</ion-title>
+        </ion-row>
+        <ion-row>
+          <ion-label>{{currentItem.species}}</ion-label>
+        </ion-row>
         </ion-col>
       </ion-grid>
     </ion-card-content>
   </ion-card>
 </ng-container>
+<!-- *******************************************************************************************    -->
 
+<!-- ********************************* V E H I C L E S **********************************************************    -->
 <ng-container *ngIf="typeItem === 'vehicles'">
   <ion-card *ngIf="segmentCard === 'Tech'">
     <ion-card-content>
@@ -115,7 +150,7 @@
           </ion-row>
 
           <ion-row>
-            <ion-title>Capacidade de carga:</ion-title>
+            <ion-title>Carga Maxima:</ion-title>
           </ion-row>
           <ion-row>
             <ion-label>{{currentItem.cargo_capacity}}</ion-label>
@@ -136,7 +171,7 @@
           </ion-row>
         </ion-col>
       </ion-grid>
-      </ion-card-content>
+    </ion-card-content>
   </ion-card>
   <ion-card *ngIf="segmentCard === 'Prod'">
     <ion-card-content>
@@ -147,13 +182,6 @@
           </ion-row>
           <ion-row>
             <ion-label>{{currentItem.manufacturer}}</ion-label>
-          </ion-row>
-
-          <ion-row>
-            <ion-title>Classe:</ion-title>
-          </ion-row>
-          <ion-row>
-            <ion-label>{{currentItem.vehicle_class}}</ion-label>
           </ion-row>
 
           <ion-row>
@@ -168,6 +196,13 @@
           </ion-row>
           <ion-row>
             <ion-label>{{currentItem.created}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Edição:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.edited}}</ion-label>
           </ion-row>
         </ion-col>
       </ion-grid>
@@ -204,7 +239,9 @@
     </ion-card-content>
   </ion-card>
 </ng-container>
+<!-- *******************************************************************************************    -->
 
+<!-- **************************************P L A N E T A S*****************************************************    -->
 <ng-container *ngIf="typeItem === 'planets'">
   <ion-card *ngIf="segmentCard === 'Tech'">
     <ion-card-content>
@@ -268,13 +305,6 @@
           </ion-row>
 
           <ion-row>
-            <ion-title>Água na superfície:</ion-title>
-          </ion-row>
-          <ion-row>
-            <ion-label>{{currentItem.surface_water}}</ion-label>
-          </ion-row>
-
-          <ion-row>
             <ion-title>Data de criação: </ion-title>
           </ion-row>
           <ion-row>
@@ -315,7 +345,14 @@
   </ion-card>
 
 </ng-container>
+<!-- *******************************************************************************************    -->
 
+
+
+
+
+
+<!-- ***************************** E S P E C I E S**************************************************************-->
 <ng-container *ngIf="typeItem === 'species'">
   <ion-card *ngIf="segmentCard === 'Tech'">
     <ion-card-content>
@@ -336,25 +373,32 @@
           </ion-row>
 
           <ion-row>
-            <ion-title>Cor:</ion-title>
+            <ion-title>Cor da pele:</ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.skin_color}}</ion-label>
+            <ion-label>{{currentItem.skin_colors}}</ion-label>
           </ion-row>
 
           <ion-row>
             <ion-title>Cor do cabelo: </ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.hair_color}}</ion-label>
+            <ion-label>{{currentItem.hair_colors}}</ion-label>
           </ion-row>
-
           <ion-row>
             <ion-title>Cor do olho:</ion-title>
           </ion-row>
           <ion-row>
+            <ion-label>{{currentItem.eye_colors}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Média de vida:</ion-title>
+          </ion-row>
+          <ion-row>
             <ion-label>{{currentItem.average_lifespan}}</ion-label>
           </ion-row>
+
         </ion-col>
       </ion-grid>
     </ion-card-content>
@@ -374,29 +418,16 @@
             <ion-title>Criação:</ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.average_height}}</ion-label>
-          </ion-row>
-
-          <ion-row>
-            <ion-title>{{currentItem.created}}</ion-title>
-          </ion-row>
-          <ion-row>
-            <ion-label>{{currentItem.skin_color}}</ion-label>
+            <ion-label>{{currentItem.created}}</ion-label>
           </ion-row>
 
           <ion-row>
             <ion-title>Edição: </ion-title>
           </ion-row>
           <ion-row>
-            <ion-label>{{currentItem.hair_color}}</ion-label>
-          </ion-row>
-
-          <ion-row>
-            <ion-title>Cor do olho:</ion-title>
-          </ion-row>
-          <ion-row>
             <ion-label>{{currentItem.edited}}</ion-label>
           </ion-row>
+
         </ion-col>
       </ion-grid>
     </ion-card-content>
@@ -423,5 +454,91 @@
       </ion-grid>
     </ion-card-content>
   </ion-card>
+</ng-container>
+<!-- *******************************************************************************************    -->
 
-</ng-container> 
+
+
+<!-- **************************** F I L M E S ******************************************************    -->
+<ng-container *ngIf="typeItem === 'films'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Lançamento:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.release_date}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Produtor:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.producer}}</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-title>Diretor:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.director}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Personagens:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.characters}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Veiculos:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.vehicles}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Planetas:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.planets}}</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-title>Especies:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.species}}</ion-label>
+          </ion-row>
+
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Opening Crawl:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.opening_crawl}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ng-container>
+<!-- *******************************************************************************************    -->

@@ -5,6 +5,11 @@ ion-segment-button {
   -webkit-text-fill-color: transparent;
   font-size: clamp(0.5em, 0.5em + .9vw, 1.4em);
   --color-checked: #ffc500;
+  --padding-end: 0.25em;
+  --padding-start: 0.5em;
+    ion-label{
+      margin: 0px 0px 0px;
+    }
 }
 
 ion-searchbar {
@@ -18,7 +23,6 @@ ion-list {
   margin-left: 5% !important;
   margin-right: 5% !important;
   background-color: transparent;
-
   ion-item {
     border-bottom: solid 1px white;
 
@@ -27,6 +31,7 @@ ion-list {
       margin-bottom: 18px;
       text-align: left;
       color: white;
+     
     }
 
     ion-img {

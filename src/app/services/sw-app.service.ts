@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
-import { Character, Specie, Vehicle, Planet } from '../models/SwTypeItems';
+import { Character, Specie, Vehicle, Planet, Films } from '../models/SwTypeItems';
 
 interface Rank {
   id: number;
@@ -13,10 +13,11 @@ interface Rank {
 })
 export class SwAppService {
 
-  public characterList: Character[] = [] ;
+  public charactersList: Character[] = [] ;
   public vehiclesList: Vehicle[] = [];
   public speciesList: Specie[] = [];
   public planetsList: Planet[] = [];
+  public filmsList: Films[] = [];
 
   private readonly API_URL_CHARACTER =
     'https://matheusmunizera.github.io/starwars-api/api/allCharacters.json';
@@ -26,72 +27,82 @@ export class SwAppService {
     'https://matheusmunizera.github.io/starwars-api/api/allPlanets.json';
   private readonly API_URL_SPECIES =
     'https://matheusmunizera.github.io/starwars-api/api/allSpecies.json';
+  private readonly API_URL_FILMS =
+    'https://matheusmunizera.github.io/starwars-api/api/allFilms.json';
 
   constructor(public http: HttpClient, private storage: Storage) {
     this.loadRanks();
   }
 
-  public status = false;
-  async runPop() {
+  private status = false;
+  async requestAll() {
     if (this.status == false) {
       await this.getAllCharacters() ;
       await this.getAllVehicles();
       await this.getAllPlanets();
       await this.getAllSpecies();
+      await this.getAllFilms();
+      
     }
     this.status = true;
   }
 
   async getAllCharacters() {
-    this.http.get<any>(this.API_URL_CHARACTER).toPromise()
+    this.http.get<Character[]>(this.API_URL_CHARACTER).toPromise()
     .then((data)=> {
-        this.characterList = data
+        this.charactersList = data
+        
     })
   }
 
   async getAllVehicles()  {
-    this.http.get<any>(this.API_URL_VEHICLES).toPromise()
+    this.http.get<Vehicle[]>(this.API_URL_VEHICLES).toPromise()
     .then((data)=> {
-      this.vehiclesList = data   
+      this.vehiclesList = data 
+      return this.vehiclesList
     })
+    
   }
   
   async getAllPlanets() {
-    this.http.get<any>(this.API_URL_PLANETS).toPromise()
+    this.http.get<Planet[]>(this.API_URL_PLANETS).toPromise()
     .then((data)=> {
       this.planetsList = data   
     })
   }
   
   async getAllSpecies() {
-    this.http.get<any>(this.API_URL_SPECIES).toPromise()
+    this.http.get<Specie[]>(this.API_URL_SPECIES).toPromise()
     .then((data)=> {
       this.speciesList = data   
     })
   }
 
+  async getAllFilms(){
+    this.http.get<Films[]>(this.API_URL_FILMS).toPromise()
+    .then((data)=>{
+      this.filmsList = data
+    })
+    
+  }
   // ** RANDOM ** \\
 
   // Gera um numero aleatório e procura na lista
-  public getCharacter() {
+  public getRandomCharacter() {
     let randomNumber = Math.floor(Math.random() * 88);
-    console.log(randomNumber);
-    return this.characterList[randomNumber];
+    return this.charactersList[randomNumber];
   }
-  public getVehicle() {
+  public getRandomVehicle() {
     let randomNumber = Math.floor(Math.random() * 40);
-    console.log(randomNumber);
     return this.vehiclesList[randomNumber];
   }
-  public getSpecie() {
+  public getRandomSpecie() {
     let randomNumber = Math.floor(Math.random() * 37);
-    console.log(randomNumber);
     return this.speciesList[randomNumber];
   }
 
-  public getPlanet() {
+  public getRandomPlanet() {
     let randomNumber = Math.floor(Math.random() * 37);
-    console.log(randomNumber);
     return this.planetsList[randomNumber];
   }
 
