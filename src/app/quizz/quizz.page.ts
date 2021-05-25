@@ -21,22 +21,22 @@ export class QuizzPage implements OnInit {
   public results = [
     {
       name: 'Jedi Iniciado',
-      img: 'https://static.wikia.nocookie.net/starwars/images/5/52/SorsBandeam.png',
+      img: '/assets/image/Quizz/Jedi-Iniciado.png',
       description: 'Enquanto são crianças, são conduzidas com base em seu potencial de poder, Anakin foi apresentado nessa fase quando Qui-Gon Jinn o encontrou no planeta Tatooine.'
     },
     {
       name: 'Padawan',
-      img: 'https://static.wikia.nocookie.net/ptstarwars/images/b/bb/Padawan_Kenobi.png',
+      img: '/assets/image/Quizz/Padawan.png',
       description: 'Um Padawan “se forma” passando nas Provas Jedi, embora alguns Padawans sejam considerados aprovados quando passam por experiências difíceis.'
     },
     {
       name: 'Cavaleiro Jedi',
-      img: 'https://consciencianerd.com/wp-content/uploads/2020/10/Cavaleiro-Jedi.jpg',
+      img: '/assets/image/Quizz/Cavaleiro-Jedi.jpg',
       description: 'Durante a história de Star Wars, vimos muitos padawns que cumpriram os desafios jedis e acenderam como cavaleiros.'
     },
     {
       name: 'Grão-Mestre',
-      img: 'https://static.wikia.nocookie.net/ptstarwars/images/4/45/Yoda.jpg',
+      img: '/assets/image/Quizz/Yoda.jpg',
       description: 'Esta classificação final é solitária, mantida por aquele considerado o mais sábio dos Mestres Jedi. Yoda foi o Grande Mestre durante a era prequel.'
     }
   ]
@@ -126,6 +126,9 @@ export class QuizzPage implements OnInit {
   public async openUserModal(){
     const modal = await this.modalController.create({
       component: UserModalComponent,
+      componentProps:{
+        username: ''
+      }
     });
     modal.present();
   }

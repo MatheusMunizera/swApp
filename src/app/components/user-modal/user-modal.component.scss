@@ -6,7 +6,7 @@
    border-style:groove;
    border-left: none !important;
    border-right: none !important;
-   --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
    color: rgb(255, 255, 255);
    --background: black;
    background: black;
@@ -16,7 +16,7 @@
    --color: #ffc500;
    border-color: #ffc500;
    border-style:groove;
-   --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
    color: black;
    --background: black;
    background: black;
@@ -28,7 +28,7 @@ ion-button{
    border-style:groove;
    border-left: none !important;
    border-right: none !important;
-   --background: #ffc500 url('/assets/gif/background5.gif') no-repeat center center / cover;
+   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
    transform: translate(1px, 1px); 
 }
 }

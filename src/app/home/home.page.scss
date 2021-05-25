@@ -1,7 +1,4 @@
-ion-content {
-  --background: #000000 url('/assets/gif/background5.gif') no-repeat center center / cover;
-  overflow: visible;
-}
+
 
 /*fORMATAÇÃO LINKS*/
 a{
@@ -37,7 +34,7 @@ a{
 
 /*CLASSE DIV BATTEFRONT*/
 .battlefront{/*Background do segundo conjunto de slides*/
-  background-image: url("../../assets/image/battlefront.jpg");
+  background-image: url("/assets/image/Home/Home/battlefront.jpg");
   background-repeat: no-repeat;
   background-position:center;
   background-size:100%;
@@ -85,7 +82,7 @@ h1{
 
 /*FORMATAÇÃO DIV MANDALORIA*/
 .mandalorian{
-  background-image: url("../../assets/image/mandalorian.jpg"); 
+  background-image: url("/assets/image/Home/Home/mandalorian.jpg"); 
   background-repeat: no-repeat;
   background-size:100% 99%;
   background-position:center;
@@ -127,7 +124,7 @@ h1{
 }
 /*FORMATAÇÃO RODAPE*/
 #rodape{
-  background-image: url("../../assets/image/rodape.jpg"); 
+  background-image: url("/assets/image/Home/Home/rodape.jpg"); 
   background-repeat: no-repeat;
   background-size:100%;
   background-position:center;

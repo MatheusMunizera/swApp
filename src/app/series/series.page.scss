@@ -8,9 +8,6 @@ ion-toolbar{
   --background:#000000;
 }
 
-ion-content {
-  --background: url('/assets/gif/background5.gif') no-repeat center center / cover;
-}
 
 ion-menu-button {
   color: var(--ion-color-primary);
@@ -54,7 +51,7 @@ color: white;
 }
 
 .rodape{
-  background-image: url("/assets/image/rodape.jpg"); 
+  background-image: url("/assets/image/Home/Home/rodape.jpg"); 
   background-repeat: no-repeat;
   background-size:100%;
   background-position:center;
