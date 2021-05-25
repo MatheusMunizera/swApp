@@ -8,7 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SwHeaderComponent implements OnInit {
 
   @Input() namePage
-  @Input() info
+  @Input() type
+
   constructor() { }
   ngOnInit() {
    

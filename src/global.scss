@@ -36,6 +36,12 @@ ion-content {
 }   
 
 @font-face {
+  font-family: LemonMilk;
+  src: url("/assets/fonts/lemon_milk/LEMONMILK-RegularItalic.otf");
+  position: absolute
+} 
+
+@font-face {
     font-family: SoloistTitle;
     src: url("/assets/fonts/soloist/soloisttitle1.ttf");
     position: absolute

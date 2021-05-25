@@ -1,7 +1,9 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SwAppService } from 'src/app/services/sw-app.service';
+import { ActivatedRoute } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-user-modal',
@@ -10,17 +12,26 @@ import { SwAppService } from 'src/app/services/sw-app.service';
 })
 export class UserModalComponent implements OnInit {
 
-  constructor(private modalController: ModalController, private swService: SwAppService) { }
+  @Input() username
+  constructor(private modalController: ModalController,
+     private swService: SwAppService,
+     route: ActivatedRoute,
+    private navCtrl: NavController) { }
 
   ngOnInit() {}
 
-
-  public username = ''
-  
-
   goQuizz(){
     this.swService.newUser = this.username
-    //console.log(this.swService.ranks)
+    this.closeModal()
+  }
+  
+  closeModal(){
     this.modalController.dismiss();
   }
+
+  goRank(){
+    this.navCtrl.navigateBack('/quizz/rank')
+    this.closeModal()
+  }
+  
 }

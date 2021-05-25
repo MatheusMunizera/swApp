@@ -1,34 +1,87 @@
-.next{ 
-    ion-item{
-       font-family: Title !important;
-   --color: #ffc500;
-   border-color: #ffc500;
-   border-style:groove;
-   border-left: none !important;
-   border-right: none !important;
-   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
-   color: rgb(255, 255, 255);
-   --background: black;
-   background: black;
+.user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  ion-card {
+    overflow: visible;
+    transform: translate(-52%, -50%);
+    background-color: #0a0a0a;
+    ;
+    border-left: none !important;
+    border-right: none !important;
+    border: solid 2px #ffc500;
+    box-shadow: 2px -2px 20px yellow;
+    position: relative;
+    height: 170px;
+    width: 245px;
+
+    ion-img {
+      max-width: 150px;
+      position: absolute;
+      transform: translate(25%, -60%);
     }
-    ion-list{
-       font-family: Title !important;
-   --color: #ffc500;
-   border-color: #ffc500;
-   border-style:groove;
-   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
-   color: black;
-   --background: black;
-   background: black;
+
+    ion-item {
+      text-align: left;
+      overflow: visible;
+      position: relative;
+      margin-top: 50px;
+
+      font-family: SoloistTitle !important;
+      --color: #ffc500;
+      color: rgb(255, 255, 255);
+      --background: #1c1b1b
     }
-ion-button{
-   font-family: Title !important;
-   --color: #ffc500;
-   border-color: #ffc500;
-   border-style:groove;
-   border-left: none !important;
-   border-right: none !important;
-   --background: #ffc500 url('/assets/gif/background.gif') no-repeat center center / cover;
-   transform: translate(1px, 1px); 
+
+    .btn-quizz {
+
+      font-family: SoloistTitle !important;
+      --color: #ffc500;
+      border-color: #ffc500;
+      border-style: groove;
+
+      color: rgb(255, 255, 255);
+      --background: black;
+      position: absolute;
+      transform: translate(120%, 100%);
+
+    }
+
+    .btn-rank {
+
+      font-family: SoloistTitle !important;
+      --color: #ffc500;
+      border-color: #ffc500;
+      border-style: groove;
+
+      color: rgb(255, 255, 255);
+      --background: black;
+      position: absolute;
+      transform: translate(-20%, 100%);
+
+    }
+  }
 }
+
+
+.sw-laser {
+  font-size: clamp(1.5em, 100% + 2vw, 2em);
+}
+
+ion-toolbar {
+  --background: black
+}
+
+ion-title {
+  h4 {
+    font-family: LemonMilk !important;
+    font-weight: 800;
+    text-align: center;
+    margin: 10px 0px 30px;
+    font-size: clamp(0.5em, 1.1em + 1vw, 2.5em);
+    white-space: break-spaces;
+  }
+
+
 }

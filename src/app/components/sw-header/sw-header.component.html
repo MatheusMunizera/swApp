@@ -1,4 +1,4 @@
-<ng-container *ngIf="info == false">
+<ng-container *ngIf="type == 'geral'">
   <ion-header mode=md>
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -9,13 +9,37 @@
   </ion-header>
 </ng-container>
 
- <ng-container *ngIf="info == true">
+ <ng-container *ngIf="type == 'info'">
   <ion-header mode=md>
     <ion-toolbar>
       <ion-buttons slot="start">
         <ion-back-button color="primary" defaultHref="home"></ion-back-button>
       </ion-buttons>
       <ion-title class=sw-laser>{{namePage}} </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ng-container>
+
+
+<ng-container *ngIf="type =='user'">
+  <ion-header mode=md>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="primary" defaultHref="home" ></ion-back-button>
+      </ion-buttons>
+      <ion-title class=sw-laser>Usuário</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ng-container>
+
+
+<ng-container *ngIf="type =='rank'">
+  <ion-header mode=md>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button color="primary" defaultHref="/quizz" ></ion-back-button>
+      </ion-buttons>
+      <ion-title class=sw-laser>Ranking</ion-title>
     </ion-toolbar>
   </ion-header>
 </ng-container>

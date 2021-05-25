@@ -1,22 +1,32 @@
+<app-sw-header [namePage] = "'Usuário'" [type] = "'user'" (click)= "closeModal()"></app-sw-header>
+
+
 <ion-content>
-  <ion-header>
-    <ion-toolbar color = opaco>
-      <ion-buttons slot="start">
-      </ion-buttons>
-      <ion-title class = sw-laser>Usuario </ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-text color="primary">
+  <ion-title color="primary">
     <h4>Você é um verdadeiro fã de Star Wars?</h4>
-    <h5>Digite seu nome, responda o quiz e descubra se você sabe tudo sobre Star Wars.</h5>
-  </ion-text>
+  </ion-title>
+
+
+  <div class="user">
     
-    <ion-item class = "next">
-      <ion-label position = "floating"> Digite seu nome</ion-label>
-      <ion-input [(ngModel)]="username"></ion-input>
-    </ion-item>
-    <ion-button (click)="goQuizz()" expand="block" [disabled]="username == '' " >
-      Iniciar Quizz
-     </ion-button>
+    <ion-card>
+      <ion-img src="/assets/image/Home/Home/yoda.png"></ion-img>
+      
+
+      <ion-item>
+        <ion-label position="floating"> Digite seu nome/apelido</ion-label>
+        <ion-input [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <ion-button class = "btn-quizz" (click)="goQuizz()" expand="block" [disabled]="username == '' ">
+        Iniciar
+      </ion-button>
+
+      <ion-button class="btn-rank" (click)="goRank()" expand="block">
+        Ver Rank
+      </ion-button>
+
+    </ion-card>
+  </div>
 
 </ion-content>
