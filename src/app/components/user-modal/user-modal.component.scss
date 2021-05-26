@@ -27,7 +27,9 @@
       overflow: visible;
       position: relative;
       margin-top: 50px;
-
+      border-bottom: white solid 2px;
+      --border-radius: 50px;
+    border-radius: 20px;
       font-family: SoloistTitle !important;
       --color: #ffc500;
       color: rgb(255, 255, 255);

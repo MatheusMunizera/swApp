@@ -56,7 +56,7 @@ export class QuizzPage implements OnInit {
         "Verdade"
       ]
 
-  },
+   },
   {
     text: "O número da cela onde Leia ficou presa na Estrela da Morte era 2167?",
     answers:
@@ -103,17 +103,12 @@ export class QuizzPage implements OnInit {
       ["Não",
         "Sim"
       ]
-
-
-
-
-
   }
   ]
 
   public currentQuestion = 0;
   public selectedAnswer = null;
-  public maxQuestionsNumbers = 8;
+  public maxQuestionsNumbers = this.questions.length;
 
   constructor(private toastCtrl: ToastController, 
     private alertCtrl: AlertController, 
@@ -122,6 +117,7 @@ export class QuizzPage implements OnInit {
       this.score = 0;
     }
 
+  private score: number;
 
   public async openUserModal(){
     const modal = await this.modalController.create({
@@ -130,22 +126,21 @@ export class QuizzPage implements OnInit {
         username: ''
       }
     });
-    modal.present();
+    modal.present(); 
   }
+
+
   public nextQuestion() {
     this.currentQuestion++;
     this.calculateResult();
     this.selectedAnswer = null;
-
     this.showToast();
 
      if (this.currentQuestion >= this.maxQuestionsNumbers){
-     this.swService.add(this.score);
-     this.score = 0;
+    this.swService.atualRank.score = this.score
+    this.swService.addToStorage(this.swService.atualRank)
      }
   }
-
-
 
   public async confirmReset() {
     const alert = await this.alertCtrl.create({
@@ -163,26 +158,14 @@ export class QuizzPage implements OnInit {
   }
 
   private reset() {
-    if(this.status == false){
-      //this.swService.add()
-    }
-    //this.swService.rank.username = ''
-    this.status = false;
     this.currentQuestion = 0;
- //   this.swService.rank.score = 0;
+    this.score = 0;
     this.openUserModal()
   }
 
-  public status = false
-  public username = ''
-  public id = 0
-  private score: number;
+ 
   
-  public getNewScore(){
-    return this.swService.newScore
-  }
-    
-  
+
   private calculateResult() {
     if (this.selectedAnswer==0){
       this.score++;
@@ -199,6 +182,8 @@ export class QuizzPage implements OnInit {
 }
 public teste=0
 public teste2=0
+
+
   private async showToast() {
     const toast = await this.toastCtrl.create({
       header: this.currentQuestion + ' de ' + this.questions.length + ' respondidas',

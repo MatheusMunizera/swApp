@@ -1,17 +1,23 @@
-<app-sw-header [namePage] = "'Ranking'" [type] = "'rank'" ></app-sw-header>
+<app-sw-header [namePage]="'Ranking'" [type]="'rank'">
+</app-sw-header>
+
 <ion-content>
+  <ion-toolbar  color="opaco">
+    <ion-searchbar (ionChange)="updateSearchStream($event)"></ion-searchbar>
+  </ion-toolbar>
+
   <ion-list>
-    <ion-item *ngFor="let rank of ranks" color = "opaco" lines = "none"  >
+    <ion-item *ngFor="let rank of rankStream | async" color="opaco" lines="none">
       <ion-label>
-          <h1>Nome : {{rank.username}}
-            <br>Pontuação : {{rank.score}}
-          </h1>
-         
+        <h1>Nome : {{rank.username}}
+          <br>Pontuação : {{rank.score}}
+        </h1>
+
       </ion-label>
     </ion-item>
   </ion-list>
- 
-  <ion-button (click)="goQuizz()" expand="block" >
+
+  <ion-button (click)="goQuizz()" expand="block">
     Voltar
-    </ion-button>
+  </ion-button>
 </ion-content>
