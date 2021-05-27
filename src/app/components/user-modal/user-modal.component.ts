@@ -9,7 +9,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./user-modal.component.scss'],
 })
 export class UserModalComponent implements OnInit {
-  @Input() username
+  @Input() username: string
 
   constructor(
     private modalController: ModalController,
@@ -19,7 +19,8 @@ export class UserModalComponent implements OnInit {
   ngOnInit() {}
 
   goQuizz() {
-    this.swService.atualRank.username = this.username
+
+    this.swService.atualRank.username = this.username.toLowerCase()
     this.closeModal();
   }
 

@@ -1,26 +1,28 @@
-
-ion-list{
-    border-radius: 5px !important; 
-    margin-top: 5% !important;       
-    margin-left: 5% !important;
-    margin-right: 5% !important;   
-    margin-bottom: 5% !important;
-    padding-top: 5% !important;        
-    padding-left: 3% !important;
-    padding-right: 5% !important;
-    margin-bottom: 1px;
-    border: 1px solid #ffc500;
-    background-color: hsla(0, 0%, 0%, 0);
-
-    ion-item{
-        color: rgb(255, 255, 255);
-        margin-bottom: 3% !important;
-        border: solid 2px #303030;
-        ion-label{
-            font-size: large;
-            text-align: left;
-        }
-    }
+.bgcolor {
+    background: #ffc500;
+   color: hsl(0, 0%, 0%);
+    border-right: 1px solid #000000;
     
+  }
+  
+  .sw-title{
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(0.4em, 0.6em + 1vw, 1em);
+  }
+  ion-col {
+    border: 1px solid #ffc500;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+  }
 
-}
+  .sw-text{
+    font-family: LemonMilk !important;
+    color: whitesmoke;
+    -webkit-line-clamp: 0;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+

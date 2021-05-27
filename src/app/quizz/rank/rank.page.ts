@@ -34,7 +34,7 @@ export class RankPage implements OnInit {
   );
 
   public updateSearchStream(event: CustomEvent) {
-    this.searchStream.next(event.detail.value);
+    this.searchStream.next(event.detail.value.toLowerCase());
   }
 
   public goQuizz() {

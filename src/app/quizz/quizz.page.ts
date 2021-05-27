@@ -171,17 +171,17 @@ export class QuizzPage implements OnInit {
       this.score++;
     }
     if (this.score <=2){
-      this.teste=0
+      this.result=0
     }if(this.score >2 && this.score <=4){
-      this.teste=1
+      this.result=1
     }if (this.score >4 && this.score <=6){
-      this.teste=2
+      this.result=2
     }if (this.score >6){
-      this.teste=3
+      this.result=3
     }
 }
-public teste=0
-public teste2=0
+public result=0
+
 
 
   private async showToast() {
