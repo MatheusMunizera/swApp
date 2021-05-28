@@ -1,12 +1,16 @@
-
-.content{
-    transform: translate(-50%, -240%);
-}
-
 .center {
     position: absolute;
     top: 50%;
     left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  .card-position {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform:translate(-50%, -105%);
     ion-img {
         max-height: 100%;
         max-width: 100%;
@@ -15,50 +19,63 @@
         object-fit: fill;
         border: solid 2px #ffc500;
         box-shadow: 2px -2px 20px yellow;
-        transform: translate(-50%, -90%);
-      }
-      ion-title{
+    }
+  
+  }
+  .info-content {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    ion-title{
         font-family: SoloistTitle !important;
-        transform: translate(-55%, -1500%);
         font-size: clamp(0.7em, 1em + .4vw, 1.2em);
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #ffc500;
         -webkit-text-fill-color: transparent;
+        margin-left: -10%;
     }
-    ion-text{
-        font-family: LemonMilk !important;
-         color: whitesmoke;
+    ion-label{
+        font-family: LemonMilk !important;   
          font-size: clamp(0.9em, 1em + 0.5vw, 1em);
-         transform: translate(-48%, -255%);
          position: absolute;
+         color: white;
+         margin-right: 8%;
      }
 
-     ion-button{
-        font-family: SoloistTitle !important;
-        --color: #ffc500;
-        border-color: #ffc500;
-        border-style:groove;
-        border-left: none !important;
-        border-right: none !important;
-        transform: translate(1px, 1px); 
-        --background: transparent;
-        transform: translate(-50%, -400%);
-     }
-     
+      ion-content{
+          ion-title{
+              font-family: SoloistTitle !important;
+          }
+          ion-text{
+             font-family: LemonMilk !important;
+              color: whitesmoke;
+          }
     
-  }
-
-  ion-content{
-      ion-title{
-          font-family: SoloistTitle !important;
-      }
-      ion-text{
-         font-family: LemonMilk !important;
-          color: whitesmoke;
       }
 
+
+ion-button{
+    font-family: SoloistTitle !important;
+    --color: #ffc500;
+    border-color: #ffc500;
+    border-style:groove;
+    border-left: none !important;
+    border-right: none !important;
+    --background: transparent;
+    transform: translate(-15px, 125px);
+ }
+    
+    
+  } 
+
+  .text {
+    padding-top: 10px;
+    padding-right: 20%;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
   }
 
+  
 
 ion-card{
     background-color: transparent;
@@ -100,8 +117,8 @@ ion-button{
     border-style:groove;
     border-left: none !important;
     border-right: none !important;
-    transform: translate(1px, 1px); 
     --background: transparent;
+ 
  }
  
     

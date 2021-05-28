@@ -24,20 +24,34 @@
   </div>
 
   <ng-template #resultCard>
-    <div class="center">
-      <ion-img [src]="results[result].img" [alt]="results[result].name"></ion-img>
 
-     
-        <ion-title>Você é um {{results[result].name}}</ion-title>
-        <ion-text>{{results[result].description}}</ion-text>
-     
-    
-      <ion-button (click)="confirmReset()" expand="block">
-        Fazer de novo
-      </ion-button>
-      <ion-button [routerLink]="['/quizz/rank']" expand="block">
-        Ver Rank
-      </ion-button>
-    </div>
+    <ion-content fullscreen>
+      <div class='center'>
+        <div class="card-position">
+          <ion-img [src]="results[result].img" [alt]="results[result].name"></ion-img>
+        </div>
+      </div>
+      <ion-col class=info-content>
+        <ion-row>
+          <ion-title class="sw-title">Você é um {{results[result].name}}</ion-title>
+        </ion-row>
+        <ion-row>
+          <ion-label>{{results[result].description}}</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+          <ion-button (click)="confirmReset()" expand="full">
+            Fazer de novo
+          </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button [routerLink]="['/quizz/rank']" expand="full">
+              Ver Rank
+            </ion-button>
+          </ion-col>
+        </ion-row>
+       
+      </ion-col>
+    </ion-content>  
   </ng-template>
 </ion-content>
