@@ -1,0 +1,6 @@
+{
+	"appId": "com.sw.app",
+	"appName": "swApp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

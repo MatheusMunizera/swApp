@@ -33,7 +33,7 @@ export class RankPage implements OnInit {
     )
   );
 
-  public updateSearchStream(event: CustomEvent) {
+  public updateSearchStream(event: any) {
     this.searchStream.next(event.detail.value.toLowerCase());
   }
 

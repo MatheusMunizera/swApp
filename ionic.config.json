@@ -1,7 +1,7 @@
 {
   "name": "swApp",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
