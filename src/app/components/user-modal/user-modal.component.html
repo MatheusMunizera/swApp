@@ -1,4 +1,11 @@
-<app-sw-header [namePage] = "'Usuário'" [type] = "'user'"></app-sw-header>
+<ion-header mode=md>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary" defaultHref="home" (click)="closeModal()" ></ion-back-button>
+    </ion-buttons>
+    <ion-title class=sw-laser>Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <ion-title color="primary">
     <h4>Você é um verdadeiro fã de Star Wars?</h4>
