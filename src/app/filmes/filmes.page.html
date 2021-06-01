@@ -1,202 +1,37 @@
 <app-sw-header [namePage] = "'Filmes'" [type] = "'geral'"></app-sw-header>
 <ion-content>
-  <div class="ion-padding">  <!--INCIO DIV GERAL-->
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/Ascensão-Skywalker.jpg"></ion-img>
-        <ion-card-title>Star Wars: A Ascensão Skywalker</ion-card-title>
-          <ion-card-content>
-            Com o retorno do Imperador Palpatine, a Resistência toma a frente da batalha.
-            Treinando para ser uma completa Jedi, Rey se encontra em conflito com passado e futuro,
-            e teme pelas respostas que pode conseguir com Kylo Ren.  <a href="https://www.imdb.com/title/tt2527338/">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=W0squnw6Jp8">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-a-ascensao-skywalker-episodio-ix/5e8JThYwCYgw">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
+  <div class="film-card">
+  <ion-card class="ion-activatable ripple-parent"  *ngFor="let current of currentItem">
+    <ion-img src={{current.image}}></ion-img>
 
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/solo.jpg"></ion-img>
-        <ion-card-title>Han Solo: Uma História de Star Wars</ion-card-title>
-          <ion-card-content>
-            Em dificuldade financeira, o piloto Han Solo e sua namorada Qi'ra buscam trabalho.
-            Eles colocam as mãos em uma substância valiosa, mas perigosa, e que acaba levando 
-            à perseguição do Império e à separação entre os dois. Preocupado, Han usa toda a sua
-            esperteza para se infiltrar em um plano arriscado, mas que pode render a oportunidade
-            de voltar à terra natal e reencontrar a sua amada. No caminho, o piloto encontra parceiros
-            importantes, como Chewbacca e Lando Calrissian <a href="https://www.imdb.com/title/tt3778644/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=UtpnRFzZWlM">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/han-solo-uma-historia-star-wars/7ks3IYr1eU2P">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
+    <ion-item >
+      
+      <div id="youtube-player"></div>
+    </ion-item> 
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="auto">
+          <ion-card-subtitle class = subtitle >{{current.release_date}}</ion-card-subtitle>
+          <ion-card-title class = sw-title>{{current.name}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-card-content>
 
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/last.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio VIII: Os Últimos Jedi</ion-card-title>
-          <ion-card-content>
-            A tranquila e solitária vida de Luke Skywalker sofre uma reviravolta quando ele conhece Rey,
-            uma jovem que mostra fortes sinais da Força. O desejo dela de aprender o estilo dos Jedi força 
-            Luke a tomar uma decisão que mudará sua vida para sempre. Enquanto isso, Kylo Ren e o General Hux lideram 
-            a Primeira Ordem para um ataque total contra Leia e a Resistência pela supremacia da galáxia.
-            <a href="https://www.imdb.com/title/tt2527336/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=4JB3tHn2S5A">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/rogue-one-uma-historia-star-wars/14CV6eSbygOA">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
+          <ion-label class = "text">
+            {{current.resume}}
+          </ion-label>
+         </ion-card-content>
+      </ion-row>
+    </ion-card-header>
+    
+    <ion-button class = "trailer-btn" (click)="youtubePlayerNative(current.trailer)">Trailer</ion-button>
+    <ion-button class = "info-btn"  [routerLink]="['/info', 'films', current.id]">Ver Mais</ion-button>
+    <ion-ripple-effect></ion-ripple-effect>
+  </ion-card>
+</div>
+  
+  
 
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/rogue.jpg"></ion-img>
-        <ion-card-title>Rogue One: Uma História Star Wars</ion-card-title>
-          <ion-card-content>
-            A Aliança Rebelde faz um movimento arriscado e rouba os planos da Estrela da Morte,
-            a arma definitiva de destruição do Império.<a href="https://www.imdb.com/title/tt3748528/?ref_=nv_sr_srsg_1">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=nq5fOUx28e4">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/rogue-one-uma-historia-star-wars/14CV6eSbygOA">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/force.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio VII: O Despertar da Força</ion-card-title>
-          <ion-card-content>
-            A queda de Darth Vader e do Império levou ao surgimento de uma nova força sombria: a Primeira Ordem.
-            Eles procuram o jedi Luke Skywalker, desaparecido. A resistência tenta desesperadamente encontrá-lo
-            antes para salvar a galáxia.<a href="https://www.imdb.com/title/tt2488496/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=sGbxmsDFVnE">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-o-despertar-da-forca-episodio-vii/1LEKJPDPeMr7">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/return.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio VI: O Retorno do Jedi</ion-card-title>
-          <ion-card-content>
-            Luke Skywalker e seus amigos viajam para Tatooine e salvam seu amigo Han Solo do lorde
-            do crime Jabba o Hutt. O Império Galático começou a construção de uma segunda Estrela da Morte,
-            visando aniquilar a Aliança Rebelde, mas seu término está comprometido pela Frota Rebelde, que insiste
-            em dar um fim ao Império. Neste meio tempo, Luke Skywalker luta para resgatar Vader, um ex-Jedi, de volta
-            do lado sombrio da Força.  <a href="https://www.imdb.com/title/tt0086190/?ref_=nv_sr_srsg_3">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=5UfA_aKBGMc">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-o-retorno-de-jedi-episodio-vi/6QGKo5mjDBS8">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/empire.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio V: O Império Contra-Ataca</ion-card-title>
-          <ion-card-content>
-            Yoda treina Luke Skywalker para ser um cavaleiro Jedi. Han Solo corteja a Princesa Leia
-            enquanto Darth Vader retorna para combater as forças rebeldes que tentam salvar a galáxia.
-            <a href="https://www.imdb.com/title/tt0080684/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=wXyosVVZEYA">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-o-imperio-contra-ataca-episodio-v/iqtDTZAewwYl">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/hope.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio IV: Uma Nova Esperança </ion-card-title>
-          <ion-card-content>
-            A princesa Leia é mantida refém pelas forças imperiais comandadas por Darth Vader.
-            Luke Skywalker e o capitão Han Solo precisam libertá-la e restaurar a liberdade e 
-            a justiça na galáxia. <a href="https://www.imdb.com/title/tt0076759/?ref_=fn_al_tt_1">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=TlLb07C30To">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-uma-nova-esperanca-episodio-iv/12fVeZxD2fWJ">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/revenge.png"></ion-img>
-        <ion-card-title>Star Wars Episódio III: A Vingança dos Sith</ion-card-title>
-          <ion-card-content>
-            As Guerras Clônicas estão em pleno andamento e Anakin Skywalker mantém um elo de lealdade
-            com Palpatine, ao mesmo tempo em que luta para que seu casamento com Padmé Amidala não seja
-            afetado por esta situação. Seduzido por promessas de poder, Anakin se aproxima cada vez mais
-            de Darth Sidious até se tornar o temível Darth Vader. Juntos eles tramam um plano para aniquilar 
-            de uma vez por todas com os cavaleiros jedi.  <a href="https://www.imdb.com/title/tt0121766/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=GLaBPcbxFFs">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-a-vinganca-dos-sith-episodio-iii/4WvbqLFumNvi">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/attack.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio II: Ataque dos Clones</ion-card-title>
-          <ion-card-content>
-            Tentado por promessas de poder, Anakin Skywalker se aproxima de Darth Sidious
-            e participa de um plano para acabar com os Cavaleiros Jedi.  <a href="https://www.imdb.com/title/tt0121765/?ref_=nv_sr_srsg_0">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=DPV0kDhK0hM">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-ataque-dos-clones-episodio-ii/mgpYHGnzZW6N">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-img src="/assets/image/Home/Filmes/phantom.jpg"></ion-img>
-        <ion-card-title>Star Wars Episódio I: A ameaça fantasma</ion-card-title>
-          <ion-card-content>
-            Obi-Wan e seu mentor embarcam em uma perigosa aventura na tentativa de salvar o planeta
-            das garras de Darth Sidious. Durante a viagem, eles conhecem um habilidoso menino e decidem
-            treiná-lo para se tornar um Jedi. Mas o tempo irá revelar que as coisas nem sempre são o que aparentam ser.
-          <a href="https://www.imdb.com/title/tt0120915/">Saiba Mais</a> <br>
-            <ion-button class="botao" href="https://www.youtube.com/watch?v=IBcwY3BrQtA">
-              Trailer
-            </ion-button>
-            <ion-button class="botao" href="https://www.disneyplus.com/pt-br/movies/star-wars-a-ameaca-fantasma-episodio-i/2ezYynkgW1AH">
-              Disney +Plus            
-            </ion-button>
-          </ion-card-content>
-    </ion-card>
-  </div> <!--FIM DIV GERAL-->
-
-  <div class="rodape">
-    <div>
-    <a>TM & LucasFilm Ltd. All Rights Reserved</a><br><br>
-    <a href="https://disneytermsofuse.com/">Term of Use</a><br><br>
-    <a href="https://support.disney.com/hc/pt">Additional Content Information</a><br><br>
-    <a href="https://privacy.thewaltdisneycompany.com/en/">Privacy Policy</a><br><br>
-    <a href="https://privacy.thewaltdisneycompany.com/en/for-parents/childrens-online-privacy-policy/">Children's Online Privacy Policy</a><br><br>
-    <a href="https://www.shopdisney.com/franchises/star-wars/?CMP=SYN-Dcom&att=StarWars_Footer_Store">Star Wars at shopDisney</a><br><br>
-    <a href="http://preferences-mgr.truste.com/?type=starwars&affiliateId=115">Interes-Based Ads</a><br><br>
-    <a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/">Do not Sell My Info</a><br><br>
-   </div>
-  </div>
 
 </ion-content>

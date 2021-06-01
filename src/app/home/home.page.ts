@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Browser } from '@capacitor/browser';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -28,11 +30,17 @@ export class HomePage implements OnInit {
   };
 
 
-  constructor(private activatedRoute: ActivatedRoute,
-              ) { }
+  constructor(private activatedRoute: ActivatedRoute,) { 
+  
+  
+  }
 
   ngOnInit() {
     this.home = this.activatedRoute.snapshot.paramMap.get('id');
+  }
+
+ async openPage(){
+  await Browser.open({toolbarColor: "#000000", url: 'https://github.com/matheusmunizera/'})
   }
 
 }

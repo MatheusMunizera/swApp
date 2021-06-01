@@ -1,1 +1,8 @@
-{}
+
+{
+    "appId": "com.sw.app",
+    "appName": "swApp",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www"
+  }

@@ -87,8 +87,8 @@ ion-content {
   
   .text {
     font-size: clamp(0.9em, 0.9em + 0.9vw, 2em);
-    font-weight: 600;
-    color: var(--ion-color-step-600, #ffffff);
+    font-family: LemonMilk;
+    color: white;
     overflow: hidden;
     display: -webkit-box;
   }

@@ -1,80 +1,82 @@
-@charset "UTF-8";
-@font-face {
-  font-family: "fonteTitle";
-  src: url(/assets/fonts/soloist/soloisthalf.ttf);
-}
-
-ion-toolbar{
-  --background:#000000;
-}
-
-ion-content {
-  --background: url('/assets/gif/background.gif') no-repeat center center / cover;
-}
-
-ion-menu-button {
-  color: var(--ion-color-primary);
-}
-
-//FORMATAÇAÕ HEADER/
-#title{
-  font-family: "fonteTitle";
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: #ffc500;
-  -webkit-text-fill-color: transparent;
-  font-size:large;
-  text-align: center;
-  padding-right: 15%;
-}
-
-//BOTÕES EM GERAL/
-.botao{
-  --background: #ffc500;
-  --background-activated: #ffc500;
-  --color:black;
-   font-family: "fonteButton";
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  -webkit-text-fill-color: black;
-  font-size:small;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-ion-card{
-  margin-bottom: 40px;
-  text-align: justify;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  background: #303030;
-  color: white;
-}
-ion-card-title{
-  background: #303030;
-  color: white;
+.ripple-parent {
+  position: relative;
+  overflow: hidden;
+  color: #ffc500
 }
 
 
-.rodape{
-  background-image: url("/assets/image/Home/Home/rodape.jpg"); 
-  background-repeat: no-repeat;
-  background-size:100%;
-  background-position:center;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  margin-bottom: 10px;
-  border: transparent solid;
-  text-align: center;
+.trailer-btn{
+  font-family: SoloistTitle !important;
+  --color: #ffc500;
+  border-color: #ffc500;
+  border-style: groove;
+  border-left: none !important;
+  border-right: none !important;
+  --background: transparent;
+  position: absolute;
+  transform: translate(180px,-25px);
+  font-size: smaller;
 
-  a{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #ffc500;
+}
+
+.info-btn{ font-family: SoloistTitle !important;
+  --color: #ffc500;
+  border-color: #ffc500;
+  border-style: groove;
+  border-left: none !important;
+  border-right: none !important;
+  --background: transparent;
+  position: absolute;
+  transform: translate(0px,-25px);
+  font-size: smaller;
+
+}
+.film-card{
+  position: absolute;
+  top: 12%;
+  left: 10%;
+  ion-card {
+    transform: translate(-5%, -25%);
+    text-align: left;
+    background: #000000;
+    object-fit: fill;
+    border: solid 1px #303030;
+    margin: 5% 5% 10% 5%;
+    overflow: visible;
+    position: relative;
+
+    ion-img {
+      height: 130px;
+      width: 100%;
+      object-fit: cover;
+      border: solid 2px #ffc500;
+      box-shadow: 2px -2px 20px yellow;
+      border-radius: 5%;
+    }
+
+    ion-card-header{
+      padding: 0px 0px 0px 1%;
+    }
+    ion-card-title {
+      font-size:large;
+      -webkit-text-stroke-color: #ffc500;
+    }
+  
+  
   }
-
-  div{
-    margin-top: 80%;
-    border: transparent solid;
-  }
-
 }
+
+.text{
+  text-align: left;
+  color: white;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  margin-left: -10px;
+  margin-top: -15px;
+  margin-bottom: 20px;
+}
+  
+  
+
+
