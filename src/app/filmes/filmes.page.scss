@@ -4,7 +4,6 @@
   color: #ffc500
 }
 
-
 .trailer-btn{
   font-family: SoloistTitle !important;
   --color: #ffc500;
@@ -14,9 +13,10 @@
   border-right: none !important;
   --background: transparent;
   position: absolute;
-  transform: translate(180px,-25px);
+  right: 0%;
+    top: 90%;
   font-size: smaller;
-
+  border-radius: 20px;
 }
 
 .info-btn{ font-family: SoloistTitle !important;
@@ -27,9 +27,10 @@
   border-right: none !important;
   --background: transparent;
   position: absolute;
-  transform: translate(0px,-25px);
+  top: 90%;
+    left: 0%;
   font-size: smaller;
-
+  border-radius: 20px;
 }
 .film-card{
   position: absolute;
@@ -52,6 +53,13 @@
       border: solid 2px #ffc500;
       box-shadow: 2px -2px 20px yellow;
       border-radius: 5%;
+    }
+    ion-icon {
+      position: absolute;
+      top: 1%;
+      left: 90%;
+      width: 30px;
+      height: 20px;
     }
 
     ion-card-header{

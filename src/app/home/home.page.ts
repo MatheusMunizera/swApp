@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Browser } from '@capacitor/browser';
-
+import { SwAppService } from '../services/sw-app.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -30,11 +30,17 @@ export class HomePage implements OnInit {
   };
 
 
-  constructor(private activatedRoute: ActivatedRoute,) { 
+  constructor(private activatedRoute: ActivatedRoute,private swService: SwAppService) { 
   
   
   }
 
+  async ngAfterViewInit(){
+    await this.swService.requestAll();
+  }
+
+
+  
   ngOnInit() {
     this.home = this.activatedRoute.snapshot.paramMap.get('id');
   }

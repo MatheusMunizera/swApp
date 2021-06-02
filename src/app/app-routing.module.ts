@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'quizz',
     loadChildren: () => import('./quizz/quizz.module').then( m => m.QuizzPageModule)
+  },
+  {
+    path: 'openingcrawl',
+    loadChildren: () => import('./openingcrawl/openingcrawl.module').then( m => m.OpeningcrawlPageModule)
   }
 ];
 

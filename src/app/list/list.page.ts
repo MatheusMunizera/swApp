@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { SwAppService } from '../services/sw-app.service';
@@ -33,12 +33,12 @@ export class ListPage implements OnInit {
 
 
   async ngOnInit() {
-    await this.presentLoading();
-  
-   
-   
+   // await  this.presentLoading(); 
   }
 
+  async ngAfterViewInit(){
+   await  this.presentLoading();
+  }
  
   public updateFilter(){
     const currentList = this.currentFilter + 'List'

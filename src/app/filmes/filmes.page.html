@@ -3,11 +3,9 @@
   <div class="film-card">
   <ion-card class="ion-activatable ripple-parent"  *ngFor="let current of currentItem">
     <ion-img src={{current.image}}></ion-img>
+   
+    <ion-icon name="alert-circle-outline" color="primary" [routerLink]="['/info','films', current.id]"></ion-icon>
 
-    <ion-item >
-      
-      <div id="youtube-player"></div>
-    </ion-item> 
     <ion-card-header>
       <ion-row>
         <ion-col size="auto">
@@ -17,16 +15,15 @@
       </ion-row>
       <ion-row>
         <ion-card-content>
-
           <ion-label class = "text">
             {{current.resume}}
           </ion-label>
          </ion-card-content>
       </ion-row>
     </ion-card-header>
-    
-    <ion-button class = "trailer-btn" (click)="youtubePlayerNative(current.trailer)">Trailer</ion-button>
-    <ion-button class = "info-btn"  [routerLink]="['/info', 'films', current.id]">Ver Mais</ion-button>
+   
+    <ion-button class = "trailer-btn" (click)="openBrowser(current.trailer, current.name)">Trailer</ion-button>
+    <ion-button class = "info-btn"  [routerLink]="['/openingcrawl', current.id]">Opening Crawl</ion-button>
     <ion-ripple-effect></ion-ripple-effect>
   </ion-card>
 </div>

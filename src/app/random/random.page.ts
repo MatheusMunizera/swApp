@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { AnimationController, LoadingController } from '@ionic/angular';
 import { SwAppService } from '../services/sw-app.service';
 @Component({
@@ -21,8 +21,10 @@ export class RandomPage implements OnInit {
   
   }
 
-  public ngOnInit() {
-     this.swService.requestAll();
+  public ngOnInit() {}
+
+  async ngAfterViewInit(){
+    await this.swService.requestAll();
   }
 
   // ***************** ANIMAÇOES *************  \\
