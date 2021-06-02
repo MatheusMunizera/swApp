@@ -27,14 +27,14 @@ export class RankPage implements OnInit {
       ranking.filter((rank) => rank.username.includes(search))
     ),
     map((ranks) =>
-      [...ranks]
+    [...ranks]
         .sort((a, b) => a.username.localeCompare(b.username))
         .sort((a, b) => b.score - a.score)
     )
   );
 
   public updateSearchStream(event: any) {
-    this.searchStream.next(event.detail.value.toLowerCase());
+    this.searchStream.next( event.detail.value.toLowerCase());
   }
 
   public goQuizz() {
