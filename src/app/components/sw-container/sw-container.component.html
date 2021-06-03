@@ -542,3 +542,72 @@
 
 </ng-container>
 <!-- *******************************************************************************************    -->
+
+
+<!-- *********************************   S E R I E S   **********************************************************    -->
+<ng-container *ngIf="typeItem === 'series'">
+  <ion-card *ngIf="segmentCard === 'Tech'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Elenco:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>Coming Soon</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-title>Personagens:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>Coming Soon</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+   
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Prod'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Diretor:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.director}} </ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-title>Produtores</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>{{currentItem.producer}}</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentCard === 'Pol'">
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-title>Coming:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>Soon</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-title>Coming:</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-label>Soon</ion-label>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ng-container>
+<!-- *******************************************************************************************    -->

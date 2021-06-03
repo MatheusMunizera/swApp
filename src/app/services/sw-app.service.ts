@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
-import { Character, Specie, Vehicle, Planet, Films } from '../models/SwTypeItems';
+import { Character, Specie, Vehicle, Planet, Films, Series } from '../models/SwTypeItems';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 interface Rank {
@@ -19,6 +19,7 @@ export class SwAppService {
   public speciesList: Specie[] = [];
   public planetsList: Planet[] = [];
   public filmsList: Films[] = [];
+  public seriesList: Series[] = [];
 
   private readonly API_URL_CHARACTER =
     'https://matheusmunizera.github.io/starwars-api/api/allCharacters.json';
@@ -30,6 +31,8 @@ export class SwAppService {
     'https://matheusmunizera.github.io/starwars-api/api/allSpecies.json';
   private readonly API_URL_FILMS =
     'https://matheusmunizera.github.io/starwars-api/api/allFilms.json';
+  private readonly API_URL_SERIES =
+    'https://matheusmunizera.github.io/starwars-api/api/allSeries.json';
 
   constructor(public http: HttpClient, private storage: Storage) {
     this.loadRanks();
@@ -43,6 +46,7 @@ export class SwAppService {
       await this.getAllPlanets();
       await this.getAllSpecies();
       await this.getAllFilms();
+      await this.getAllSeries();
     }
     this.status = true;
   }
@@ -93,6 +97,14 @@ export class SwAppService {
       });
   }
 
+  async getAllSeries(){
+    this.http
+      .get<Series[]>(this.API_URL_SERIES)
+      .toPromise()
+      .then((data)=>{
+        this.seriesList = data
+      });
+  }
 
   // ********    R A N D O M   *********** \\
 

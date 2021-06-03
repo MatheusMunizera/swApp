@@ -31,12 +31,10 @@ export class FilmesPage implements OnInit {
     await loading.dismiss();
   }
 
-  async openBrowser(url: string, name: string) {
+  async openBrowser(url: string) {
     await Browser.open({ 
       toolbarColor: '#ffc500', 
       url: url, 
-      windowName: name,
-      
     });
   }
 

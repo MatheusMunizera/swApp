@@ -22,13 +22,9 @@
       </ion-row>
     </ion-card-header>
    
-    <ion-button class = "trailer-btn" (click)="openBrowser(current.trailer, current.name)">Trailer</ion-button>
+    <ion-button class = "trailer-btn" (click)="openBrowser(current.trailer)">Trailer</ion-button>
     <ion-button class = "info-btn"  [routerLink]="['/openingcrawl', current.id]">Opening Crawl</ion-button>
     <ion-ripple-effect></ion-ripple-effect>
   </ion-card>
 </div>
-  
-  
-
-
 </ion-content>

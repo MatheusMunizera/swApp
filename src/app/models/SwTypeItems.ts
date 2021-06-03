@@ -14,6 +14,17 @@ export interface Films {
   species:       string[];
 }
 
+export interface Series {
+  id:           number;
+  name:         string;
+  release_date: Date;
+  image:        string;
+  trailer:      string;
+  resume:       string;
+  director:     string;
+  producer:     string;
+}
+
 export interface Character {
   id:           number;
   name:         string;

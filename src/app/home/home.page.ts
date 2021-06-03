@@ -36,7 +36,7 @@ export class HomePage implements OnInit {
   }
 
   async ngAfterViewInit(){
-    await this.swService.requestAll();
+   await this.swService.requestAll();
   }
 
 
@@ -45,8 +45,8 @@ export class HomePage implements OnInit {
     this.home = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
- async openPage(){
-  await Browser.open({toolbarColor: "#000000", url: 'https://github.com/matheusmunizera/'})
+ async openPage(name: string){
+  await Browser.open({toolbarColor: "#ffc500", url: 'https://github.com/matheusmunizera/'})
   }
 
 }

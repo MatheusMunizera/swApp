@@ -33,7 +33,7 @@ export class ListPage implements OnInit {
 
 
   async ngOnInit() {
-   // await  this.presentLoading(); 
+ 
   }
 
   async ngAfterViewInit(){

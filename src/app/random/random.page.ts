@@ -24,7 +24,7 @@ export class RandomPage implements OnInit {
   public ngOnInit() {}
 
   async ngAfterViewInit(){
-    await this.swService.requestAll();
+   await this.swService.requestAll();
   }
 
   // ***************** ANIMAÇOES *************  \\
