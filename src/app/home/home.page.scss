@@ -1,3 +1,9 @@
+#container {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 200px;
+}
 
 
 /*fORMATAÇÃO LINKS*/
@@ -6,106 +12,117 @@ a{
   color: #ffffff;
 } 
 
-#container {
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  min-width: 300px;
+h1{
+  color: #ffc500;;
 }
 
+ion-card {
+  margin-top: 10%;
+  text-align: left;
+  background: #000000;
+  object-fit: fill;
+  border: solid 1px #303030;
 
-/*CLASSE DOS SLIDES INICIAIS*/
-.slides{
-  margin: 4%;
-
-  ion-slide{
-    
-    text-align: justify;
-    display: inline-block;
-    padding: 0, 20px;
-    p{
-      color: white;
-    }
+  img {
+    min-height: 250px;
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border: solid 2px #ffc500;
+    box-shadow: 2px -2px 20px yellow;
+    border-radius: 5%;
   }
-
 }
 
+.botton{
+  --color: #ffc500;
+  border-color: #ffc500;
+  border-style: groove;
+  border-left: none !important;
+  border-right: none !important;
+  --background: transparent;
+  font-size: smaller;
+  border-radius: 20px;
+  margin-left: 78%;
+}
 
-
-/*CLASSE DIV BATTEFRONT*/
 .battlefront{/*Background do segundo conjunto de slides*/
   background-image: url("/assets/image/Home/Home/battlefront.jpg");
   background-repeat: no-repeat;
-  background-position:center;
+  background-position:center center / cover;
   background-size:100%;
   max-width: 100%;
   min-width: 100%;
-  min-height: 150%;
-  max-height: 150%;
+  min-height: 100%;
+  max-height: 100%;
   margin-top: 30px;
+  border-left: none !important;
+  border-right: none !important;
+
+  ion-card {
+    margin-top: 10%;
+    text-align: left;
+    background: #000000;
+    object-fit: fill;
+    border: solid 1px #303030;
+  
+    img {
+      min-height: 150px;
+      max-height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border: solid 2px #ffc500;
+      box-shadow: 2px -2px 20px yellow;
+      border-radius: 5%;
+    }
+  }
 
 /*FORMATAÇÃO BUTTON*/
   ion-button{
-    --background: #ffc500;
-    --background-activated: #ffc500;
-    --color:black;
-     font-family: "fonteButton";
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    -webkit-text-fill-color: black;
-    position: absolute;
-    margin: 190% 25% 5% 75%;
+    --color: #ffc500;
+    border-color: #ffc500;
+    border-style: groove;
+    border-left: none !important;
+    border-right: none !important;
+    --background: transparent;
     font-size:small;
-    
+    border-radius: 20px;
+    margin: 190% 25% -150% 75%;
+    min-width: 100%;
+    min-height: 10%;
+    max-height: 30%;
+    }
 
+    ion-slides{
+      margin-top: 80%;
+      border: transparent solid;
     }
 }
-h1{
-  color: white;
-}
-/*FORMATAÇÃO SLIDES BATTLEFRONT*/
-.slide2{
-  margin-top: 100%;
-  border: transparent solid;
-      ion-card{
-        background-color: rgb(29, 28, 28);
-        text-align: justify;
-        color: white;
-        font-family:Arial, Helvetica, sans-serif;
-        img{
-          border-radius: 10px;
-          width: 100%;
-        }
-      }
-}
 
-
-/*FORMATAÇÃO DIV MANDALORIA*/
-.mandalorian{
-  background-image: url("/assets/image/Home/Home/mandalorian.jpg"); 
+.mandalorian{/*Background do segundo conjunto de slides*/
+  background-image: url("/assets/image/Home/Home/mandalorian.jpg");
   background-repeat: no-repeat;
-  background-size:100% 99%;
-  background-position:center;
+  background-position:center center / cover;
+  background-size:100%;
+  top: 90%;
   max-width: 100%;
   min-width: 100%;
   min-height: 100%;
   max-height: 100%;
   margin-top: 30px;
 
+/*FORMATAÇÃO BUTTON*/
   ion-button{
-    --background: #ffc500;
-    --background-activated: #ffc500;
-    --color:black;
-     font-family: "fonteButton";
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    -webkit-text-fill-color: black;
-    font-size:small;
-    margin-top:80%;
-    margin-left: 5%;
-    margin-bottom: 40%;
-  }
-
+    --color: #ffc500;
+    border-color: #ffc500;
+    border-style: groove;
+    border-left: none !important;
+    border-right: none !important;
+    --background: transparent;
+    font-size: 10px;
+    border-radius: 20px;
+    margin: 90% 5% 60% 0%;
+    }
 }
 
 /*FORMATAÇÃO NOTICIAS E LINKS EXTRAS*/
@@ -113,6 +130,9 @@ h1{
   margin: 10% 2%; 
   ion-slide{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:small;
+    display: inline-block;
+    a:link {text-decoration: none;}
   }
 
   img{
@@ -122,28 +142,3 @@ h1{
   }
 
 }
-/*FORMATAÇÃO RODAPE*/
-#rodape{
-  background-image: url("/assets/image/Home/Home/rodape.jpg"); 
-  background-repeat: no-repeat;
-  background-size:100%;
-  background-position:center;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  margin-bottom: 10px;
-  border: transparent solid;
-
-  a{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #ffc500;
-  }
-
-  div{
-    margin-top: 80%;
-    border: transparent solid;
-  }
-
-}
-

@@ -1,172 +1,163 @@
 <app-sw-header [namePage] = "'Home'" [type] = "'geral'"></app-sw-header>
 <ion-content>
-  <div id="container">    <!--iNICIO DO CONTAINER-->
-    <div class="slides">   <!--DIV  (SLIDES INICIAL)-->
-      <ion-slides pager="true" [options]="slideOpts">  <!-- INICIO DO 1 CONJUNTO DE SLIDES-->
-        <ion-slide >
-            <img src="/assets/image/Home/Home/teste.jpg">
-            <p >Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown </p>
-        </ion-slide>
-
-        <ion-slide>
-             <img src="/assets/image/Home/Home/teste.jpg">
-             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown </p>
-        </ion-slide>
-
-        <ion-slide>
-              <img src="/assets/image/Home/Home/teste.jpg">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                when an unknown </p>
-        </ion-slide>
-      </ion-slides>   <!--FIM DO 1 CONJUNTO DE SLIDES-->
-    </div>   <!--FIM DA DIV (SLIDES INICIAL)-->
-
-    <div class="battlefront">     <!--INICIO DIV (BATTLEFRONT)-->
-      <ion-row>    <!-- INICIO ROW BUTTON-->
-        <ion-col size="6">    <!--INICIO COL BUTTON-->
-          <ion-button expand="full">
-           teste plugin
-          </ion-button>
-        </ion-col><!-- FIM COL BUTTON-->
-      </ion-row><!--FIM ROW BUTTON-->
-
-          <ion-slides pager="true" [options]="slideOpts2" class="slide2">    <!--INICIO 2 CONJUNTO DE SLIDES BATTLEFRONT-->
-  
-            <ion-slide> 
-             <ion-card href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/letter-to-the-community-original-era-content" >
-               <img src="/assets/image/noticias/scarif.jpg">
-               <p>Battle on Scarif é a última atualização para Star Wars: Battlefront 2</p>
-               <p>27/04/2020</p>
-              </ion-card>
-            </ion-slide>
- 
-            <ion-slide>
-               <ion-card href="https://dropsdejogos.uai.com.br/noticias/industria/ultimas-horas-epic-games-store-tem-um-jogo-de-star-wars-gratuito/">
-               <img src="/assets/image/noticias/battefront.jpg">
-                 <p>ÚLTIMAS HORAS Epic Games Store tem um jogo de Star Wars gratuito</p>
-                 <p>21/01/2020</p>
-              </ion-card>
-             </ion-slide>
- 
-             <ion-slide>
-                 <ion-card href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/making-the-sounds-of-swbf2">
-                 <img src="/assets/image/noticias/sons.jpg">
-                   <p>CRIANDO OS SONS DE STAR WARS™ BATTLEFRONT™ II</p>
-                   <p>19/02/2020</p>
-                </ion-card>
-             </ion-slide>
-          </ion-slides> <!--FIM 2 CONJUNTO DE SLIDES BATTLEFRONT-->
-
-    </div>   <!--FIM DIV  (BATTLEFRONT)-->
-
-    <div class="mandalorian">   <!-- INICIO DIV (MANDALORIAN)-->
-        <ion-row>   <!-- INICIO ROW 2 BUTTON-->
-          <ion-col size="12"> <!-- INICIO COL 2 BUTTON-->
-            <ion-button class="botao-mandalorian"  href="https://www.disneyplus.com/pt-br/series/the-mandalorian/3jLIGMDYINqD">
-              Assistir 
-            </ion-button>
+    <div id="container">  <!--iNICIO DO CONTAINER-->
+        <div class="slides">   <!--DIV  (SLIDES INICIAL)-->
+            <ion-slides pager="true" [options]="slideOpts">  <!-- INICIO DO 1 CONJUNTO DE SLIDES-->
+              <ion-slide >
+                  <ion-card>
+                  <img src="/assets/image/Home/Home/personagens.png">
+                  <p>Acesse as infromações dos seus personagens favoritos e descubra curiosidades, origem, detalhes técnicos e muito mais sobre esse incrível universo de Star Wars</p>
+                  <ion-button class="botton" routerLink="/list">
+                    Explore
+                  </ion-button>
+                  </ion-card>
+              </ion-slide>
       
-            <ion-button class="botao-mandalorian" href="https://www.youtube.com/watch?v=rV-BmMbWEj4">
-              Trailer
-            </ion-button> 
-          </ion-col>   <!--FIM ROW 2 BUTTON-->
-        </ion-row>    <!--FIM COL 2 BUTTON-->
-  
-    </div>
-
-    <div class="slide3"> <!--INICIO DIV DE NOTICIAS-->
+              <ion-slide>
+                    <ion-card>
+                   <img src="/assets/image/Home/Home/quiz.gif">
+                   <p>Teste seu conhecimento sobre o universo Star Wars</p><br><br>
+                   <ion-button class="botton" routerLink="/quizz">
+                    Explore
+                    </ion-button>
+                    </ion-card>
+              </ion-slide>
       
-    <ion-row><!--START ROW NOTICIAS -->
-      <ion-col size="12"> <!--START COL NOTICIAS -->
+              <ion-slide>
+                    <ion-card>
+                    <img src="/assets/image/Home/Home/teste.jpg">
+                    <p>Veja todos os filmes pertencentes ao universo de Star wars e descrubra curiosidades e infromações extras de cada filme.</p>
+                      <ion-button class="botton" routerLink="/filmes">
+                          Explore
+                      </ion-button>
+                    </ion-card>
+              </ion-slide>
+            </ion-slides>   <!--FIM DO 1 CONJUNTO DE SLIDES-->
+          </div>  <!--FIM DA DIV (SLIDES INICIAL)-->
 
-        <h1>Últimas Notícias </h1>
+          <div class="battlefront">     <!--INICIO DIV (BATTLEFRONT)-->
+            <ion-row>    <!-- INICIO ROW BUTTON-->
+              <ion-col size="6">    <!--INICIO COL BUTTON-->
+                <ion-button expand="full">
+                    buy now
+                </ion-button>
+              </ion-col><!-- FIM COL BUTTON-->
+            </ion-row><!--FIM ROW BUTTON-->
+      
+                <ion-slides pager="true" [options]="slideOpts2">    <!--INICIO 2 CONJUNTO DE SLIDES BATTLEFRONT-->
+        
+                  <ion-slide> 
+                   <ion-card href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/letter-to-the-community-original-era-content" >
+                     <img src="/assets/image/Home/Noticias/scarif.jpg">
+                     <p>Battle on Scarif é a última atualização para Star Wars: Battlefront 2</p>
+                     <p>27/04/2020</p>
+                    </ion-card>
+                  </ion-slide>
+       
+                  <ion-slide>
+                     <ion-card href="https://dropsdejogos.uai.com.br/noticias/industria/ultimas-horas-epic-games-store-tem-um-jogo-de-star-wars-gratuito/">
+                     <img src="/assets/image/Home/Noticias/battefront.jpg">
+                       <p>ÚLTIMAS HORAS Epic Games Store tem um jogo de Star Wars gratuito</p>
+                       <p>21/01/2020</p>
+                    </ion-card>
+                   </ion-slide>
+       
+                   <ion-slide>
+                       <ion-card href="https://www.ea.com/pt-br/games/starwars/battlefront/star-wars-battlefront-2/news/making-the-sounds-of-swbf2">
+                       <img src="/assets/image/Home/Noticias/sons.jpg">
+                         <p>CRIANDO OS SONS DE STAR WARS™ BATTLEFRONT™ II</p>
+                         <p>19/02/2020</p>
+                      </ion-card>
+                   </ion-slide>
+                </ion-slides> <!--FIM 2 CONJUNTO DE SLIDES BATTLEFRONT-->
+          </div>   <!--FIM DIV  (BATTLEFRONT)-->
 
-        <ion-slides pager="true" [options]="slideOpts3"> <!--INICIO CONJUNTO DE SLIDES NOTICIAS-->
-  
-          <ion-slide>
-             <a href="https://olhardigital.com.br/2021/03/30/cinema-e-streaming/star-wars-the-bad-batch-ganha-trailer-e-data-de-estreia-no-disney/">
-              <img src="/assets/image/Home/Noticias/bad.jfif">
-              <p>Star Wars The Bad Batch ganha trailer e data de estreia no Disney+</p></a>
-          </ion-slide>
+          <div class="mandalorian"> <!--INICIO DIV  (Mandaloria)-->
+            <ion-row>   <!-- INICIO ROW 2 BUTTON-->
+                <ion-col size="12"> <!-- INICIO COL 2 BUTTON-->
+                  <ion-button class="assistir"  href="https://www.disneyplus.com/pt-br/series/the-mandalorian/3jLIGMDYINqD">
+                    Assistir 
+                  </ion-button>
+            
+                  <ion-button class="trailer" href="https://www.youtube.com/watch?v=rV-BmMbWEj4">
+                    Trailer
+                  </ion-button> 
+                </ion-col>   <!--FIM ROW 2 BUTTON-->
+              </ion-row>    <!--FIM COL 2 BUTTON-->
+          </div> <!--FIM DIV  (Mandaloria)-->
 
-          <ion-slide>
-             <a href="https://olhardigital.com.br/2021/04/02/games-e-consoles/lego-star-wars-the-skywalker-saga-e-adiado-indefinidamente/">
-              <img src="/assets/image/Home/Noticias/lego.jpg">
-              <p>Lego Star Wars The Skywalker Saga é adiado indefinidamente</p></a>
-           </ion-slide>
+          <div class="slide3"> <!--INICIO DIV DE NOTICIAS-->
+      
+            <ion-row><!--START ROW NOTICIAS -->
+              <ion-col size="12"> <!--START COL NOTICIAS -->
+        
+                <h1>Últimas Notícias </h1>
+        
+                <ion-slides pager="true" [options]="slideOpts3"> <!--INICIO CONJUNTO DE SLIDES NOTICIAS-->
+          
+                  <ion-slide>
+                     <a href="https://olhardigital.com.br/2021/03/30/cinema-e-streaming/star-wars-the-bad-batch-ganha-trailer-e-data-de-estreia-no-disney/">
+                      <img src="/assets/image/Home/Noticias/bad.jfif">
+                      <p>Star Wars The Bad Batch ganha trailer e data de estreia no Disney+</p></a>
+                  </ion-slide>
+        
+                  <ion-slide>
+                     <a href="https://olhardigital.com.br/2021/04/02/games-e-consoles/lego-star-wars-the-skywalker-saga-e-adiado-indefinidamente/">
+                      <img src="/assets/image/Home/Noticias/lego.jpg">
+                      <p>Lego Star Wars The Skywalker Saga é adiado indefinidamente</p></a>
+                   </ion-slide>
+        
+                   <ion-slide>
+                      <a href="https://www.oficinadanet.com.br/disney-plus/35879-disney-ordem-correta-para-assistir-os-filmes-star-wars">
+                        <img src="/assets/image/Home/Noticias/ordem.jfif">
+                        <p>Star Wars Qual a ordem certa para assistir os filmes na Disney+?</p></a>
+                   </ion-slide>
+        
+                   <ion-slide>
+                      <a href="https://sociedadejedi.com.br/2021/01/05/star-wars-a-alta-republica-novo-trailer-e-livros-revelados/">
+                        <img src="/assets/image/Home/Noticias/republic.jpg">
+                        <p>Star Wars A Alta República Novo Trailer e Livros Revelados</p></a>
+                   </ion-slide>
+                 </ion-slides> <!--FIM CONJUNTO SLIDES-->
+                </ion-col> <!--FIM COL -->
+              </ion-row> <!--FIM ROW-->
+            </div> <!--FIM DIV NOTICIAS-->
 
-           <ion-slide>
-              <a href="https://www.oficinadanet.com.br/disney-plus/35879-disney-ordem-correta-para-assistir-os-filmes-star-wars">
-                <img src="/assets/image/Home/Noticias/ordem.jfif">
-                <p>Star Wars Qual a ordem certa para assistir os filmes na Disney+?</p></a>
-           </ion-slide>
+            <div class="slide3"> <!--DIV LINKS EXTRAS-->
+                <ion-row> <!--INICIO ROW LINKS EXTRAS-->
+                  <ion-col size="12"> <!--INICIO COL LINKS EXTRAS-->
+                    <h1>Links Extras</h1>
+          
+                    <ion-slides pager="true" [options]="slideOpts3"> <!--INICIO CONJUNTO SLIDES NOTICIAS-->
+              
+                      <ion-slide>
+                        <a href="https://loja.panini.com.br/panini/vitrines/comics-star-wars.aspx"><img src="/assets/image/Home/Extras/republic.jpg">
+                         <h2>HQs</h2></a>
+                      </ion-slide>
+            
+                      <ion-slide>
+                          <a href="https://starwars.fandom.com/pt/wiki/P%C3%A1gina_principal"><img src="/assets/image/Home/Extras/fandom.jpg">
+                            <h2>Fandom</h2></a>
+                       </ion-slide>
+            
+                       <ion-slide>
+                          <a href="https://www.disneyplus.com/pt-br/login"><img src="/assets/image/Home/Extras/disney.jpg">
+                            <h2>Disney +</h2></a>
+                       </ion-slide>
+            
+                       <ion-slide>
+                          <a href="https://www.starwarscelebration.com/"><img src="/assets/image/Home/Extras/celebration.webp">
+                            <h3>Star Wars Celebration</h3></a>
+                       </ion-slide>
+            
+                       <ion-slide>
+                         <a href="https://www.oculus.com/vader-immortal/"><img src="/assets/image/Home/Extras/vader.webp">
+                           <h2>Vader Immortal</h2></a>
+                       </ion-slide>
+                    </ion-slides> <!--FIM CONJUNTO DE SLIDES NOTICIAS-->
+                  </ion-col> <!-- FIM ROW NOTICIAS-->
+                </ion-row><!--FIM COL NOTICIAS-->
+              </div>
 
-           <ion-slide>
-              <a href="https://sociedadejedi.com.br/2021/01/05/star-wars-a-alta-republica-novo-trailer-e-livros-revelados/">
-                <img src="/assets/image/Home/Noticias/republic.jpg">
-                <p>Star Wars A Alta República Novo Trailer e Livros Revelados</p></a>
-           </ion-slide>
-         </ion-slides> <!--FIM CONJUNTO SLIDES-->
-        </ion-col> <!--FIM COL -->
-      </ion-row> <!--FIM ROW-->
-    </div> <!--FIM DIV NOTICIAS-->
-
-    <div class="slide3"> <!--DIV LINKS EXTRAS-->
-      <ion-row> <!--INICIO ROW LINKS EXTRAS-->
-        <ion-col size="12"> <!--INICIO COL LINKS EXTRAS-->
-          <h1>Links Extras</h1>
-
-          <ion-slides pager="true" [options]="slideOpts3"> <!--INICIO CONJUNTO SLIDES NOTICIAS-->
-    
-            <ion-slide>
-              <a href="https://loja.panini.com.br/panini/vitrines/comics-star-wars.aspx"><img src="/assets/image/Home/Extras/republic.jpg">
-               <h2>HQs</h2></a>
-            </ion-slide>
-  
-            <ion-slide>
-                <a href="https://starwars.fandom.com/pt/wiki/P%C3%A1gina_principal"><img src="/assets/image/Home/Extras/fandom.jpg">
-                  <h2>Fandom</h2></a>
-             </ion-slide>
-  
-             <ion-slide>
-                <a href="https://www.disneyplus.com/pt-br/login"><img src="/assets/image/Home/Extras/disney.jpg">
-                  <h2>Disney +</h2></a>
-             </ion-slide>
-  
-             <ion-slide>
-                <a href="https://www.starwarscelebration.com/"><img src="/assets/image/Home/Extras/celebration.webp">
-                  <h3>Star Wars Celebration</h3></a>
-             </ion-slide>
-  
-             <ion-slide>
-               <a href="https://www.oculus.com/vader-immortal/"><img src="/assets/image/Home/Extras/vader.webp">
-                 <h2>Vader Immortal</h2></a>
-             </ion-slide>
-          </ion-slides> <!--FIM CONJUNTO DE SLIDES NOTICIAS-->
-        </ion-col> <!-- FIM ROW NOTICIAS-->
-      </ion-row><!--FIM COL NOTICIAS-->
-    </div>
-    
-    <div id="rodape"> <!--INICIO DIV RODAPE-->
-      <div>
-      <a>TM & LucasFilm Ltd. All Rights Reserved</a><br><br>
-      <a href="https://disneytermsofuse.com/">Term of Use</a><br><br>
-      <a href="https://support.disney.com/hc/pt">Additional Content Information</a><br><br>
-      <a href="https://privacy.thewaltdisneycompany.com/en/">Privacy Policy</a><br><br>
-      <a href="https://privacy.thewaltdisneycompany.com/en/for-parents/childrens-online-privacy-policy/">Children's Online Privacy Policy</a><br><br>
-      <a href="https://www.shopdisney.com/franchises/star-wars/?CMP=SYN-Dcom&att=StarWars_Footer_Store">Star Wars at shopDisney</a><br><br>
-      <a href="http://preferences-mgr.truste.com/?type=starwars&affiliateId=115">Interes-Based Ads</a><br><br>
-      <a href="https://privacy.thewaltdisneycompany.com/en/dnsmi/">Do not Sell My Info</a><br><br>
-     </div>
-    </div><!-- FIM DIV RODAPE-->
-
-  </div> <!--FIM DIV CONTAINER-->
-  
-
-
+    </div> <!--FIM DIV CONTAINER-->
 </ion-content>
