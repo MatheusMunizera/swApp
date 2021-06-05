@@ -1,144 +1,119 @@
-#container {
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  min-width: 200px;
-}
+.internal-page-slide{
+  margin-bottom: -20%;
 
-
-/*fORMATAÇÃO LINKS*/
-a{
-  text-decoration: none; 
-  color: #ffffff;
-} 
-
-h1{
-  color: #ffc500;;
-}
-
-ion-card {
-  margin-top: 10%;
-  text-align: left;
-  background: #000000;
-  object-fit: fill;
-  border: solid 1px #303030;
-
-  img {
-    min-height: 250px;
-    max-height: 250px;
-    width: 100%;
-    object-fit: cover;
-    border: solid 2px #ffc500;
-    box-shadow: 2px -2px 20px yellow;
-    border-radius: 5%;
-  }
-}
-
-.botton{
-  --color: #ffc500;
-  border-color: #ffc500;
-  border-style: groove;
-  border-left: none !important;
-  border-right: none !important;
-  --background: transparent;
-  font-size: smaller;
-  border-radius: 20px;
-  margin-left: 78%;
-}
-
-.battlefront{/*Background do segundo conjunto de slides*/
-  background-image: url("/assets/image/Home/Home/battlefront.jpg");
-  background-repeat: no-repeat;
-  background-position:center center / cover;
-  background-size:100%;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  margin-top: 30px;
-  border-left: none !important;
-  border-right: none !important;
-
-  ion-card {
-    margin-top: 10%;
-    text-align: left;
-    background: #000000;
-    object-fit: fill;
-    border: solid 1px #303030;
+   ion-title{
+    font-size: x-large
   
-    img {
-      min-height: 150px;
-      max-height: 150px;
-      width: 100%;
-      object-fit: cover;
-      border: solid 2px #ffc500;
-      box-shadow: 2px -2px 20px yellow;
-      border-radius: 5%;
     }
-  }
+  
+   
+    ion-card {
+    min-height: 100%;
+    background: #0000;
+    object-fit: fill;
+    border: 1px solid #00000000;
+    margin: 5% 5% 10%;
+    overflow: visible;
+    position: relative;
 
-/*FORMATAÇÃO BUTTON*/
-  ion-button{
-    --color: #ffc500;
-    border-color: #ffc500;
-    border-style: groove;
-    border-left: none !important;
-    border-right: none !important;
-    --background: transparent;
-    font-size:small;
-    border-radius: 20px;
-    margin: 190% 25% -150% 75%;
+      ion-img {
+        min-height: 130px;
+        min-width: 100%;
+        object-fit: cover;
+        border: solid 2px #ffc500;
+        box-shadow: 2px -2px 20px yellow;
+        border-radius: 5%;
+        margin-top: 5%;
+      }
+    }
+
+    
+}
+
+.game-slide{
+  background-image: url('/assets/gif/Fundo.png');
+  
+  ion-img{
+    margin-top: -10%;
+    position: center center;
     min-width: 100%;
-    min-height: 10%;
-    max-height: 30%;
-    }
-
-    ion-slides{
-      margin-top: 80%;
-      border: transparent solid;
-    }
-}
-
-.mandalorian{/*Background do segundo conjunto de slides*/
-  background-image: url("/assets/image/Home/Home/mandalorian.jpg");
-  background-repeat: no-repeat;
-  background-position:center center / cover;
-  background-size:100%;
-  top: 90%;
-  max-width: 100%;
-  min-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
-  margin-top: 30px;
-
-/*FORMATAÇÃO BUTTON*/
-  ion-button{
-    --color: #ffc500;
-    border-color: #ffc500;
-    border-style: groove;
-    border-left: none !important;
-    border-right: none !important;
-    --background: transparent;
-    font-size: 10px;
-    border-radius: 20px;
-    margin: 90% 5% 60% 0%;
-    }
-}
-
-/*FORMATAÇÃO NOTICIAS E LINKS EXTRAS*/
-.slide3{
-  margin: 10% 2%; 
-  ion-slide{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:small;
-    display: inline-block;
-    a:link {text-decoration: none;}
   }
 
-  img{
-    border-radius: 10px;
-    min-height: 200px;
-    max-height: 200px;
+  h2{
+    margin-top: 5px;
+    font-size: x-large;
   }
+   
+    ion-card {
+    background: #0000;
+    object-fit: fill;
+    border: 1px solid #00000000;
+    margin: 5% 5% 10%;
+    overflow: visible;
+    position: relative;
+    top: -10%;
+    margin-bottom: -5%;
+  
+      ion-img {
+        position: center center;
+        min-height: 306px;
+        min-width: 306px;
+        object-fit: cover;
+        top: -5%;
+        border-radius: 5%;
+       
+      }
 
+      ion-icon {
+        position: absolute;
+        top: 1%;
+        left: 90%;
+        width: 30px;
+        height: 20px;
+      }
+
+    }
+
+  
 }
+
+ .extra-slide{
+
+  ion-title{
+    font-size: x-large
+  
+    }
+  
+  h2{
+      margin-top: 5px;
+      font-size: x-large;
+   }
+  
+    ion-card {
+    height: 100%;
+    background: #0000;
+    object-fit: fill;
+    border: 1px solid #00000000;
+    margin: 5% 5% 10%;
+    overflow: visible;
+    position: relative;
+
+      ion-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5%;
+      }
+    }
+
+ }
+
+
+.sw-title{
+  font-family: Soloist3d !important;
+  text-align: center;
+}
+
+
+
+
