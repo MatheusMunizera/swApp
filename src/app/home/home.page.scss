@@ -17,7 +17,7 @@
     position: relative;
 
       ion-img {
-        min-height: 130px;
+        height: 150px;
         min-width: 100%;
         object-fit: cover;
         border: solid 2px #ffc500;
@@ -45,6 +45,7 @@
   }
    
     ion-card {
+    height: 100%;
     background: #0000;
     object-fit: fill;
     border: 1px solid #00000000;
@@ -56,7 +57,7 @@
   
       ion-img {
         position: center center;
-        min-height: 306px;
+        height: 306px;
         min-width: 306px;
         object-fit: cover;
         top: -5%;
