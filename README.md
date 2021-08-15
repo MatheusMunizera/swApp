@@ -6,20 +6,19 @@
 </p>
 
 # 🌟 SwApp
+<p align="center">Lovingly crafted <a href="https://github.com/MatheusMunizera/starwars-api/">StarWars API</a> tools and resources in Death Star</p>
+
 
 <p align="center">
-  Lovingly crafted <a href="https://github.com/MatheusMunizera/starwars-api/">StarWars API</a> tools and resources in Death Star
     <a target="_blank" href="https://anhembi-swapp.netlify.app/">  
         <img src="https://github.com/MatheusMunizera/swApp/blob/main/readme/all.gif" width="212" height="368"/>
     </a>
   </p>
 
 ## Content
-<table>
 
-</table>
-- <a href="#cristal_ball-Preview-Page">Preview Page</a>
-- [Instalation](#:computer:-Instalation)
+- <a href="#cristal_ball-preview-page">Preview Page</a>
+- [Instalation](#computer-instalation)
 - [Pages](#Pages)
     - [Home](#Home)
     - [Films & Series](#Films-&-Series)
