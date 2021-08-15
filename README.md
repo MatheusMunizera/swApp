@@ -5,30 +5,31 @@
   </a>
 </p>
 
-# 🌠  SwApp
-Lovingly crafted [StarWars API](https://github.com/MatheusMunizera/starwars-api/) tools and resources in Death Star
+# 🌟 SwApp
 
 <p align="center">
+  Lovingly crafted <a href="https://github.com/MatheusMunizera/starwars-api/">StarWars API</a> tools and resources in Death Star
     <a target="_blank" href="https://anhembi-swapp.netlify.app/">  
         <img src="https://github.com/MatheusMunizera/swApp/blob/main/readme/all.gif" width="212" height="368"/>
     </a>
   </p>
 
 ## Content
-- [Preview Page Setup](##Preview-Page-Setup)
-- [Instalation](##Instalation)
-- [Pages](##Pages)
-    - [Home](###Home)
-    - [Films & Series](###Films-&-Series)
-    - [List](###List)
-    - [Random](###Random)
-    - [Info](###Info)
-- [Links](##Links)
-    -[Creators](##Creators) 
+- [Preview Page](#cristal_ball-Preview-Page)
+- [Instalation](#:computer:-Instalation)
+- [Pages](#Pages)
+    - [Home](#Home)
+    - [Films & Series](#Films-&-Series)
+    - [List](#List)
+    - [Random](#Random)
+    - [Info](#Info)
+- [Links](#Links)
+    -[Creators](#Creators) 
 
 
-## Preview Page Setup
-      
+
+## 🔮 Preview Page
+
 🔗 Access: https://anhembi-swapp.netlify.app/ and set to mobile mode.
   <p align="center">
     <a target="_blank" href="https://anhembi-swapp.netlify.app/">  
@@ -36,7 +37,7 @@ Lovingly crafted [StarWars API](https://github.com/MatheusMunizera/starwars-api/
     </a>
   </p>
 
-## Instalation
+## 💻 Instalation
  - 1- Install [NodeJS](https://nodejs.org/en/)
  - 2- Install [Ionic](https://ionicframework.com/docs/intro/cli)<br>
     `npm install -g @ionic/cli`
@@ -49,9 +50,9 @@ Lovingly crafted [StarWars API](https://github.com/MatheusMunizera/starwars-api/
 <br>
 
 
-## Pages
+## 📄 Pages
 
-  ### Home  
+  ### 🏠 Home  
 <p>
   <img align="right" alt="home" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/home.gif" width="212" height="368" />
   <em>
@@ -75,7 +76,7 @@ curiosidades.
 <br>
 <br>
 
-   ### Films & Series 
+    ### 🎥 Films & Series 
   
 
 <p>
@@ -98,7 +99,7 @@ contêm toda a informação do filme, desde elenco quanto nota do filme de acord
 <br>
 <br>
 
-   ### List
+   ### 🧮 List
  
 
 <p>
@@ -126,7 +127,7 @@ apenas abrir os dados do personagem na tela de informações.
 <br>
 <br>
 
-   ### Random
+   ### ♾️ Random
  
 
 <p>
@@ -157,7 +158,7 @@ abrir os demais dados do personagem na tela de informações
 <br>
 <br>
 
-   ### Info
+      ### ℹ️ Info
   <img align="right" alt="info" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/info.gif" width="212" height="368" />
 
 <p>
@@ -173,12 +174,13 @@ Até o momento, já foi implementado toda a questão de design, restando somente
     </em>  
 </p>
   
+  
 
-## Links
+## 🔗 Links
 [SwApp](https://anhembi-swapp.netlify.app)<br>
 [Starwars-API](https:/github.com/MatheusMunizera/starwars-api)<br>
 
-### Creators
+### 🎓 Creators
 [Daniel Baião](https://github.com/Tirss)<br>
 [Henrique Mendes](https://github.com/HmbGow)<br>
 [Lucas Herranz](https://github.com/lucashrz)<br>
