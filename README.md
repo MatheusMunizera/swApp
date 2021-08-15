@@ -15,15 +15,16 @@ Lovingly crafted [StarWars API](https://github.com/MatheusMunizera/starwars-api/
   </p>
 
 ## Content
-- [Preview Page Setup](#Preview-Page-Setup)
-- [Instalation] (#Instalation)
-- [Pages](#Pages)
-    - [Home](#Home)
-    - [Films & Series](#Films-&-Series)
-    - [List](#List)
-    - [Random](#Random)
-    - [Info](#Info)
-- [Links](#links)
+- [Preview Page Setup](##Preview-Page-Setup)
+- [Instalation](##Instalation)
+- [Pages](##Pages)
+    - [Home](###Home)
+    - [Films & Series](###Films-&-Series)
+    - [List](###List)
+    - [Random](###Random)
+    - [Info](###Info)
+- [Links](##Links)
+    -[Creators](##Creators) 
 
 
 ## Preview Page Setup
@@ -37,19 +38,22 @@ Lovingly crafted [StarWars API](https://github.com/MatheusMunizera/starwars-api/
 
 ## Instalation
  - 1- Install [NodeJS](https://nodejs.org/en/)
- - 2- Install [Ionic](https://ionicframework.com/docs/intro/cli)
+ - 2- Install [Ionic](https://ionicframework.com/docs/intro/cli)<br>
     `npm install -g @ionic/cli`
  - 3- Clone the repository
- - 4- On folder:
+ - 4- On folder<br>
  `npm install`
- - 5- To run:
+ - 5- To run<br>
     `ionic server`
     
-## Pages
-  ### Home
-  <img align="right" alt="home" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/home.gif" width="212" height="368" />
+<br>
 
+
+## Pages
+
+  ### Home  
 <p>
+  <img align="right" alt="home" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/home.gif" width="212" height="368" />
   <em>
     A home Page contém uma apresentação do aplicativo e de todo seu conteúdo. Do lado esquerdo do app
 encontramos o menu com os acessos para as outras páginas e acesso para links extras relacionados a criação
@@ -62,12 +66,21 @@ curiosidades.
     </em>  
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
    ### Films & Series 
-  <img align="right" alt="film" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/film.gif" width="212" height="368" />
-  <img align="left" alt="serie" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/serie.gif" width="212" height="368" />
+  
 
 <p>
+  <img align="left" alt="film" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/film.gif" width="212" height="368" />
+  <img align="left" alt="serie" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/serie.gif" width="212" height="368" />
   <em>
     As Páginas filmes e séries traz uma lista de filmes e séries pertencentes ao universo Star Wars, cada card
 possui uma breve sinopse dos filmes/série e dois botões que direcionam para o trailer e para o site da Disney
@@ -76,11 +89,20 @@ contêm toda a informação do filme, desde elenco quanto nota do filme de acord
     </em>  
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
    ### List
-  <img align="right" alt="list" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/list.gif" width="212" height="368" />
+ 
 
 <p>
+   <img align="right" alt="list" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/list.gif" width="212" height="368" />
   <em>
    Essa pagina foi feita com o intuito de trazer mais informações ao usuário sobre o vasto
 universo da saga star wars, mostrando e trazendo ao usuário mais informações sobre o incrível
@@ -95,11 +117,20 @@ apenas abrir os dados do personagem na tela de informações.
     </em>  
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
    ### Random
-  <img align="right" alt="random" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/random.gif" width="212" height="368" />
+ 
 
 <p>
+   <img align="left" alt="random" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/random.gif" width="212" height="368" />
   <em>
   A princípio esta tela tem como objetivo gerar personagens, veículos, planetas ou até espécies de forma
 aleatória.
@@ -117,9 +148,17 @@ abrir os demais dados do personagem na tela de informações
     </em>  
 </p>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
    ### Info
-  <img align="right" alt="info" src="https://github.com/MatheusMunizera/MatheusMunizera/blob/main/Assets/info.gif" width="212" height="368" />
+  <img align="right" alt="info" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/info.gif" width="212" height="368" />
 
 <p>
   <em>
@@ -135,10 +174,16 @@ Até o momento, já foi implementado toda a questão de design, restando somente
 </p>
   
 
-# Links
-[SwApp] (https://anhembi-swapp.netlify.app)
+## Links
+[SwApp](https://anhembi-swapp.netlify.app)<br>
 [Starwars-API](https:/github.com/MatheusMunizera/starwars-api)<br>
-[Matheus Muniz](https://github.com/MatheusMunizera)
+
+### Creators
+[Daniel Baião](https://github.com/Tirss)<br>
+[Henrique Mendes](https://github.com/HmbGow)<br>
+[Lucas Herranz](https://github.com/lucashrz)<br>
+[Matheus Muniz](https://github.com/MatheusMunizera)<br>
+[Pedro Lisboa](https://github.com/Pedrohdiasl)
 
 
 
