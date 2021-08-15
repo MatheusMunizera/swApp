@@ -15,7 +15,10 @@
   </p>
 
 ## Content
-- [Preview Page](#cristal_ball-Preview-Page)
+<table>
+
+</table>
+- <a href="#cristal_ball-Preview-Page">Preview Page</a>
 - [Instalation](#:computer:-Instalation)
 - [Pages](#Pages)
     - [Home](#Home)
@@ -75,8 +78,8 @@ curiosidades.
 <br>
 <br>
 <br>
-
-    ### 🎥 Films & Series 
+  
+  ### 🎥 Films & Series  
   
 
 <p>
@@ -158,7 +161,10 @@ abrir os demais dados do personagem na tela de informações
 <br>
 <br>
 
-      ### ℹ️ Info
+  ### ℹ️ Info
+
+
+
   <img align="right" alt="info" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/info.gif" width="212" height="368" />
 
 <p>
