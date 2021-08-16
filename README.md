@@ -17,16 +17,16 @@
 
 ## Content
 
-- <a href="#cristal_ball-preview-page">Preview Page</a>
-- [Instalation](#computer-instalation)
-- [Pages](#Pages)
-    - [Home](#Home)
-    - [Films & Series](#Films-&-Series)
-    - [List](#List)
-    - [Random](#Random)
-    - [Info](#Info)
-- [Links](#Links)
-    -[Creators](#Creators) 
+- [Preview Page](#-preview-page)
+- [Instalation](#-instalation)
+- [Pages](#-pages)
+    - [Home](#-home)
+    - [Films & Series](#-films--series)
+    - [List](#-list)
+    - [Random](#%EF%B8%8F-random)
+    - [Info](#ℹ%EF%B8%8F-info)
+- [Links](#-links)
+    - [Creators](#-creators) 
 
 
 
