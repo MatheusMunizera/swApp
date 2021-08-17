@@ -1,7 +1,7 @@
 
 <p align="center">
    <a target="_blank" href="https://matheusmunizera.github.io/starwars-api/">
-    <img src="https://github.com/MatheusMunizera/swApp/blob/main/readme/swapplogo.gif"/>
+    <img src="https://github.com/MatheusMunizera/swApp/blob/main/readme/swapplogo.gif" width="980" height="200"/>
   </a>
 </p>
 
@@ -55,17 +55,13 @@
 ## 📄 Pages
 
   ### 🏠 Home  
+  
 <p>
+  
   <img align="right" alt="home" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/home.gif" width="212" height="368" />
+  
   <em>
-    A home Page contém uma apresentação do aplicativo e de todo seu conteúdo. Do lado esquerdo do app
-encontramos o menu com os acessos para as outras páginas e acesso para links extras relacionados a criação
-do site, o conteúdo do site está dividido em slides e posters que realizando o redirecionamento para outros sites,
-no conjunto de slides iniciais irá conter informações das páginas do app, exemplo filmes e séries. Já nos slides
-seguintes encontramos notícias e informações de determinados assuntos como exemplo o slide do jogo
-Battlefront que traz últimas notícias do jogo e um link que direciona para o site onde pode estar adquirindo o
-jogo, também encontramos mais abaixo slides com links extras que direcionam para lojas, notícias e
-curiosidades.
+    This is the first page from SwApp and its an apresentation of all project.<br> Here we can find some informations about the latest games, features and news.
     </em>  
 </p>
 
@@ -77,7 +73,12 @@ curiosidades.
 <br>
 <br>
 <br>
-  
+<br>
+<br>
+<br>
+<br>
+<br>
+
   ### 🎥 Films & Series  
   
 
@@ -85,13 +86,16 @@ curiosidades.
   <img align="left" alt="film" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/film.gif" width="212" height="368" />
   <img align="left" alt="serie" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/serie.gif" width="212" height="368" />
   <em>
-    As Páginas filmes e séries traz uma lista de filmes e séries pertencentes ao universo Star Wars, cada card
-possui uma breve sinopse dos filmes/série e dois botões que direcionam para o trailer e para o site da Disney
-plus para assistir o conteúdo, também possui um saiba mais no final da sinopse que leva para o site do IMD que
-contêm toda a informação do filme, desde elenco quanto nota do filme de acordo com os críticos.
+    This pages shows movies and series of StarWars, pushing from <a href="https://github.com/MatheusMunizera/starwars-api"> StarWars API</a>. 
+    <br>
+    Each card has a resume of film/serie with two buttons its can display the opening crawl or redirectly to trailer. And, if want to view more, you can
+    click above the card.
     </em>  
 </p>
 
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -105,18 +109,13 @@ contêm toda a informação do filme, desde elenco quanto nota do filme de acord
  
 
 <p>
+  
    <img align="right" alt="list" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/list.gif" width="212" height="368" />
+  
   <em>
-   Essa pagina foi feita com o intuito de trazer mais informações ao usuário sobre o vasto
-universo da saga star wars, mostrando e trazendo ao usuário mais informações sobre o incrível
-mundo dessa maravilhosa saga. A página faz acesso na API feita pelo nosso amigo Matheus
-Muniz, onde a tela de listagem faz uma série de requisições a api para buscar informações sobre
-todos os personagens, veículos, planetas e espécies presentes na saga, trazendo uma listagem
-completa de todos, e para ver todas as informações sobre o personagem, basta clicar no ícone de
-informações ao lado do nome do personagem, que abrirá as informações do personagem na tela
-de Informações, e ainda conta com um filtro para poder pesquisar por personagens específicos.
-Até o momento, já foi implementado toda a parte de acesso a api, listagem e filtro, faltando
-apenas abrir os dados do personagem na tela de informações.
+    This pages its like database of all characters, planets, species, films, series and vehicles.
+    <br>
+      You can search by name to filter the database and you can click above to show more about the name.
     </em>  
 </p>
 
@@ -128,6 +127,13 @@ apenas abrir os dados do personagem na tela de informações.
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
    ### ♾️ Random
  
@@ -135,22 +141,16 @@ apenas abrir os dados do personagem na tela de informações.
 <p>
    <img align="left" alt="random" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/random.gif" width="212" height="368" />
   <em>
-  A princípio esta tela tem como objetivo gerar personagens, veículos, planetas ou até espécies de forma
-aleatória.
-Seu funcionamento age da seguinte forma: após o usuário selecionar o tipo de informação
-(como representado na figura 3), é feito um cálculo para gerar um número e esse número é passado como ID do
-que será retornado, então, por exemplo, seja gerado o número 2, será retornado o personagem com ID de
-número 2.
-As informações retornadas são rasas, composta apenas por uma breve descrição e uma imagem respectiva ao
-personagem, mas caso o usuário deseje algo mais detalhado é possível ser direcionado a página do
-personagem clicando no ícone sobre o card. Por fim, temos 3 botões: o primeiro com função de voltar ao último
-personagem gerado; O segundo com intuito de alterar o tipo de informação gerada (personagem, veículo,
-planeta ou espécie); E o terceiro, que gera um novo ID para ser apresentado
-A implementação da tela random já é feita usando a API e seu principal objetivo está completo, restando apenas
-abrir os demais dados do personagem na tela de informações
+    This page, fristly show 4 buttons with a image to select. Each button its like a generator.
+    <br>
+    This generator calcs a random number, and with this number its showed the short information respectively of the button.
+    <br>
+    To finish, its showed 3 buttons, to generate the next, to change whats its generated and to see the previous generation.
     </em>  
 </p>
 
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -163,34 +163,43 @@ abrir os demais dados do personagem na tela de informações
   ### ℹ️ Info
 
 
-
   <img align="right" alt="info" src="https://github.com/MatheusMunizera/swApp/blob/main/readme/info.gif" width="212" height="368" />
 
 <p>
   <em>
-   A tela info tem como objetivo principal a distribuição de informações em larga escala, onde o usuário terá a
-oportunidade de tirar suas dúvidas e descobrir curiosidades a fundo do universo cenográfico de Star Wars,
-sabemos como a saga, que ja passou de seus 40 anos, ainda intriga muitos de seus fans, sejam novos
-seguidores ou antigos entusiastas com sua complexidade
-A tela info é dívida em 3 principais módulos, imagem do elemento (seja um personagem, planeta, veículos e
-especies), um breve resumo com o nome do objeto selecionado através da API e por fim um módulo "SAIBA
-MAIS”, onde serão apresentadas as informações mais detalhadas (Técnicas, Produção e Ideológicas).
-Até o momento, já foi implementado toda a questão de design, restando somente o acesso a API.
+    This page its the most important, here we can view all information that the API shares.
+    <br>
+    So, the page receive an item, and with this, can discover if its a character, planet, vehicle, film or serie.
+    <br>
+    First the information its a image of the item and a complete description, and to finsh are 3 segments with Technical Data, Info Production and Ideology of item.
     </em>  
 </p>
-  
-  
+
+
+
+
 
 ## 🔗 Links
 [SwApp](https://anhembi-swapp.netlify.app)<br>
-[Starwars-API](https:/github.com/MatheusMunizera/starwars-api)<br>
+[Starwars-API](https://github.com/MatheusMunizera/starwars-api)<br>
 
 ### 🎓 Creators
 [Daniel Baião](https://github.com/Tirss)<br>
 [Henrique Mendes](https://github.com/HmbGow)<br>
 [Lucas Herranz](https://github.com/lucashrz)<br>
 [Matheus Muniz](https://github.com/MatheusMunizera)<br>
-[Pedro Lisboa](https://github.com/Pedrohdiasl)
+[Pedro Lisboa](https://github.com/Pedrohdiasl)<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<p align="center">
+   <a target="_blank" href="https://matheusmunizera.github.io/starwars-api/">
+    <img src="https://github.com/MatheusMunizera/swApp/blob/main/readme/the-mandalorian-baby-yoda.gif" width="980" height="200"/>
+  </a>
+</p>
 
 
 
