@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
 import { Character, Specie, Vehicle, Planet, Films, Series } from '../models/SwTypeItems';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { retry } from 'rxjs/operators';
 
 interface Rank {
   id: number;
@@ -21,18 +22,18 @@ export class SwAppService {
   public filmsList: Films[] = [];
   public seriesList: Series[] = [];
 
-  private readonly API_URL_CHARACTER =
-    'https://swapi-strapi.herokuapp.com/api/characters';
-  private readonly API_URL_VEHICLES =
-    'https://swapi-strapi.herokuapp.com/api/vehicles';
-  private readonly API_URL_PLANETS =
-    'https://swapi-strapi.herokuapp.com/api/planets';
-  private readonly API_URL_SPECIES =
-    'https://swapi-strapi.herokuapp.com/api/species';
-  private readonly API_URL_FILMS =
-    'https://swapi-strapi.herokuapp.com/api/films';
-  private readonly API_URL_SERIES =
-    'https://swapi-strapi.herokuapp.com/api/series';
+  private API_URL_CHARACTER =
+    'https://swapi.matheusmuniz.dev/characters.json';
+  private API_URL_VEHICLES =
+    'https://swapi.matheusmuniz.dev/vehicles.json';
+  private API_URL_PLANETS =
+    'https://swapi.matheusmuniz.dev/planets.json';
+  private API_URL_SPECIES =
+    'https://swapi.matheusmuniz.dev/species.json';
+  private API_URL_FILMS =
+    'https://swapi.matheusmuniz.dev/filmsaaa.json';
+  private API_URL_SERIES =
+    'https://swapi.matheusmuniz.dev/series.json';
 
   constructor(public http: HttpClient, private storage: Storage) {
     this.loadRanks();
@@ -57,8 +58,13 @@ export class SwAppService {
       .toPromise()
       .then((res) => {
         console.log(res)
-        this.charactersList = res['data'][0]['attributes']['content'];
-      });
+        this.charactersList = res;
+      })
+      .catch(() => {
+        this.API_URL_SERIES = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/characters.json';
+        this.getAllCharacters();
+      })
+      
   }
 
   async getAllVehicles() {
@@ -66,10 +72,12 @@ export class SwAppService {
       .get<Vehicle[]>(this.API_URL_VEHICLES)
       .toPromise()
       .then((res) => {
-        
-        this.vehiclesList = res['data'][0]['attributes']['content'];
+        this.vehiclesList = res;
         return this.vehiclesList;
-      });
+      }).catch(()=>{
+        this.API_URL_SERIES = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/vehicles.json';
+        this.getAllVehicles();
+      })
   }
 
   async getAllPlanets() {
@@ -77,8 +85,11 @@ export class SwAppService {
       .get<Planet[]>(this.API_URL_PLANETS)
       .toPromise()
       .then((res) => {
-        this.planetsList = res['data'][0]['attributes']['content'];
-      });
+        this.planetsList = res;
+      }).catch(()=>{
+        this.API_URL_PLANETS = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/planets.json';
+        this.getAllPlanets();
+      })
   }
 
   async getAllSpecies() {
@@ -86,8 +97,11 @@ export class SwAppService {
       .get<Specie[]>(this.API_URL_SPECIES)
       .toPromise()
       .then((res) => {
-        this.speciesList = res['data'][0]['attributes']['content'];
-      });
+        this.speciesList = res;
+      }).catch(()=>{
+        this.API_URL_SPECIES = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/species.json';
+        this.getAllFilms();
+      })
   }
 
   async getAllFilms() {
@@ -95,8 +109,11 @@ export class SwAppService {
       .get<Films[]>(this.API_URL_FILMS)
       .toPromise()
       .then((res) => {
-        this.filmsList = res['data'][0]['attributes']['content'];
-      });
+        this.filmsList = res;
+      }).catch(()=>{
+        this.API_URL_FILMS = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/films.json';
+        this.getAllFilms();
+      })
   }
 
   async getAllSeries(){
@@ -104,7 +121,10 @@ export class SwAppService {
       .get<Series[]>(this.API_URL_SERIES)
       .toPromise()
       .then((res)=>{
-        this.seriesList = res['data'][0]['attributes']['content'];
+        this.seriesList = res;
+      }).catch(()=>{
+        this.API_URL_SERIES = 'https://swapi-k1dhnj6wu-matheusmunizera.vercel.app/series.json';
+        this.getAllSeries();
       });
   }
 
