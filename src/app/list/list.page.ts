@@ -25,6 +25,7 @@ export class ListPage implements OnInit {
       message: '<img src="/assets/gif/loading.gif">',
       spinner: null,
     });
+    
     await this.swService.requestAll();
     await loading.present();
     this.currentItem = this.swService.charactersList;

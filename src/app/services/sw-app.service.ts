@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Storage } from '@ionic/storage-angular';
 import { Character, Specie, Vehicle, Planet, Films, Series } from '../models/SwTypeItems';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -22,17 +22,17 @@ export class SwAppService {
   public seriesList: Series[] = [];
 
   private readonly API_URL_CHARACTER =
-    'https://matheusmunizera.github.io/starwars-api/api/allCharacters.json';
+    'https://swapi-strapi.herokuapp.com/api/characters';
   private readonly API_URL_VEHICLES =
-    'https://matheusmunizera.github.io/starwars-api/api/allVehicles.json';
+    'https://swapi-strapi.herokuapp.com/api/vehicles';
   private readonly API_URL_PLANETS =
-    'https://matheusmunizera.github.io/starwars-api/api/allPlanets.json';
+    'https://swapi-strapi.herokuapp.com/api/planets';
   private readonly API_URL_SPECIES =
-    'https://matheusmunizera.github.io/starwars-api/api/allSpecies.json';
+    'https://swapi-strapi.herokuapp.com/api/species';
   private readonly API_URL_FILMS =
-    'https://matheusmunizera.github.io/starwars-api/api/allFilms.json';
+    'https://swapi-strapi.herokuapp.com/api/films';
   private readonly API_URL_SERIES =
-    'https://matheusmunizera.github.io/starwars-api/api/allSeries.json';
+    'https://swapi-strapi.herokuapp.com/api/series';
 
   constructor(public http: HttpClient, private storage: Storage) {
     this.loadRanks();
@@ -55,8 +55,9 @@ export class SwAppService {
     this.http
       .get<Character[]>(this.API_URL_CHARACTER)
       .toPromise()
-      .then((data) => {
-        this.charactersList = data;
+      .then((res) => {
+        console.log(res)
+        this.charactersList = res['data'][0]['attributes']['content'];
       });
   }
 
@@ -64,8 +65,9 @@ export class SwAppService {
     this.http
       .get<Vehicle[]>(this.API_URL_VEHICLES)
       .toPromise()
-      .then((data) => {
-        this.vehiclesList = data;
+      .then((res) => {
+        
+        this.vehiclesList = res['data'][0]['attributes']['content'];
         return this.vehiclesList;
       });
   }
@@ -74,8 +76,8 @@ export class SwAppService {
     this.http
       .get<Planet[]>(this.API_URL_PLANETS)
       .toPromise()
-      .then((data) => {
-        this.planetsList = data;
+      .then((res) => {
+        this.planetsList = res['data'][0]['attributes']['content'];
       });
   }
 
@@ -83,8 +85,8 @@ export class SwAppService {
     this.http
       .get<Specie[]>(this.API_URL_SPECIES)
       .toPromise()
-      .then((data) => {
-        this.speciesList = data;
+      .then((res) => {
+        this.speciesList = res['data'][0]['attributes']['content'];
       });
   }
 
@@ -92,8 +94,8 @@ export class SwAppService {
     this.http
       .get<Films[]>(this.API_URL_FILMS)
       .toPromise()
-      .then((data) => {
-        this.filmsList = data;
+      .then((res) => {
+        this.filmsList = res['data'][0]['attributes']['content'];
       });
   }
 
@@ -101,8 +103,8 @@ export class SwAppService {
     this.http
       .get<Series[]>(this.API_URL_SERIES)
       .toPromise()
-      .then((data)=>{
-        this.seriesList = data
+      .then((res)=>{
+        this.seriesList = res['data'][0]['attributes']['content'];
       });
   }
 

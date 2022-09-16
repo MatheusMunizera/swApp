@@ -93,6 +93,13 @@ ion-content {
     display: -webkit-box;
   }
 
+  body{
+    max-width: 478px !important;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto !important;
+    position: relative;
+  }
 
 
  
